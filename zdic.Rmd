@@ -1,0 +1,70 @@
+---
+title: "zdic"
+author: "Thomas"
+date: "18/12/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Packages
+```{r}
+library(tidyverse)
+library(rvest)
+#library(httr)
+#library(XML)
+```
+
+
+
+# Looking for the 國語辭典 definition on zdic.com
+
+```{r}
+# Specify URL
+url <- "http://wap.zdic.net/"
+session <- html_session(url)
+
+# Grab Initial Form
+#  Form is filled in stages. Here, only do country and date
+form.unfilled <- 
+  session %>% 
+  html_node("form") %>% 
+  html_form()
+
+form.filled <- 
+  form.unfilled %>%
+  set_values("q" = "躍躍")
+
+# submit the form and save as a new session
+submitted <- submit_form(session, form.filled) 
+
+# look for a definition in the nodes
+definitie <- 
+  submitted %>% 
+  html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
+  html_text()
+
+
+definitie
+
+
+```
+
+
+[rvest tutorial](http://stat4701.github.io/edav/2015/04/02/rvest_tutorial/)
+[forms and rvest](https://stackoverflow.com/questions/37868709/using-submit-form-from-rvest-package-returns-a-form-which-is-not-updated)
+
+
+
+
+
+
+
+
+
+
+
+
+
