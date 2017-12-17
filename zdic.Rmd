@@ -24,6 +24,7 @@ library(rvest)
 ```{r}
 # Specify URL
 url <- "http://wap.zdic.net/"
+query <- "躍躍"
 session <- html_session(url)
 
 # Grab Initial Form
@@ -35,7 +36,7 @@ form.unfilled <-
 
 form.filled <- 
   form.unfilled %>%
-  set_values("q" = "躍躍")
+  set_values("q" = query)
 
 # submit the form and save as a new session
 submitted <- submit_form(session, form.filled) 
@@ -52,19 +53,7 @@ definitie
 
 ```
 
-
-[rvest tutorial](http://stat4701.github.io/edav/2015/04/02/rvest_tutorial/)
-[forms and rvest](https://stackoverflow.com/questions/37868709/using-submit-form-from-rvest-package-returns-a-form-which-is-not-updated)
-
-
-
-
-
-
-
-
-
-
-
-
+### Some sources
+* [rvest tutorial](http://stat4701.github.io/edav/2015/04/02/rvest_tutorial/)
+* [forms and rvest](https://stackoverflow.com/questions/37868709/using-submit-form-from-rvest-package-returns-a-form-which-is-not-updated)
 
