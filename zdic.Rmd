@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(tidyverse)
 library(rvest)
+library(stringr)
 #library(httr)
 #library(XML)
 ```
@@ -21,10 +22,75 @@ library(rvest)
 
 # Looking for the 國語辭典 definition on zdic.com
 
+##function definition
+
+```{r opzoeken.function}
+opzoeken <- function(query){
+  # Specify URL
+  url <- "http://wap.zdic.net/"
+  session <- html_session(url)
+
+  # Grab Initial Form
+  #  Form is filled in stages. Here, only do country and date
+  form.unfilled <- 
+    session %>% 
+    html_node("form") %>% 
+    html_form()
+
+  form.filled <- 
+    form.unfilled %>%
+    set_values("q" = query)
+
+  # submit the form and save as a new session
+  submitted <- submit_form(session, form.filled) 
+
+  # look for a definition in the nodes
+  definitie <- 
+    submitted %>% 
+    html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
+    html_text()
+
+  pronunciation <-
+    submitted %>%
+    html_nodes(xpath = "//rtc//rt") %>%
+    html_text()
+
+  pinyin <- pronunciation[1]
+  zhuyin <- pronunciation[2]
+
+  df <- data.frame(
+    woord = query,
+    pinyin = pinyin,
+    zhuyin = zhuyin,
+    definitie = definitie %>%
+      paste(collapse = "")
+  )
+}
+
+opzoeken <- possibly(opzoeken, otherwise = NA_real_)
+```
+
+##Query
+```{r}
+woord <- "咻咻"
+```
+
+##Run function
+```{r}
+a <- opzoeken(woord)
+a$definitie %>%
+  pull()
+```
+
+
+
+
+
+
 ```{r}
 # Specify URL
 url <- "http://wap.zdic.net/"
-query <- "躍躍"
+query <- "旅行"
 session <- html_session(url)
 
 # Grab Initial Form
@@ -47,8 +113,20 @@ definitie <-
   html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
   html_text()
 
+pronunciation <-
+  submitted %>%
+  html_nodes(xpath = "//rtc//rt") %>%
+  html_text()
 
-definitie
+pinyin <- pronunciation[1]
+zhuyin <- pronunciation[2]
+
+query
+pinyin
+zhuyin
+definitie %>%
+  paste(collapse = "")
+
 
 
 ```
