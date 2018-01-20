@@ -1,0 +1,91 @@
+---
+title: "glossing"
+author: "Thomas"
+date: "19/1/2018"
+output:
+  pdf_document:
+    latex_engine: xelatex
+#    fig_caption: yes
+
+  html_document: default
+  word_document: default
+header-includes: \usepackage{gb4e}
+bibliography: latexref.bib
+csl: unified-style-linguistics.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(citr)
+```
+
+
+# First header
+
+## Some equations
+
+
+\begin{equation}
+\label{eq-abc}
+a + b = c
+\end{equation}
+
+
+## Some text 
+Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
+
+Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
+Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
+Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
+
+## R Markdown
+
+
+\begin{exe}
+\ex 
+\gll kat eat cream\\
+cat.NOM eat.3.SG.PRS sour-cream.ACC\\
+\trans `The cat eats sour cream'
+\end{exe}
+
+Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
+## Table
+
+\begin{table}
+\centering
+\caption{}
+\label{table-paramvalues}
+\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
+\hline \\ [-1.5ex]
+colname &amp; colname &amp; colname \\ [1ex]
+\hline \\ [-1.5ex]
+Info & info & info \\ [1ex]
+Info & info & info \\ [1ex]
+Info & info & info \\ [1ex]
+\hline
+\end{tabular}
+\end{table}
+
+```{r}
+#chinese support?
+library(huxtable)
+ht <- hux(
+        Employee     = c('柏緯', 'Jane Doe', 'David Hugh-Jones'), 
+        Salary       = c(50000, 50000, 40000),
+        add_colnames = TRUE
+      )
+ht
+```
+ 
+
+
+
+
+
+
+
+# References
+
+
+
