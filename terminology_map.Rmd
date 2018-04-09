@@ -20,82 +20,9 @@ country.lang("Dutch")
 ```
 
 
-
-
-
-# Making a table with all the languages, terminology and bibliography
 ```{r}
-#first put in all the languages
-#it is best to add a language and its bibliography together
-languages <- c("Semai_expressive",
-               "Bahnar_expressive",
-               "Kedah Malay_expressive",
-               "Lao_expressive",
-               "Indonesian_expressive",
-               "Somali_ideophone",
-               "Yoruba_ideophone",
-               "Kisi_ideophone",
-               "Zulu_ideophone",
-               "Gbaya-Bossangoa_ideophone",
-               "Hausa_ideophone",
-               "Siwu_ideophone",
-               "Korean_ideophone",
-               "Asheninka Perene_ideophone",
-               "Japanese_mimetic",
-               "French_expressive",
-               "Northern Pastaza Quichua_ideophone",
-               "Ewe_Lautbilder",
-               "Shona_ideophone",
-               "Sesotho_ideophone",
-               "Kota (India)_onomatopoetics",
-               "Vietnamese_impressif",
-               "Khasi_phonaesthetic words",
-               "Pacoh_ideophone",
-               "South Azerbaijani_onomatopes",
-               
-               )
-
-#adding the bibliography + the terms used in that language (if we know)
-# this can be formatted using html
-bibliography <- c("Diffloth (1976); Tufvesson (2011)",
-                  "Diffloth (1994)",
-                  "Collins (1979)",
-                  "Crisfield (1983); Wayland (1996)",
-                  "Carr (1966)",
-                  "Dhoorre & Tosco (1998)",
-                  "Rowlands (1970)",
-                  "Childs (1988)",
-                  "Doke 1935",
-                  "Samarin (1965)",
-                  "Newman (1968)",
-                  "Dingemanse (2011)",
-                  "Lee (1992)",
-                  "Mihas (2012)",
-                  "Lu (2006); Akita (2009); Kita (1997); Mester & Itô (1989), Rodrigues (1604) <br>
-                  オノマトペ・擬音語・擬態語・擬情語",
-                  "Grammont (1901)",
-                  "Nuckolls (1992; 1996; 2004; 2017)",
-                  "Westermann (1905; 1907)",
-                  "Fortune (1962)",
-                  "Kunene (1965)",
-                  "Emeneau (1969)",
-                  "Durand (1961)",
-                  "Henderson (1965)",
-                  "Watson (1966)",
-                  "Householder (1962)"
-                  )
-
-#languages
-
-df_pre <- tibble(languages, popup = bibliography)
-#df_pre
-
-df <- df_pre %>% 
-  separate(languages, into = c("language", "terminology"), sep = "_")
-
+df <- read_csv("https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv")
 df
-
-write_csv(df, "terminology_map.csv", na = "NA")
 ```
 
 
@@ -105,7 +32,7 @@ write_csv(df, "terminology_map.csv", na = "NA")
 map.feature(languages = df$language,
             features = df$terminology,
             popup = df$popup,
-            color= c("yellowgreen", "navy"),
+            #color= c("yellowgreen", "navy"),
             #shape = TRUE
             label = df$language
             )
