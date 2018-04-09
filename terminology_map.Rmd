@@ -43,7 +43,9 @@ languages <- c("Semai_expressive",
                "Asheninka Perene_ideophone",
                "Japanese_mimetic",
                "French_expressive",
-               "Northern Pastaza Quichua_ideophone"
+               "Northern Pastaza Quichua_ideophone",
+               "Ewe_Lautbilder",
+               "Bantu_ideophone"
                )
 
 #adding the bibliography + the terms used in that language (if we know)
@@ -65,7 +67,9 @@ bibliography <- c("Diffloth (1976); Tufvesson (2011)",
                   "Lu (2006); Akita (2009); Kita (1997); Mester & Itô (1989), Rodrigues (1604) <br>
                   オノマトペ・擬音語・擬態語・擬情語",
                   "Grammont (1901)",
-                  "Nuckolls (1992; 1996; 2004; 2017)"
+                  "Nuckolls (1992; 1996; 2004; 2017)",
+                  "Westermann (1905; 1907)",
+                  "Doke (1935)"
                   )
 
 languages
