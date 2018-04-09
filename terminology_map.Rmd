@@ -1,0 +1,21 @@
+---
+title: "Terminology ideophones"
+author: "Thomas Van Hoey"
+date: "9/4/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(lingtypology)
+```
+
+Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.
+
+
+
+
+
+
