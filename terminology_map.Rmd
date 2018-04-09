@@ -15,6 +15,76 @@ library(lingtypology)
 Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.
 
 
+```{r}
+country.lang("Dutch")
+```
+
+
+The term ‘ideophone’ is commonly used to refer to a class of sound-symbolic words in sub-Saharan
+African languages, such as Somali (Dhoorre & Tosco, 1998), Yoruba (Rowlands, 1970), Kisi
+(Childs, 1988), Zulu (Doke, 1935), Gbeya (Samarin, 1965), Hausa (Newman, 1968), Siwu
+(Dingemanse, 2011), and in some other non-African languages, such as Korean (Lee, 1992) and
+Alto Perené (Mihas, 2012).
+
+
+# Making a table with all the languages, terminology and bibliography
+```{r}
+#first put in all the languages
+
+#it is best to add a language and its bibliography together
+languages <- c("Semai_expressive",
+               "Bahnar_expressive",
+               "Kedah Malay_expressive",
+               "Lao_expressive",
+               "Indonesian_expressive",
+               "Japanese_mimetic"
+               )
+
+bibliography <- c("Diffloth (1976); Tufvesson (2011)",
+                  "Diffloth (1994)",
+                  "Collins (1979)",
+                  "Crisfield (1983); Wayland (1996)",
+                  "Carr (1966)",
+                  "Akita (2009)"
+                  )
+
+languages
+
+df_pre <- tibble(languages, popup = bibliography)
+df_pre
+
+
+
+df <- df_pre %>% 
+  separate(languages, into = c("language", "terminology"), sep = "_")
+
+
+
+df
+
+
+```
+
+
+
+
+```{r}
+map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            color= c("yellowgreen", "navy"),
+            #shape = TRUE
+            label = df$language
+            )
+
+```
+
+
+
+
+
+
+
 
 
 
