@@ -20,32 +20,52 @@ country.lang("Dutch")
 ```
 
 
-The term ‘ideophone’ is commonly used to refer to a class of sound-symbolic words in sub-Saharan
-African languages, such as Somali (Dhoorre & Tosco, 1998), Yoruba (Rowlands, 1970), Kisi
-(Childs, 1988), Zulu (Doke, 1935), Gbeya (Samarin, 1965), Hausa (Newman, 1968), Siwu
-(Dingemanse, 2011), and in some other non-African languages, such as Korean (Lee, 1992) and
-Alto Perené (Mihas, 2012).
+
 
 
 # Making a table with all the languages, terminology and bibliography
 ```{r}
 #first put in all the languages
-
 #it is best to add a language and its bibliography together
 languages <- c("Semai_expressive",
                "Bahnar_expressive",
                "Kedah Malay_expressive",
                "Lao_expressive",
                "Indonesian_expressive",
-               "Japanese_mimetic"
+               "Somali_ideophone",
+               "Yoruba_ideophone",
+               "Kisi_ideophone",
+               "Zulu_ideophone",
+               "Gbaya-Bossangoa_ideophone",
+               "Hausa_ideophone",
+               "Siwu_ideophone",
+               "Korean_ideophone",
+               "Asheninka Perene_ideophone",
+               "Japanese_mimetic",
+               "French_expressive",
+               "Northern Pastaza Quichua_ideophone"
                )
 
+#adding the bibliography + the terms used in that language (if we know)
+# this can be formatted using html
 bibliography <- c("Diffloth (1976); Tufvesson (2011)",
                   "Diffloth (1994)",
                   "Collins (1979)",
                   "Crisfield (1983); Wayland (1996)",
                   "Carr (1966)",
-                  "Akita (2009)"
+                  "Dhoorre & Tosco (1998)",
+                  "Rowlands (1970)",
+                  "Childs (1988)",
+                  "Doke 1935",
+                  "Samarin (1965)",
+                  "Newman (1968)",
+                  "Dingemanse (2011)",
+                  "Lee (1992)",
+                  "Mihas (2012)",
+                  "Lu (2006); Akita (2009); Kita (1997); Mester & Itô (1989), Rodrigues (1604) <br>
+                  オノマトペ・擬音語・擬態語・擬情語",
+                  "Grammont (1901)",
+                  "Nuckolls (1992; 1996; 2004; 2017)"
                   )
 
 languages
@@ -84,8 +104,15 @@ map.feature(languages = df$language,
 
 
 
+# References
 
 
 
+Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.
 
+
+Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: University of Queensland PhD dissertation.
+
+
+Moroz G (2017). _lingtypology: easy mapping for Linguistic Typology_. <URL: https://CRAN.R-project.org/package=lingtypology>.
 
