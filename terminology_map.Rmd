@@ -2,7 +2,11 @@
 title: "Terminology ideophones"
 author: "Thomas Van Hoey"
 date: "9/4/2018"
-output: html_document
+output: 
+  html_document:
+    toc: TRUE
+    theme: united
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -15,9 +19,10 @@ knitr::opts_chunk$set(echo = TRUE)
 Goal: to create a map that shows which for which languages we use which terminology relating to ideophones.
 
 # Load packages
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 library(lingtypology)
+library(kableExtra)
 ```
 
 
@@ -31,7 +36,9 @@ The data below is divided into three columns:
 
 ```{r data, warning=FALSE, message=FALSE}
 df <- read_tsv("https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv")
-df
+df %>%
+  kable("html") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 
