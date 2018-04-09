@@ -45,7 +45,14 @@ languages <- c("Semai_expressive",
                "French_expressive",
                "Northern Pastaza Quichua_ideophone",
                "Ewe_Lautbilder",
-               "Bantu_ideophone"
+               "Shona_ideophone",
+               "Sesotho_ideophone",
+               "Kota (India)_onomatopoetics",
+               "Vietnamese_impressif",
+               "Khasi_phonaesthetic words",
+               "Pacoh_ideophone",
+               "South Azerbaijani_onomatopes",
+               
                )
 
 #adding the bibliography + the terms used in that language (if we know)
@@ -69,24 +76,26 @@ bibliography <- c("Diffloth (1976); Tufvesson (2011)",
                   "Grammont (1901)",
                   "Nuckolls (1992; 1996; 2004; 2017)",
                   "Westermann (1905; 1907)",
-                  "Doke (1935)"
+                  "Fortune (1962)",
+                  "Kunene (1965)",
+                  "Emeneau (1969)",
+                  "Durand (1961)",
+                  "Henderson (1965)",
+                  "Watson (1966)",
+                  "Householder (1962)"
                   )
 
-languages
+#languages
 
 df_pre <- tibble(languages, popup = bibliography)
-df_pre
-
-
+#df_pre
 
 df <- df_pre %>% 
   separate(languages, into = c("language", "terminology"), sep = "_")
 
-
-
 df
 
-
+write_csv(df, "terminology_map.csv", na = "NA")
 ```
 
 
@@ -119,4 +128,6 @@ Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: Univers
 
 
 Moroz G (2017). _lingtypology: easy mapping for Linguistic Typology_. <URL: https://CRAN.R-project.org/package=lingtypology>.
+
+Voeltz, Erhard Friedrich Karl & Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam ; Philadelphia: J. Benjamins.
 
