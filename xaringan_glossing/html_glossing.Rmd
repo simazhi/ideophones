@@ -1,0 +1,64 @@
+---
+title: "HTML glosses"
+subtitle: "How to make glosses with HtML"
+author: "Yihui Xie"
+date: "2018/04/12"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+    css: "extra.css"
+        
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+
+
+# Hello Ninja
+
+<table border="0">
+<tr> 
+ <td  align="left">我</td>
+ <td  align="left">講</td>
+ <td  align="left">中文。</td>
+</tr>
+
+<tr> 
+ <td  align="left">wǒ</td>
+ <td  align="left">jǐang</td>
+ <td  align="left">zhōngwén</td>
+</tr>
+
+<tr> 
+ <td  align="left">1.<sc>sg</sc></td>
+ <td  align="left">speak</td>
+ <td  align="left">Chinese</td>
+</tr>
+
+
+
+<tr>
+ <td colspan="9">I speak Chinese.</td>
+</tr>
+
+</table>
+
+---
+
+# Henry
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IsXB5eRMRno" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+--
+
+Here is a nice video. Let's listen to it.
+
+
+
+

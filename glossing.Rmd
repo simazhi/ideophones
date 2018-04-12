@@ -1,93 +1,107 @@
 ---
-title: "glossing"
-author: "Thomas"
-date: "19/1/2018"
-output:
-  pdf_document:
+title: "Untitled"
+author: "Thomas Van Hoey"
+date: "29/3/2018"
+output: 
+  bookdown::pdf_document2:
+    fig_caption: yes
     latex_engine: xelatex
-#    fig_caption: yes
-
   html_document: default
-  word_document: default
-header-includes: \usepackage{gb4e}
-bibliography: latexref.bib
-csl: unified-style-linguistics.csl
+header-includes:
+#  - \usepackage{gb4e}
+  - \usepackage{expex}
+  - \usepackage{tikz}
+
+CJKmainfont: Noto Sans CJK TC
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-
-library(citr)
 ```
-
-This is also a test.
-
-
-# First header
-
-## Some equations
-
-
-\begin{equation}
-\label{eq-abc}
-a + b = c
-\end{equation}
-
-
-## Some text 
-Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
-
-Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
-Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
-Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
 
 ## R Markdown
 
 
-\begin{exe}
-\ex 
-\gll kat eat cream\\
-cat.NOM eat.3.SG.PRS sour-cream.ACC\\
-\trans `The cat eats sour cream'
-\end{exe}
+Example (\nextx) is well-known from the literature on parasitic
+gaps. Here we are concerned with example formatting, not with the
+interesting syntax.
 
-Lorem ipsum (\ref{eq-abc})  dolor sit amet [see @Zhang2015], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore[@Zirker2017] magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis [@LuoZhufengLuoZhuFeng1986 15] aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum @Kroll2015 [192-194].
-## Table
+\ex
+I wonder which **article** *John* filed {\sl t\/} without reading {\sl e}.
+\xe
+It is beyond the scope of this investigation to determine exactly why
+John did not read the article.
 
-\begin{table}
-\centering
-\caption{}
-\label{table-paramvalues}
-\begin{tabular}{ p{4cm} p{4cm} p{4cm} }
-\hline \\ [-1.5ex]
-colname &amp; colname &amp; colname \\ [1ex]
-\hline \\ [-1.5ex]
-Info & info & info \\ [1ex]
-Info & info & info \\ [1ex]
-Info & info & info \\ [1ex]
-\hline
-\end{tabular}
-\end{table}
+Multipart examples are equally straightforward.
 
-```{r}
-#chinese support?
-library(huxtable)
-ht <- hux(
-        Employee     = c('柏緯', 'Jane Doe', 'David Hugh-Jones'), 
-        Salary       = c(50000, 50000, 40000),
-        add_colnames = TRUE
-      )
-ht
-```
- 
+\pex Two examples of parasitic gaps.
+\a He is the man that John did not interview {\sl e\/} before
+he gave the job to {\sl e}.
+\a He is someone who John expected {\sl e\/} to be successful
+though believing {\sl e\/} to be incompetent.
+\xe
+Here, we can speculate on why John did not do an interview before
+recommending the person for a job. It is likely that the person
+was a crony of John. In (\lastx b), perhaps John knew that
+the ‘‘someone’’ went to prep school with the owner of the
+business.
 
 
 
+\ex
+\begingl
+\gla Mary$_i$ ist sicher, dass es den Hans nicht st\"oren
+w\"urde seiner Freundin ihr$_i$ Herz auszusch\"utten.//
+\glb Mary is sure that it the-{\sc acc} Hans not annoy would
+his-{\sc dat} girlfriend-{\sc dat} her-{\sc acc} heart-{\sc acc} {out to
+throw}//
+\glft ‘Mary is sure that it would not annoy John to reveal her
+heart to his girlfriend.’//
+\endgl
+\xe
+
+
+\ex
+\begingl
+\gla 我 講 中文//
+\glb 1SG speak Chinese//
+\glc third line of.gloss//
+\glft I speak Chinese.//
+\endgl
+\xe
+
+\begin{tikzpicture}[parent anchor=south,
+align=center, level distance=2em,
+anchor=north, sibling distance=4em,
+child anchor=north]
+\node (top) {XP}
+child {node {X}}
+child {node {YP}
+child {node {Y}}
+child {node {ZP}}};
+\end{tikzpicture}
 
 
 
-
-# References
-
-
-
+A tree:
+\begin{tikzpicture}[every node/.style={draw}, baseline=(top.base),
+level distance=2em, sibling distance=4em, align=center,
+parent anchor=south, child anchor=north, anchor=north]
+\node (top) {XP}
+child {node {X}}
+child {node {YP}
+child {node {AP}}
+child {node {Y}}
+child {node {ZP\\\footnotesize{}[anchor=north]}}};
+\end{tikzpicture}
+%
+Another tree:
+\begin{tikzpicture}[every node/.style={draw}, baseline=(top.base),
+level distance=2em, sibling distance=4em, align=center,
+parent anchor=south, child anchor=north, anchor=center] % ← look here
+\node (top) {XP}
+child {node {X}}
+child {node {YP}
+child {node {Y}}
+child {node {ZP\\\footnotesize{}[anchor=center]}}};
+\end{tikzpicture}

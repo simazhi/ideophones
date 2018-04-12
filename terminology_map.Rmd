@@ -58,6 +58,20 @@ map.feature(languages = df$language,
 ```
 
 
+```{r save_as_png, echo=FALSE}
+library(mapview)
+
+## 'leaflet' objects (image above)
+m <- map.feature(languages = df$language,
+            features = df$terminology,
+            popup = df$popup,
+            color= c("yellowgreen", "navy"),
+            #shape = TRUE
+            label = df$language
+            )
+mapshot(m, file = "Rplot.png")
+
+```
 
 
 
@@ -70,5 +84,5 @@ Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: Univers
 
 Moroz G (2017). _lingtypology: easy mapping for Linguistic Typology_. <URL: https://CRAN.R-project.org/package=lingtypology>.
 
-Voeltz, Erhard Friedrich Karl & Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam ; Philadelphia: J. Benjamins.
+Voeltz, Erhard Friedrich Karl & Christa Kilian-Hatz (eds.). 2001. Ideophones. (Typological Studies in Language v. 44). Amsterdam; Philadelphia: J. Benjamins.
 
