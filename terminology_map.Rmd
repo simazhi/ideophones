@@ -35,7 +35,10 @@ The data below is divided into three columns:
 * `popup`: What I want to appear in the frames when you click on a given language. In this case that would be a reference to some research, or the names used for the phenomenon in the language itself.
 
 ```{r data, warning=FALSE, message=FALSE}
-df <- read_tsv("https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv")
+df <- read_csv("https://raw.githubusercontent.com/simazhi/ideophones/master/terminology_map.csv")
+
+#df
+
 df %>%
   kable("html") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
@@ -46,12 +49,12 @@ df %>%
 
 Next we plot the map, which can then be explored.
 
-```{r map}
+```{r map, cache=TRUE}
 map.feature(languages = df$language,
             features = df$terminology,
             popup = df$popup,
-            color= c("yellowgreen", "navy"),
-            #shape = TRUE
+            #color= c("yellowgreen", "navy"),
+            #shape = TRUE,
             label = df$language
             )
 
@@ -65,7 +68,7 @@ library(mapview)
 m <- map.feature(languages = df$language,
             features = df$terminology,
             popup = df$popup,
-            color= c("yellowgreen", "navy"),
+            #color= c("yellowgreen", "navy"),
             #shape = TRUE
             label = df$language
             )
@@ -79,6 +82,8 @@ mapshot(m, file = "Rplot.png")
 # References
 
 Dingemanse, Mark. 2011. The meaning and use of ideophones in Siwu. Nijmegen: Radboud University Nijmegen dissertation.
+
+Dingemanse, Mark. 2018. Redrawing the margins of language: Lessons from research on ideophones. Glossa: a journal of general linguistics 3(1). doi:10.5334/gjgl.444.
 
 Kwon, Nahyun. 2015. The natural motivation of sound symbolism. Brisbane: University of Queensland PhD dissertation.
 
