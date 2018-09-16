@@ -1,7 +1,7 @@
 ---
 title: "Terminology ideophones"
 author: "Thomas Van Hoey"
-date: "9/4/2018"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
 output: 
   html_document:
     toc: TRUE
@@ -61,7 +61,7 @@ map.feature(languages = df$language,
 ```
 
 
-```{r save_as_png, echo=FALSE}
+```{r save_as_png, echo=FALSE, warning=FALSE}
 library(mapview)
 
 ## 'leaflet' objects (image above)
