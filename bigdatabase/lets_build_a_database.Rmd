@@ -1,0 +1,235 @@
+---
+title: "Let’s build a database"
+author: "Thomas Van Hoey"
+date: "19/9/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+What I want to do is combine three documents together:
+1. My own database project (.odb)
+2. Kroll's (2015) A-M (by Arthur)
+3. Kroll's (2015) N-Z (by Thomas)
+
+# Package load
+```{r}
+library(tidyverse)
+library(ODB)
+library(tmcn)
+library(pinyin)
+```
+
+
+# The .odb database
+
+## Getting the R-object and wrangling
+
+First we need to make a connection with the database, get everything out of it, and turn it into an R-object (tibble/dataframe).
+
+```{r}
+db <- odb.open("ideophone.odb")
+#db
+#names <- names(odb.tables(db))
+#tables <- odb.tables(db)
+#names
+#tables
+SQL <- 'SELECT * FROM "ideophone"' #use single and double quotes, quotes around table name
+database <- odb.read(db, SQL)
+#print(database)
+database
+```
+
+We are leaving out:
+- Zdic
+- Ricci
+- same_as_ID
+- form_letterID
+- form_mechanismID
+
+
+```{r}
+#colnames(database)
+
+DBwr <- database %>%
+  select(pinyin, pinyintone, traditional, simplified, MC, OC, Kroll, note)
+DBwr
+```
+
+# Kroll A-M
+
+## Getting R-object
+
+```{r}
+Kroll_ar <- readxl::read_excel("kroll_Arthur.xlsx")
+Kroll_ar
+
+colnames(Kroll_ar)
+
+KAwr <- Kroll_ar %>%
+  rename(traditional = `Kroll Binome`,
+         pinyinnum = pinyin,
+         Kroll = English,
+         notes = Notes,
+         radsup = `Radical Support`) %>%
+  select(traditional,
+         pinyinnum,
+         MC,
+         Kroll,
+         `Morphological Structure`,
+         radsup,
+         notes)
+KAwr
+```
+
+
+# Kroll N-Z
+
+## Getting R-object
+```{r}
+Kroll_th <- readxl::read_excel("kroll_Thomas.xlsx")
+Kroll_th
+
+colnames(Kroll_th)
+
+KTwr <- Kroll_th %>%
+  rename(traditional = `Kroll Binome`,
+         pinyinnum = pinyin,
+         Kroll = English,
+         notes = Notes,
+         radsup = `Radical Support`) %>%
+  select(traditional,
+         pinyinnum,
+         MC,
+         Kroll,
+         `Morphological Structure`,
+         radsup,
+         notes)
+KTwr
+```
+
+This leaves out:
+- page no
+- variant
+
+# Combining the tables
+
+```{r}
+#DBh <- head(DBwr)
+#KTh <- head(KTwr)
+#KAh <- head(KAwr)
+
+#colnames(DBh)
+#colnames(KTh)
+#colnames(KAh)
+```
+
+```{r}
+joined1 <- full_join(DBwr, KTwr, by = c("traditional", "Kroll", "MC", "note" = "notes"))
+joined <- full_join(joined1, KAwr, by = c("traditional", "Kroll", "MC", "note" = "notes", "pinyinnum", "radsup", "Morphological Structure"))
+joined
+```
+
+# Revamping stuff
+
+## Simplified
+
+Obviously, there are going to be mistakes here.
+```{r}
+# from trad to simpl
+joined <- joined %>%
+  mutate(simplified = toTrad(traditional, rev=TRUE)) 
+```
+
+## Pinyins
+After some testing, it seemed that neither `pinyin` or `tmcn` could bring what I wanted: pinyin without tones, pinyin with tone, pinyin with tone numbers. Thus we need to do this manually?
+It seems python can come to the rescue.
+
+Maybe if we split the characters and then combine them again?
+
+```{r}
+list <- joined %>%
+  select(traditional) %>%
+  unlist()
+```
+
+```{r}
+library(reticulate)
+use_python("/usr/local/bin/python3", required = T)
+reticulate::py_config()
+```
+
+```{python}
+import pinyin
+a = r.list
+
+thomas = []
+for i in a:
+    j = pinyin.get(i, delimiter="~")
+    thomas.append(j)
+    
+cj = []
+for i in a:
+    j = pinyin.get(i, format= "strip", delimiter="~")
+    cj.append(j)
+    
+arthur = []
+for i in a:
+    j = pinyin.get(i, format="numerical", delimiter="~")
+    arthur.append(j)
+#print (thomas)
+#print(type(thomas))
+```
+
+```{r}
+#py_run_file("script.py")
+#py_run_string("x = 10")
+
+# access the python main module via the 'py' object
+#py$x
+thomas <- py$thomas #%>% tibble()
+thomas <- tibble(thomas)
+
+cj <- py$cj #%>% tibble()
+cj <- tibble(cj)
+
+arthur <- py$arthur #%>% tibble()
+arthur <- tibble(arthur)
+
+thomas
+cj
+arthur
+```
+
+#
+
+
+
+# Distinct entries
+
+```{r}
+joined %>%
+  distinct()
+
+unique(joined$`Morphological Structure`)
+
+joined %>%
+  filter(`Morphological Structure` == "NOTIDEOPHONE")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

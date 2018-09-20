@@ -1,0 +1,66 @@
+---
+title: "literarydatabase"
+author: "Thomas Van Hoey"
+date: "19/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readxl)
+library(tidyverse)
+library(tmcn)
+```
+
+# Read in file
+
+```{r}
+file <- readxl::read_excel("kroll_Thomas.xlsx")
+file
+
+```
+
+
+# `tmcn` package
+```{r}
+file %>%
+  rename(binome = "Kroll Binome") %>%
+  select(binome) %>%
+  mutate(pinyin = toPinyin(binome, capitalize = FALSE)) %>%
+  mutate(simplified = toTrad(binome, rev = TRUE)) 
+  
+
+```
+
+## Semantic dictionary
+
+```{r}
+semantic <- tibble(NTUSD)
+semantic
+
+data(NTUSD)
+NTUSD
+
+NTUSD_tibble <- NTUSD %>% 
+  unlist(recursive = FALSE) %>% 
+  enframe() %>% 
+  unnest() %>%
+  mutate(polarity = str_extract(name, "^[a-z]+(?=_)")) %>%
+  mutate(characterset = case_when(
+    str_detect(name, "chs") ~ "simplified",
+    str_detect(name, "cht") ~ "traditional"))
+           
+NTUSD_tibble 
+```
+
+## Stopwords
+
+```{r}
+data(STOPWORDS)
+STOPWORDS
+```
+
+
+
+
+
