@@ -13,6 +13,9 @@ header-includes:
   - \usepackage{tikz}
 
 CJKmainfont: Noto Sans CJK TC
+
+fontsize: 12pt
+linestretch: 1
 ---
 
 ```{r setup, include=FALSE}
@@ -21,12 +24,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
+\lingset{everyex=\small}
+
+
+\@ref(ex:snoopy)
 
 Example (\nextx) is well-known from the literature on parasitic
 gaps. Here we are concerned with example formatting, not with the
 interesting syntax.
 
-\ex
+\ex (\#ex:snoopy)
 I wonder which **article** *John* filed {\sl t\/} without reading {\sl e}.
 \xe
 It is beyond the scope of this investigation to determine exactly why
@@ -36,7 +43,7 @@ Multipart examples are equally straightforward.
 
 \pex Two examples of parasitic gaps.
 \a He is the man that John did not interview {\sl e\/} before
-he gave the job to {\sl e}.
+he gave the job to {\sl e}. (\#ex:snoopy)
 \a He is someone who John expected {\sl e\/} to be successful
 though believing {\sl e\/} to be incompetent.
 \xe
@@ -105,3 +112,22 @@ child {node {YP}
 child {node {Y}}
 child {node {ZP\\\footnotesize{}[anchor=center]}}};
 \end{tikzpicture}
+
+
+Table: (\#tab:simple-table) Testing the caption
+
+| Mandarin | Cantonese      | Taiwanese |
+|----------|----------------|-----------|
+| AcadLang | HKU-70         | Tsay      |
+| Beijing  | Lee/Wong/Leung |           |
+| Chang1   | PaidoCantonese |           |
+| Chang 2 |
+| Context |
+| LiZhou |
+| TCCM |
+| Tong |
+| Xinjiang |
+| Zhou1 |
+| Zhou2 |
+| ZhouDinner |
+| ZhouNarratives |
