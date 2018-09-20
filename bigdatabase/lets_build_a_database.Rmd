@@ -9,10 +9,16 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Goals
 What I want to do is combine three documents together:
 1. My own database project (.odb)
 2. Kroll's (2015) A-M (by Arthur)
 3. Kroll's (2015) N-Z (by Thomas)
+
+# Before programming intervenes
+
+* Add 'neglected' entries from dictionary
+* Make sure source files are correct (first skype)
 
 # Package load
 ```{r}
@@ -143,7 +149,8 @@ joined <- joined %>%
   mutate(simplified = toTrad(traditional, rev=TRUE)) 
 ```
 
-## Pinyins
+## Pinyin
+
 After some testing, it seemed that neither `pinyin` or `tmcn` could bring what I wanted: pinyin without tones, pinyin with tone, pinyin with tone numbers. Thus we need to do this manually?
 It seems python can come to the rescue.
 
@@ -164,6 +171,10 @@ reticulate::py_config()
 ```{python}
 import pinyin
 a = r.list
+
+richard = []
+for i in a:
+    richard.append(i)
 
 thomas = []
 for i in a:
@@ -203,25 +214,118 @@ cj
 arthur
 ```
 
-#
+# zdic entries
 
+## set up
+```{r}
+library(rvest)
+```
+
+```{r opzoeken.function}
+opzoeken <- function(query){
+  # Specify URL
+  url <- "http://wap.zdic.net/"
+  session <- html_session(url)
+
+  # Grab Initial Form
+  #  Form is filled in stages. Here, only do country and date
+  form.unfilled <- 
+    session %>% 
+    html_node("form") %>% 
+    html_form()
+
+  form.filled <- 
+    form.unfilled %>%
+    set_values("q" = query)
+
+  # submit the form and save as a new session
+  submitted <- submit_form(session, form.filled) 
+
+  # look for a definition in the nodes
+  definitie <- 
+    submitted %>% 
+    html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
+    html_text()
+  
+  if (is_empty(definitie) == TRUE){
+    definitie <- "NA"
+  } else {
+    definitie <- definitie
+  }
+
+  pronunciation <-
+    submitted %>%
+    html_nodes(xpath = "//rtc//rt") %>%
+    html_text()
+
+  pinyin <- pronunciation[1]
+  zhuyin <- pronunciation[2]
+
+  df <- data.frame(
+    woord = query,
+    pinyin = pinyin,
+    zhuyin = zhuyin,
+    definitie = definitie %>%
+      paste(collapse = "")
+  )
+}
+
+opzoeken <- possibly(opzoeken, otherwise = NA_real_)
+```
+
+
+With the head() this worked, so probably with all the rest too.
+
+```{r}
+list2 <- py$richard %>% head()
+#list2
+map_df(list2, opzoeken) %>%
+  select(woord, definitie)
+```
 
 
 # Distinct entries
 
+I don't know if I should run this, this may best be done manually?
+
 ```{r}
-joined %>%
-  distinct()
+#joined %>%
+#  distinct()
+#unique(joined$`Morphological Structure`)
+#joined %>%
+#filter(`Morphological Structure` == "NOTIDEOPHONE")
+```
 
-unique(joined$`Morphological Structure`)
+# Finishing touches
+## Put all extra tables together
+```{r}
 
-joined %>%
-  filter(`Morphological Structure` == "NOTIDEOPHONE")
+```
+
+## Sort the final table
+```{r}
+
+```
+
+## Sort the variables in final table
+```{r}
+
 ```
 
 
 
+# Stuff that needs to happen after coding.
 
+## Higher priorities
+
+* Manually checking all three new pronunciations agains the old ones. The old ones were only partially filled out, but they were correct. With computing it is possible to fill out the whole table but it might be wrong.
+* Checking traditional vs. simplified characters.
+* Fill out radsup
+* Fill out MC
+
+## Lower priorites
+
+* Fill out OC
 
 
 
