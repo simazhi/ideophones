@@ -67,6 +67,7 @@ fluidPage(theme = shinytheme("flatly"),
     sidebarLayout(position = "left",
                   fluid = TRUE,
                   sidebarPanel(
+                      width = 3,
                        # h4("test"),
                        # br(),
                        #checkboxes
@@ -99,27 +100,20 @@ fluidPage(theme = shinytheme("flatly"),
                                                       "variants" = "variant")
                                           )
                        #end of checkboxes
-                ) # end of sidepanel
-    ,
-    mainPanel(
-    # # Create a new Row in the UI for selectInputs
-    # fluidRow(
-    #     column(12,
-    #            selectInput("py",
-    #                        "Hanyu pinyin:",
-    #                        c("All",
-    #                          unique(as.character(ideodata$pinyintone)
-    #                                 )
-    #                          )
-    #                        )
-    #      )
-    #  ),
-    # h2("test"),
-    # Create a new row for the table.
-    DT::dataTableOutput("table")
-) #main panel
-    ) #sidebar layout
-) #fluidpage
+                ), # end of sidepanel
+
+    mainPanel(width = 9,
+              DT::dataTableOutput("table")
+    ) #main panel
+        ), #sidebar layout,
+    hr(),
+    print("© Thomas Van Hoey 司馬智"),
+    a(href="https://www.thomasvanhoey.com", "(website)"),
+    br(),
+    print("Last updated:"),
+    strong("January 2019")
+    
+) #end fluidpage
 
 
 
