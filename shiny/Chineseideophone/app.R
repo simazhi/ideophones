@@ -12,10 +12,11 @@ library(shiny)
 library(tidyverse)
 library(readxl)
 library(DT)
+library(shinythemes)
 
 # Here is the data and stuff
 
-ideodata <- read_xlsx("data.xlsx") %>%
+ideodata <- read_xlsx("www/data.xlsx") %>%
     filter(morph != "NOTIDEOPHONE") %>%
     select(pinyinnone,
            traditional,
@@ -44,14 +45,8 @@ function(input, output) {
     # Filter data based on selections
     output$table <- DT::renderDataTable(DT::datatable({
         data <- ideodata
-        if (input$py != "All") {
-            data <- data[data$pinyintone == input$py,]
-        }
-        # if (input$cyl != "All") {
-        #     data <- data[data$cyl == input$cyl,]
-        # }
-        # if (input$trans != "All") {
-        #     data <- data[data$trans == input$trans,]
+        # if (input$py != "All") {
+        #     data <- data[data$pinyintone == input$py,]
         # }
         data[, checkGroup(), drop = FALSE]
         #data[, which(input$checkGroup | input$checkGroup2), drop = FALSE]
@@ -64,13 +59,10 @@ function(input, output) {
 
 
 ## UI
-# Load the ggplot2 package which provides
-# the 'mpg' dataset.
-library(ggplot2)
 
 ui <-
-fluidPage(
-    titlePanel("Chinese ideophones — marked words (form)"),
+fluidPage(theme = shinytheme("flatly"),
+    titlePanel("Chinese ideophones — a database"),
     
     sidebarLayout(position = "left",
                   fluid = TRUE,
@@ -110,18 +102,19 @@ fluidPage(
                 ) # end of sidepanel
     ,
     mainPanel(
-    # Create a new Row in the UI for selectInputs
-    fluidRow(
-        column(12,
-               selectInput("py",
-                           "Hanyu pinyin:",
-                           c("All",
-                             unique(as.character(ideodata$pinyintone)
-                                    )
-                             )
-                           )
-         )
-     ),
+    # # Create a new Row in the UI for selectInputs
+    # fluidRow(
+    #     column(12,
+    #            selectInput("py",
+    #                        "Hanyu pinyin:",
+    #                        c("All",
+    #                          unique(as.character(ideodata$pinyintone)
+    #                                 )
+    #                          )
+    #                        )
+    #      )
+    #  ),
+    # h2("test"),
     # Create a new row for the table.
     DT::dataTableOutput("table")
 ) #main panel
