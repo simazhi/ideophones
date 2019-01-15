@@ -1,0 +1,37 @@
+---
+title: "wrangling sketch engine csv"
+author: "Thomas Van Hoey"
+date: "11/5/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+
+```
+
+```{r}
+SOURCEPATH <- "/Users/Thomas/Downloads/灼灼_modern.csv"
+TARGETPATH <- "/Users/Thomas/Dropbox/Doctoraat/ideophone_scripts/hanchi/灼灼_modern.txt"
+CONCORDANCEWORD <- "灼灼"
+```
+
+```{r}
+files <- read_lines(SOURCEPATH) %>%
+  str_replace_all(sprintf('\",\"(%s)\",\"', CONCORDANCEWORD),
+                  ' \\1 ') %>%
+  as_data_frame() %>%
+  slice(-1:-4) %>%
+  separate(col = "value", into = c("empty", "site", "text"), sep = ",") %>%
+  select(-empty, -site)
+
+head(files)
+files %>%
+  #pull() %>%
+  write_lines(path = TARGETPATH)
+```
+

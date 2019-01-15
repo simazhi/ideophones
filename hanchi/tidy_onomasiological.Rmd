@@ -1,0 +1,148 @@
+---
+title: "Untitled"
+author: "Thomas Van Hoey"
+date: "11/1/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(plotly)
+```
+
+```{r}
+PATH = "/Users/Thomas/Desktop/diachronic"
+
+
+files <- list.files(path = PATH,
+                    #pattern = sprintf('*%s.txt', "_"), 
+                    full.names = TRUE
+                    )
+files
+
+lexemes <- list.files(path = PATH,
+                    pattern = sprintf('*%s.+.csv', "_"), 
+                    full.names = F
+                    ) %>%
+  tibble(file = .)  %>%
+  mutate(ideo = str_extract(file, "^..")) %>%
+  select(ideo) %>%
+  distinct()
+
+lexemes
+```
+
+
+It seems to me that it is best to combine all of our files into 1 tidy dataframe
+
+```{r}
+bigdatabase <- function(csvfile){
+  
+    df <- read_csv(csvfile) %>%
+      mutate(ideo = str_extract(csvfile, ".._"),
+             ideo = str_replace(ideo, "_", ""),
+             period = str_extract(csvfile, "_.+\\.csv"),
+             period = str_replace(period, "_", ""),
+             period = str_replace(period, "\\.csv", "")) %>%
+      #head(6) %>%
+      rename(collocate = item1)
+    
+    #df
+    
+    write_csv(df, "bigdatabase.csv", append = T, col_names = TRUE)
+}
+```
+
+
+Calling the function
+```{r}
+map(files, bigdatabase)
+```
+
+# Analysis
+
+```{r}
+db <- read_csv("bigdatabase.csv") %>%
+  filter(! period == "period")
+db
+```
+
+```{r}
+db$period <- factor(db$period,
+                           levels = c('xianqin', 
+                                      'qinhan', 
+                                      'weijin',
+                                      'suitang', 
+                                      'songjin', 
+                                      'yuan', 
+                                      'ming', 
+                                      'qing', 
+                                      'minguo'))
+
+db2 <- db %>%
+  #distinct(ideo) #%>%
+  mutate(radical = case_when(
+    str_detect(ideo, "暉|暐|曄") ~ "sun",
+    str_detect(ideo, "煇|煒|煜|熠|燁|燿|爍|爗") ~ "fire",
+    str_detect(ideo, "耀|輝|鑠") ~ "light",
+    str_detect(ideo, "犖") ~ "other"
+  )) %>%
+  filter(! radical == "other")
+
+
+draw_onom_plot <- function(database, collocation){
+  database %>% 
+    filter(str_detect(collocate, collocation)) %>%
+    ggplot(aes(period, value, label = ideo)) + 
+    theme_classic() +
+    #geom_point(aes(color = radical)) +
+    #geom_text(family="Noto Sans CJK TC", aes(color = ideo)) +
+    geom_smooth(method = lm, aes(group = radical, color = radical)) +
+    #geom_line(aes(group = collocate, 
+    #              color = radical)) +
+    #geom_line(aes(color = ideo)) +
+    theme(text = element_text(family="Noto Sans CJK TC")) +
+    #facet_grid(cols = vars(collocate)) +
+    ggtitle(sprintf("Onomasiological plot of %s", collocation)) +
+    theme(axis.title.y=element_blank(),
+      axis.text.y=element_blank(),
+       axis.ticks.y=element_blank())
+}
+
+
+draw_onom_plot(db2, "日")
+draw_onom_plot(db2, "月")
+draw_onom_plot(db2, "花")
+draw_onom_plot(db2, "華")
+draw_onom_plot(db2, "光")
+draw_onom_plot(db2, "電")
+draw_onom_plot(db2, "雷")
+```
+
+FAQ: what is on the y-axis?
+
+
+```{r}
+ggplotly(draw_onom_plot(db, "日"))
+```
+
+
+
+# Semasiological
+
+```{r}
+db %>%
+  filter(ideo == "暉暉")# %>%
+  filter(period == "ming") %>%
+  arrange(desc(value))
+
+db
+```
+
+
+
+
+
+
+

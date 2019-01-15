@@ -1,0 +1,53 @@
+---
+title: "quantedahanchi"
+author: "Thomas Van Hoey"
+date: "10/17/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidytext)
+library(quanteda)
+library(readtext)
+```
+
+
+
+```{r}
+base <- readtext::readtext("results/灼灼_suitang.txt") %>%
+  corpus()
+
+summary(base)
+tok_txt <- tokens(base, remove_numbers = TRUE, remove_punct = TRUE)
+
+myseqs <- list(c("灼", "灼"))
+
+toks2 <- tokens_compound(tok_txt, myseqs, concatenator = '', join = TRUE)
+toks2
+
+
+dfm <- dfm(toks2, 
+               remove_punct = TRUE)
+dfm
+topfeatures(dfm, 100)  
+
+#textstat_collocations(toks2)
+
+kwic(toks2, "灼灼")
+```
+
+Now let's see if we can get tidytext running
+```{r}
+tidydfm <- tidy(dfm)
+tidydfm
+```
+
+```{r}
+inaug_tf_idf <- tidydfm %>%
+  bind_tf_idf(term, document, count) %>%
+  arrange(desc(tf_idf))
+
+inaug_tf_idf
+```

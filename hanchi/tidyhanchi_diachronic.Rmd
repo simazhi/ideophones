@@ -1,0 +1,301 @@
+---
+title: "tidyhanchi_diachronic"
+author: "Thomas Van Hoey"
+date: "10/23/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+start_time <- Sys.time()
+```
+
+
+# Setting up
+## Packages
+```{r}
+library(tidyverse)
+library(tidytext)
+library(widyr)
+library(plotly)
+```
+
+
+## Function definitions
+
+### `slide_windows`
+```{r}
+slide_windows <- function(tbl, doc_var, window_size) {
+    # each word gets a skipgram (window_size words) starting on the first
+    # e.g. skipgram 1 starts on word 1, skipgram 2 starts on word 2
+    
+    each_total <- tbl %>% 
+        group_by(!!doc_var) %>% 
+        mutate(doc_total = n(),
+               each_total = pmin(doc_total, window_size, na.rm = TRUE)) %>%
+        pull(each_total)
+    
+    rle_each <- rle(each_total)
+    counts <- rle_each[["lengths"]]
+    counts[rle_each$values != window_size] <- 1
+    
+    # each word get a skipgram window, starting on the first
+    # account for documents shorter than window
+    id_counts <- rep(rle_each$values, counts)
+    window_id <- rep(seq_along(id_counts), id_counts)
+
+    
+    # within each skipgram, there are window_size many offsets
+    indexer <- (seq_along(rle_each[["values"]]) - 1) %>%
+        map2(rle_each[["values"]] - 1,
+             ~ seq.int(.x, .x + .y)) %>% 
+        map2(counts, ~ rep(.x, .y)) %>%
+        flatten_int() +
+        window_id
+    
+    tbl[indexer, ] %>%
+        bind_cols(data_frame(window_id)) %>%
+        group_by(window_id) %>%
+        filter(n_distinct(!!doc_var) == 1) %>%
+        ungroup
+}
+```
+
+
+### `tidy_pmi`
+```{r}
+tidy_pmi <- function(dataframe){
+  dataframe %>%
+    unnest_tokens(word, text, token = "regex", pattern = " ") %>%
+    add_count(word) %>%
+    filter(n >= 5) %>% 
+    select(-n) %>%
+    slide_windows(quo(postID), 8) %>%
+    pairwise_pmi(word, window_id)
+}
+```
+
+### `checking_tidy_pmi `
+This is a heuristic function if something goes wrong.
+```{r}
+checking_tidy_pmi <- function(tidydataframe, column, target){
+  tidydataframe %>%
+    filter(column %in% target) #target needs to be character
+}
+```
+
+### `tidy_word_vectors`
+```{r}
+tidy_word_vectors <- function(tidydataframe){
+  tidydataframe %>%
+    widely_svd(item1, item2, pmi, nv = 256, maxit = 1000)
+}
+```
+
+### `nearest_synonyms`
+```{r}
+nearest_synonyms <- function(df, token) {
+    df %>%
+    widely(~ . %*% (.[token, ]), 
+           sort = TRUE)(item1, dimension, value) %>%
+    select(-item2)
+}
+```
+
+### `result_table`
+```{r}
+resulttable <- function(textobject){
+  
+  TARGETbare <- textobject %>%
+    str_extract(".._") %>%
+    str_remove("_")    
+  
+  suffix <- str_extract(textobject, "_[a-z]*")
+  
+  text_df <- textobject %>% 
+    read_lines() %>%
+    unlist() %>%
+    data_frame(text = .) %>%
+    distinct() %>% 
+    mutate(postID = row_number())
+  
+  results <- text_df %>%
+    tidy_pmi() %>%
+    tidy_word_vectors() %>%
+    nearest_synonyms(TARGETbare) %>%
+    top_n(1000)
+  
+  path <- sprintf("./diachronic/%s%s.csv", TARGETbare, suffix)
+  
+  if (!file.exists(path)){
+    dir.create("./diachronic")
+    file.create(path)
+  }
+  
+  write_csv(results, path, append = F)
+}
+```
+
+```{r}
+files[1] %>%
+  str_extract(".._") %>%
+  str_remove("_")
+```
+
+# Data read in
+
+Variables
+```{r}
+TARGETbare <- "灼灼"
+TARGET <- sprintf("%s_.*", TARGETbare)
+```
+
+File locations
+```{r}
+files <- list.files(path = "./segmented", 
+                    pattern = sprintf('%s.*.txt', TARGET), 
+                    full.names = TRUE)
+files
+```
+
+
+# Function call
+```{r}
+map(files, resulttable)
+#results
+```
+
+This is to where this script / document should be run first.
+
+
+Benchmark
+```{r}
+end_time <- Sys.time()
+end_time - start_time
+```
+
+
+
+
+# Analysis time
+
+```{r}
+dia_files <- list.files(path = "./diachronic", 
+                        pattern = sprintf('%s.*.csv', TARGETbare), 
+                        full.names = TRUE)
+dia_files
+```
+
+sprintf("./diachronic/%s_xianqin.csv", TARGETbare)
+```{r}
+xianqin <- read_csv(sprintf("./diachronic/%s_xianqin.csv", TARGETbare)) %>%
+  rename(xianqin = value)
+qinhan <- read_csv(sprintf("./diachronic/%s_qinhan.csv", TARGETbare)) %>%
+  rename(qinhan = value)
+weijin <- read_csv(sprintf("./diachronic/%s_weijin.csv", TARGETbare)) %>%
+  rename(weijin = value)
+suitang <- read_csv(sprintf("./diachronic/%s_suitang.csv", TARGETbare)) %>%
+  rename(suitang = value)
+songjin <- read_csv(sprintf("./diachronic/%s_songjin.csv", TARGETbare)) %>%
+  rename(songjin = value)
+yuan <- read_csv(sprintf("./diachronic/%s_yuan.csv", TARGETbare)) %>%
+  rename(yuan = value)
+ming <- read_csv(sprintf("./diachronic/%s_ming.csv", TARGETbare)) %>%
+  rename(ming = value)
+qing <- read_csv(sprintf("./diachronic/%s_qing.csv", TARGETbare)) %>%
+  rename(qing = value)
+minguo <- read_csv(sprintf("./diachronic/%s_minguo.csv", TARGETbare)) %>%
+  rename(minguo = value)
+```
+
+```{r}
+untidytable <- xianqin %>% 
+  full_join(qinhan, by = "item1") %>%
+  full_join(weijin, by = "item1") %>%
+  full_join(suitang, by = "item1") %>%
+  full_join(songjin, by = "item1") %>%
+  full_join(yuan, by = "item1") %>%
+  full_join(ming, by = "item1") %>%
+  full_join(qing, by = "item1") %>%
+  full_join(minguo, by = "item1") %>%
+  filter(!item1 == TARGETbare) %>%
+  filter(!item1 == "之") %>%
+  filter(item1 != "，") %>%
+  filter(item1 != "。") %>%
+  filter(item1 != "曰") %>%
+  filter(item1 != "［") %>%
+  filter(item1 != "］") %>%
+  filter(item1 != " ")
+  #slice(-1)
+untidytable
+
+#untidytable
+#untidytable %>%
+#  head(1) %>%
+#  select(item1) %>%
+#  pull() 
+
+tidytable <- untidytable %>%
+  gather(`xianqin`, `qinhan`, `weijin`,
+         `suitang`, `songjin`, `yuan`, 
+         `ming`, `qing`, `minguo`,
+         key = "period", 
+         value = "values") %>%
+  mutate(ideophone = TARGETbare)
+tidytable
+
+tidytable$period <- factor(tidytable$period,
+                           levels = c('xianqin', 
+                                      'qinhan', 
+                                      'weijin',
+                                      'suitang', 
+                                      'songjin', 
+                                      'yuan', 
+                                      'ming', 
+                                      'qing', 
+                                      'minguo'))
+
+tidyplot <- tidytable %>%
+  arrange(desc(values)) %>%
+  top_n(100) %>%
+  ggplot(aes(period, values, label = item1)) + 
+  #geom_point() +
+  geom_text(family="Noto Sans CJK TC") +
+  geom_line(aes(group = item1), linetype = "dotted", color = "grey") +
+  theme(text = element_text(family="Noto Sans CJK TC")) 
+  
+ggplotly(tidyplot)
+
+```
+
+
+# Onomasiological analysis
+
+```{r}
+ONOMA <- c("日","其華") 
+
+
+tidytable %>%
+  filter(item1 == ONOMA) %>%
+  ggplot(aes(period, values, label = ideophone)) + 
+  geom_point() +
+  #geom_text(family="Noto Sans CJK TC") +
+  geom_line(aes(group = item1), linetype = "dotted", color = "grey") +
+  theme(text = element_text(family="Noto Sans CJK TC")) +
+  facet_grid(cols = vars(item1)) +
+  ggtitle("Onomasiological studies")
+```
+
+Of course this only becomes interesting when we have multiple ideophones to compare this with, but in the same domain!
+
+Path worth exploring.
+
+
+
+
+
+
+
+
+
+

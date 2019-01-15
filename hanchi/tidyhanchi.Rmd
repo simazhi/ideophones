@@ -1,0 +1,154 @@
+---
+title: "tidyhanchi"
+author: "Thomas Van Hoey"
+date: "10/17/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tidytext)
+
+```
+
+
+
+```{r}
+base <- read_lines("/Users/Thomas/Dropbox/Doctoraat/ideophone_scripts/segmented/test.txt") 
+#base
+
+text_df <- data_frame(base) %>% rename(text = base) %>%
+  mutate(postID = row_number())
+text_df
+
+
+```
+
+
+```{r}
+tidydf <- text_df %>%
+  unnest_tokens(word, text)
+
+tidydf %>%
+  filter(word == '灼灼') %>%
+  count(word)
+
+
+unigram_probs <- tidydf %>%
+  count(word, sort = TRUE) %>%
+  mutate(p = n / sum(n))
+unigram_probs
+```
+
+```{r}
+library(widyr)
+
+tidy_skipgrams <- text_df %>%
+    unnest_tokens(ngram, text, token = "ngrams", n = 8) %>%
+    mutate(ngramID = row_number()) %>% 
+    unite(skipgramID, postID, ngramID) %>%
+    unnest_tokens(word, ngram)
+
+tidy_skipgrams
+
+skipgram_probs <- tidy_skipgrams %>%
+    pairwise_count(word, skipgramID, diag = TRUE, sort = TRUE) %>%
+    mutate(p = n / sum(n))
+```
+
+```{r}
+normalized_prob <- skipgram_probs %>%
+    filter(n > 20) %>%
+    rename(word1 = item1, word2 = item2) %>%
+    left_join(unigram_probs %>%
+                  select(word1 = word, p1 = p),
+              by = "word1") %>%
+    left_join(unigram_probs %>%
+                  select(word2 = word, p2 = p),
+              by = "word2") %>%
+    mutate(p_together = p / p1 / p2)
+```
+
+
+
+```{r}
+normalized_prob %>% 
+    filter(word1 == "子") %>%
+    arrange(-p_together)
+```
+
+```{r}
+normalized_prob %>% 
+    filter(word1 == "灼灼") %>%
+    arrange(-p_together)
+```
+
+
+```{r}
+pmi_matrix <- normalized_prob %>%
+    mutate(pmi = log10(p_together)) %>%
+    cast_sparse(word1, word2, pmi)
+```
+
+```{r}
+class(pmi_matrix)
+```
+
+
+
+```{r}
+library(irlba)
+
+pmi_svd <- irlba(pmi_matrix, 256, maxit = 1e3)
+```
+
+```{r}
+word_vectors <- pmi_svd$u
+rownames(word_vectors) <- rownames(pmi_matrix)
+```
+
+```{r}
+library(broom)
+
+search_synonyms <- function(word_vectors, selected_vector) {
+    
+    similarities <- word_vectors %*% selected_vector %>%
+        tidy() %>%
+        as_tibble() %>%
+        rename(token = .rownames,
+               similarity = unrowname.x.)
+    
+    similarities %>%
+        arrange(-similarity)    
+}
+
+zhuozhuo <- search_synonyms(word_vectors, word_vectors["灼灼",])
+zhuozhuo
+
+```
+
+
+```{r}
+zhuozhuo %>%
+    top_n(15, similarity) %>%
+    mutate(token = reorder(token, similarity)) %>%
+    ggplot(aes(token, similarity)) +
+    geom_col(show.legend = FALSE, family="Noto Sans CJK") +
+    coord_flip() +
+    theme(text = element_text(family="Noto Sans CJK TC")) +
+    #theme(strip.text=element_text(hjust=0, family="Noto Sans CJK", size=12)) +
+    scale_y_continuous(expand = c(0,0))
+```
+
+
+
+
+
+
+
+
+
+
+
+
