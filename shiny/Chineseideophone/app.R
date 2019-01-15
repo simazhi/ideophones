@@ -11,6 +11,7 @@
 library(shiny)
 library(tidyverse)
 library(readxl)
+library(DT)
 
 # Here is the data and stuff
 
@@ -38,7 +39,8 @@ library(ggplot2)
 
 server <- 
 function(input, output) {
-    
+    checkGroup <- reactive(c(input$checkGroupForm,input$checkGroupMeaning))
+    #input$checkGroup <- c(input$checkGroupForm,input$checkGroupMeaning)
     # Filter data based on selections
     output$table <- DT::renderDataTable(DT::datatable({
         data <- ideodata
@@ -51,7 +53,10 @@ function(input, output) {
         # if (input$trans != "All") {
         #     data <- data[data$trans == input$trans,]
         # }
-        data[, input$checkGroup, drop = FALSE]
+        data[, checkGroup(), drop = FALSE]
+        #data[, which(input$checkGroup | input$checkGroup2), drop = FALSE]
+        #data %>% select(input$checkGroup)
+        #data %>% filter(input$checkGroupMeaning)
     }))
     
 }
@@ -67,12 +72,36 @@ ui <-
 fluidPage(
     titlePanel("Chinese ideophones — marked words (form)"),
     
-    #checkboxes
-    checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
-                       names(ideodata),
-                       selected = "OC")
+    sidebarLayout(position = "left",
+                  fluid = TRUE,
+                   sidebarPanel(
+                       h4("test"),
+                       br(),
+                       #checkboxes
+                       checkboxGroupInput("checkGroupForm", 
+                                          label = h3("Form"), 
+                                          # br(),
+                                          # p = p(strong("marked forms")),
+                                          choices = c("Pinyin without tones" = "pinyinnone", 
+                                                      "pinyintone",
+                                                      "traditional", 
+                                                      "MC", 
+                                                      "OC"),
+                                          selected = "traditional"),
+                       #end of checkboxes
+                       br(),
+                       # checkboxes two
+                       checkboxGroupInput("checkGroupMeaning", 
+                                          label = h3("Meaning"), 
+                                          # br(),
+                                          # p = p(strong("marked forms")),
+                                          #choices = c("zdic"),
+                                          choiceNames = ("Z dictionary"),
+                                          choiceValues = ("zdic"),
+                                          selected = "zdic")
+                   )
     ,
-    
+    mainPanel(
     # Create a new Row in the UI for selectInputs
     fluidRow(
         column(12,
@@ -81,24 +110,25 @@ fluidPage(
                            c("All",
                              unique(as.character(ideodata$pinyintone))))
          )
-        #,
-        # column(4,
-        #        selectInput("trans",
-        #                    "Transmission:",
-        #                    c("All",
-        #                      unique(as.character(mpg$trans))))
-        # ),
-        # column(4,
-        #        selectInput("cyl",
-        #                    "Cylinders:",
-        #                    c("All",
-        #                      unique(as.character(mpg$cyl))))
-        # )
-    ),
+    #     #,
+    #     # column(4,
+    #     #        selectInput("trans",
+    #     #                    "Transmission:",
+    #     #                    c("All",
+    #     #                      unique(as.character(mpg$trans))))
+    #     # ),
+    #     # column(4,
+    #     #        selectInput("cyl",
+    #     #                    "Cylinders:",
+    #     #                    c("All",
+    #     #                      unique(as.character(mpg$cyl))))
+    #     # )
+     ),
     # Create a new row for the table.
     DT::dataTableOutput("table")
-
-)
+) #main panel
+    ) #sidebar layout
+) #fluidpage
 
 
 
