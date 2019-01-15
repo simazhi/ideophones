@@ -51,7 +51,7 @@ function(input, output) {
         # if (input$trans != "All") {
         #     data <- data[data$trans == input$trans,]
         # }
-        data
+        data[, input$checkGroup, drop = FALSE]
     }))
     
 }
@@ -66,6 +66,12 @@ library(ggplot2)
 ui <-
 fluidPage(
     titlePanel("Chinese ideophones — marked words (form)"),
+    
+    #checkboxes
+    checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
+                       names(ideodata),
+                       selected = "OC")
+    ,
     
     # Create a new Row in the UI for selectInputs
     fluidRow(
