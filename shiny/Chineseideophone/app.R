@@ -19,27 +19,27 @@ ideodata <- read_xlsx("data.xlsx") %>%
     filter(morph != "NOTIDEOPHONE") %>%
     select(pinyinnone,
            traditional,
+           simplified,
            pinyintone,
            MC,
            OC,
-           zdic)
-
-# #memoise for caching
-# get_ideo_tc <- memoise(function(searchterm){
-#     data %>%
-#         filter(str_detect(pinyinnum, searchterm))
-# })
+           zdic,
+           Kroll,
+           morph,
+           radsup,
+           variant)
 
 
 
 ## SERVER
 # Load the ggplot2 package which provides
 # the 'mpg' dataset.
-library(ggplot2)
 
 server <- 
 function(input, output) {
-    checkGroup <- reactive(c(input$checkGroupForm,input$checkGroupMeaning))
+    checkGroup <- reactive(c(input$checkGroupForm,
+                             input$checkGroupMeaning,
+                             input$checkGroupFormation))
     #input$checkGroup <- c(input$checkGroupForm,input$checkGroupMeaning)
     # Filter data based on selections
     output$table <- DT::renderDataTable(DT::datatable({
@@ -74,32 +74,40 @@ fluidPage(
     
     sidebarLayout(position = "left",
                   fluid = TRUE,
-                   sidebarPanel(
-                       h4("test"),
-                       br(),
+                  sidebarPanel(
+                       # h4("test"),
+                       # br(),
                        #checkboxes
                        checkboxGroupInput("checkGroupForm", 
-                                          label = h3("Form"), 
-                                          # br(),
-                                          # p = p(strong("marked forms")),
+                                          label = h3("Phonology"), 
                                           choices = c("Pinyin without tones" = "pinyinnone", 
-                                                      "pinyintone",
-                                                      "traditional", 
-                                                      "MC", 
-                                                      "OC"),
-                                          selected = "traditional"),
+                                                      "Pinyin with tones" = "pinyintone",
+                                                      "Traditional Chinese" = "traditional",
+                                                      "Simplified Chinese" = "simplified",
+                                                      "Middle Chinese" = "MC", 
+                                                      "Old Chinese" = "OC"),
+                                          selected = c("traditional", "pinyinnone")
+                                          ),
                        #end of checkboxes
                        br(),
                        # checkboxes two
                        checkboxGroupInput("checkGroupMeaning", 
                                           label = h3("Meaning"), 
-                                          # br(),
-                                          # p = p(strong("marked forms")),
-                                          #choices = c("zdic"),
-                                          choiceNames = ("Z dictionary"),
-                                          choiceValues = ("zdic"),
-                                          selected = "zdic")
-                   )
+                                          choices = c("Handian 漢典 (zdic)" = "zdic",
+                                                      "Kroll (2015)" = "Kroll"),
+                                          selected = "Kroll"
+                                          ),
+                       #end of checkboxes
+                       br(),
+                       # checkboxes three
+                       checkboxGroupInput("checkGroupFormation", 
+                                          label = h3("Formation"), 
+                                          choices = c("Base and Reduplicant" = "morph",
+                                                      "Radical support" = "radsup",
+                                                      "variants" = "variant")
+                                          )
+                       #end of checkboxes
+                ) # end of sidepanel
     ,
     mainPanel(
     # Create a new Row in the UI for selectInputs
@@ -108,21 +116,11 @@ fluidPage(
                selectInput("py",
                            "Hanyu pinyin:",
                            c("All",
-                             unique(as.character(ideodata$pinyintone))))
+                             unique(as.character(ideodata$pinyintone)
+                                    )
+                             )
+                           )
          )
-    #     #,
-    #     # column(4,
-    #     #        selectInput("trans",
-    #     #                    "Transmission:",
-    #     #                    c("All",
-    #     #                      unique(as.character(mpg$trans))))
-    #     # ),
-    #     # column(4,
-    #     #        selectInput("cyl",
-    #     #                    "Cylinders:",
-    #     #                    c("All",
-    #     #                      unique(as.character(mpg$cyl))))
-    #     # )
      ),
     # Create a new row for the table.
     DT::dataTableOutput("table")

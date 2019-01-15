@@ -1,0 +1,12 @@
+name: Chineseideophone
+title: Chineseideophone
+username:
+account: simazhi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 643562
+bundleId: 1815279
+url: https://simazhi.shinyapps.io/Chineseideophone/
+when: 1547555684.61632
+asMultiple: FALSE
+asStatic: FALSE
