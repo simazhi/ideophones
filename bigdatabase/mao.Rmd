@@ -64,13 +64,70 @@ nrow(distinctssheng)
 
 #intersect(distinctsmao, distinctssheng)
 intersect(distinctsmao, distinctssheng) %>% nrow()
-
 ```
 
 So we can see that there are `nrow(distincts)` distinct ideophones in CHIDEOD that have a definition in HYDCD.
 Of these `nrow(distinctsmao)` have *mao* 貌 as a marker; and `nrow(distinctssheng)` *sheng* 聲 as a marker.
 There is some overlap, namely n = `intersect(distinctsmao, distinctssheng) %>% nrow()`. 
 
-# 
+This means that *mao* is a pretty good marker for ideophones: `nrow(distinctsmao) / nrow(distincts)`.
+
+# Mao for finding new possible ideophones
+
+So let's say we have *mao*, let's look in HYDCD at all the definitions that have this marker, in a somewhat onomasiological fashion.
+
+```{r}
+hydcd_split <- tidy.hydcd %>%
+  select(-computemeaning) %>%
+  filter(str_detect(printmeaning, "^[:digit:]")) %>%
+  separate(printmeaning, into = c("meaning", "example"), sep = "\n") %>%
+  distinct() 
+
+hydcd_mao <- hydcd_split %>%
+  filter(str_detect(meaning, "貌。")) # add period
+
+hydcd_sheng <- hydcd_split %>%
+  filter(str_detect(meaning, "聲。")) # add period
+
+```
+
+Which ones **do not** occur in CHIDEOD?
+```{r}
+hydcd_mao %>%
+  anti_join(distinctsmao, by = c("item" = "traditional")) %>%
+  group_by(item) %>%
+  mutate(meaning = paste(meaning, collapse = "; "),
+         example = paste(example, collapse = "; ")) %>%
+  distinct() -> hydcd_mao2
+
+
+hydcd_sheng %>%
+  anti_join(distinctsmao, by = c("item" = "traditional")) %>%
+  group_by(item) %>%
+  mutate(meaning = paste(meaning, collapse = "; "),
+         example = paste(example, collapse = "; ")) %>%
+  distinct() -> hydcd_sheng2
+
+#hydcd_mao2
+#hydcd_sheng2
+```
+
+These results can now be further examined in a spreadsheet.
+They are possible candidates
+
+```{r}
+write_csv(hydcd_mao2, "hydcd_mao.csv", col_names = TRUE)
+write_csv(hydcd_sheng2, "hydcd_sheng.csv", col_names = TRUE)
+```
+
+
+
+
+
+
+
+
+
+
 
 
