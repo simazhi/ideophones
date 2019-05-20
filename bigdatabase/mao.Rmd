@@ -1,0 +1,76 @@
+---
+title: "mao"
+author: "Thomas Van Hoey"
+date: "20-5-2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Mao 貌 as a predictor for ideophones
+
+The idea is that *mao* 貌 can focus as a predictor in dictionary definitions.
+Let's calculate the stats in CHIDEOD.
+
+```{r}
+library(CHIDEOR)
+library(tidyverse)
+```
+
+Loading the tidy hydcd
+```{r}
+tidy.hydcd <- read_rds("/Users/Thomas/Google\ Drive/hydcd/tidyHYDCD.rds")
+```
+
+
+```{r}
+db <- full_database
+
+# select relevant columns and left join
+db_hydcd <- db %>% 
+  select(traditional) %>%
+  left_join(tidy.hydcd, by = c("traditional" = "item")) %>%
+  select(-computemeaning)
+
+# only numbered meanngs, examples gone
+db_hydcd %>%
+  filter(str_detect(printmeaning, "^[:digit:]")) %>%
+  separate(printmeaning, into = c("meaning", "example"), sep = "\n") %>%
+  distinct() -> db_tidy
+```
+
+
+How many have the marker mao in their definition?
+```{r}
+distincts <- db_tidy %>%
+  distinct(traditional) 
+
+distinctsmao <- db_tidy %>%
+  filter(str_detect(meaning, "貌")) %>%
+  distinct(traditional) 
+
+distinctssheng <- db_tidy %>%
+  filter(str_detect(meaning, "聲")) %>%
+  distinct(traditional) 
+
+# numbers
+nrow(distincts)
+nrow(distinctsmao)
+nrow(distinctssheng)
+
+# overlap
+
+#intersect(distinctsmao, distinctssheng)
+intersect(distinctsmao, distinctssheng) %>% nrow()
+
+```
+
+So we can see that there are `nrow(distincts)` distinct ideophones in CHIDEOD that have a definition in HYDCD.
+Of these `nrow(distinctsmao)` have *mao* 貌 as a marker; and `nrow(distinctssheng)` *sheng* 聲 as a marker.
+There is some overlap, namely n = `intersect(distinctsmao, distinctssheng) %>% nrow()`. 
+
+# 
+
+
