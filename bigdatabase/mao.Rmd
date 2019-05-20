@@ -116,12 +116,35 @@ These results can now be further examined in a spreadsheet.
 They are possible candidates
 
 ```{r}
-write_csv(hydcd_mao2, "hydcd_mao.csv", col_names = TRUE)
-write_csv(hydcd_sheng2, "hydcd_sheng.csv", col_names = TRUE)
+# write_csv(hydcd_mao2, "hydcd_mao.csv", col_names = TRUE)
+# write_csv(hydcd_sheng2, "hydcd_sheng.csv", col_names = TRUE)
+```
+
+---
+
+# Other definitional lexical predictors?
+
+Perhaps CHIDEOD harbours other lexical predictors in its definitions?
+
+```{r}
+library(tidytext)
+
+db_tidy %>%
+  unnest_tokens(input = meaning, 
+                token = "characters",
+                output = "chars",
+                drop = FALSE) %>%
+  select(chars) %>%
+  count(chars) %>%
+  arrange(desc(n)) %>%
+  head(20)
+
 ```
 
 
-
+As can be seen, there are 1735 *mao*s in the definition, and 864 *sheng*s. So they are probably good predictors.
+So this is further evidence that they are probably structural, closed-class used.
+However, there are no other predictors (maybe '象聲詞'?). 
 
 
 
