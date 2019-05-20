@@ -1,0 +1,510 @@
+---
+title: "protocol for new additions"
+author: "Thomas Van Hoey"
+date: "3/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tmcn)
+library(reticulate)
+library(rvest)
+```
+
+This is the protocol for new characters (2019/03/12).
+
+# New list of additions to the database
+
+## Load in new list
+```{r}
+new <- tibble(traditional = c("輝輝"))
+```
+
+## Load in relevant databases
+```{r}
+# ideophone database
+chideod <- read_csv("DATABASE_20190312.csv",
+         col_types = cols(
+           traditional = "c",
+           simplified = "c",
+           pinyintone = "c",
+           pinyinnum = "c",
+           pinyinnone = "c",
+           MC = "c",
+           OC = "c",
+           S1 = "c",
+           S2 = "c",
+           S3 = "c",
+           S4 = "c",
+           T1 = "c",
+           T2 = "c",
+           T3 = "c",
+           T4 = "c",
+           morphology = "c",
+           S1.charfreq = "n",
+           S2.charfreq = "n",
+           S3.charfreq = "n",
+           S4.charfreq = "n",
+           S1.famfreq = "n",
+           S2.famfreq = "n",
+           S3.famfreq = "n",
+           S4.famfreq = "n",
+           S1.sem = "c",
+           S2.sem = "c",
+           S3.sem = "c",
+           S4.sem = "c",
+           S1.semfreq = "n",
+           S2.semfreq = "n",
+           S3.semfreq = "n",
+           S4.semfreq = "n",
+           S1.semfam = "n",
+           S2.semfam = "n",
+           S3.semfam = "n",
+           S4.semfam = "n",
+           S1.phon = "c",
+           S2.phon = "c",
+           S3.phon = "c",
+           S4.phon = "c",
+           S1.phonfreq = "n",
+           S2.phonfreq = "n",
+           S3.phonfreq = "n",
+           S4.phonfreq = "n",
+           S1.phonfam = "n",
+           S2.phonfam = "n",
+           S3.phonfam = "n",
+           S4.phonfam = "n",
+           sensorymod = "c",
+           HYDCD = "c",
+           zdic = "c",
+           Kroll = "c",
+           variant = "c",
+           datasource = "c",
+           note = "c"
+         ))
+
+
+# chinese lexical database
+load("/Users/Thomas/Google\ Drive/cld/chineselexicaldatabase2.1.rda")
+
+# Hanyu Da cidian
+hydcd <- read_csv("/Users/Thomas/Google\ Drive/hydcd/hanyudacidian-csv.zip",
+               col_names = TRUE) %>%
+  select(-printmeaning)
+
+# Baxter Sagart
+baxter <- readxl::read_excel("../BaxterSagartOC2015-10-13.xlsx") %>%
+  rename("middle" = "MC", "old" = "OC") %>%
+  select(zi, middle, old)
+```
+
+
+# Formal variables
+
+## pinyin
+load in
+```{r pythonreticulate}
+use_python("/usr/local/bin/python3", required = T)
+reticulate::py_config()
+```
+
+get only the characters from our list
+```{r unlisting}
+list <- new %>%
+  unlist()
+# list
+```
+
+```{python pyscript}
+import pinyin
+a = r.list
+
+traditional = []
+for i in a:
+    traditional.append(i)
+
+pinyintone = []
+for i in a:
+    j = pinyin.get(i, delimiter="~")
+    pinyintone.append(j)
+    
+# pinyinnone = []
+# for i in a:
+#     j = pinyin.get(i, format= "strip", delimiter="~")
+#     pinyinnone.append(j)
+    
+pinyinnum = []
+for i in a:
+    j = pinyin.get(i, format="numerical", delimiter="~")
+    pinyinnum.append(j)
+```
+
+```{r pythonvars}
+#py_run_file("script.py")
+#py_run_string("x = 10")
+
+# access the python main module via the 'py' object
+#py$x
+pinyintone <- py$pinyintone #%>% tibble()
+pinyintone <- tibble(pinyintone)
+
+pinyinnum <- py$pinyinnum #%>% tibble()
+pinyinnum <- tibble(pinyinnum)
+
+#join dataframes
+joined <- cbind(new, pinyintone, pinyinnum) %>%
+  distinct()
+```
+
+This is a good time to inspect if the pinyin was correct:
+```{r}
+write_csv(joined, "1_pinyincheck.csv", col_names = TRUE)
+```
+
+## traditional and simplified
+
+After checking pinyin load back in, get simplified, and get pinyinnone.
+
+```{r}
+tradsimp <- read_csv("1_pinyincheck.csv") %>% 
+  mutate(simplified = toTrad(traditional, rev = TRUE),
+         pinyinnone = str_remove_all(pinyinnum, "[12345]"))
+```
+
+## separate character information from CLD
+First prepare the necessary categories in CLD
+```{r}
+#all characters
+chars <- cld %>%
+  select(C1, C2, C3, C4) %>%
+  gather(key = "key", value = "hanzi",
+         C1:C4) %>%
+  select(-key)
+
+# character token frequency
+freqs <- cld %>%
+  select(C1Frequency, C2Frequency, C3Frequency, C4Frequency) %>%
+  gather(key = "key", value = "freq",
+         C1Frequency:C4Frequency) %>%
+  select(-key)
+
+# character family (type) frequency
+combfreq <- cld %>%
+  select(C1FamilySize, C2FamilySize, C3FamilySize, C4FamilySize) %>%
+  gather(key = "key", value = "combfreq",
+         C1FamilySize:C4FamilySize) %>%
+  select(-key)
+
+# all radicals
+rads <- cld %>%
+  select(C1SR, C2SR, C3SR, C4SR) %>%
+  gather(key = "key", value = "semrad",
+         C1SR:C4SR) %>%
+  select(-key)
+
+#radical frequency
+radfreq <- cld %>%
+  select(C1SRFrequency, C2SRFrequency, 
+         C3SRFrequency, C4SRFrequency) %>%
+  gather(key = "key", value = "semradfreq",
+         C1SRFrequency:C4SRFrequency) %>%
+  select(-key)
+
+# radical family (type) frequency
+radfam <- cld %>%
+  select(C1SRFamilySize, C2SRFamilySize, 
+         C3SRFamilySize, C4SRFamilySize) %>%
+  gather(key = "key", value = "radfam",
+         C1SRFamilySize:C4SRFamilySize) %>%
+  select(-key)
+
+# all phonetics
+phonetic <- cld %>%
+  select(C1PR, C2PR, 
+         C3PR, C4PR) %>%
+  gather(key = "key", value = "phonetic",
+         C1PR:C4PR) %>%
+  select(-key)
+
+# phonetic frequency
+phonfreq <- cld %>%
+  select(C1PRFrequency, C2PRFrequency, 
+         C3PRFrequency, C4PRFrequency) %>%
+  gather(key = "key", value = "phonfreq",
+         C1PRFrequency:C4PRFrequency) %>%
+  select(-key)
+
+# phonetic family (type) frequency
+phonfam <- cld %>%
+  select(C1PRFamilySize, C2PRFamilySize, 
+         C3PRFamilySize, C4PRFamilySize) %>%
+  gather(key = "key", value = "phonfam",
+         C1PRFamilySize:C4PRFamilySize) %>%
+  select(-key)
+
+## combine into one dataframe
+cldfreq <- cbind(chars, freqs, combfreq,
+                 rads, radfreq, radfam,
+                 phonetic, phonfreq, phonfam) %>%
+  distinct()
+cldfreq
+```
+
+merge this with our dataframe
+```{r}
+characterinfo <- tradsimp %>%
+  filter(!nchar(simplified) > 4) %>% # take out the >= 5 syllables
+  # select(simplified) %>%
+  mutate(S1 = str_extract(simplified, "^."),
+         S2 = str_extract(simplified, "^.."),
+         S3 = str_extract(simplified, "^..."),
+         S4 = str_extract(simplified, "^....")) %>%
+  mutate(S2 = str_replace(S2, "^.", ""),
+         S3 = str_replace(S3, "^..", ""),
+         S4 = str_replace(S4, "^...", "")) %>%
+  left_join(cldfreq, by = c("S1" = "hanzi")) %>%
+  rename(S1.charfreq = freq,
+         S1.famfreq = combfreq,
+         S1.sem = semrad,
+         S1.semfreq = semradfreq,
+         S1.semfam = radfam,
+         S1.phon = phonetic,
+         S1.phonfreq = phonfreq,
+         S1.phonfam = phonfam) %>%
+  left_join(cldfreq, by = c("S2" = "hanzi")) %>%
+  rename(S2.charfreq = freq,
+         S2.famfreq = combfreq,
+         S2.sem = semrad,
+         S2.semfreq = semradfreq,
+         S2.semfam = radfam,
+         S2.phon = phonetic,
+         S2.phonfreq = phonfreq,
+         S2.phonfam = phonfam) %>%
+  left_join(cldfreq, by = c("S3" = "hanzi")) %>%
+  rename(S3.charfreq = freq,
+         S3.famfreq = combfreq,
+         S3.sem = semrad,
+         S3.semfreq = semradfreq,
+         S3.semfam = radfam,
+         S3.phon = phonetic,
+         S3.phonfreq = phonfreq,
+         S3.phonfam = phonfam) %>%
+  left_join(cldfreq, by = c("S4" = "hanzi")) %>%
+  rename(S4.charfreq = freq,
+         S4.famfreq = combfreq,
+         S4.sem = semrad,
+         S4.semfreq = semradfreq,
+         S4.semfam = radfam,
+         S4.phon = phonetic,
+         S4.phonfreq = phonfreq,
+         S4.phonfam = phonfam) %>%
+  distinct()
+```
+
+## Middle and Old Chinese
+```{r}
+characterinfo %>%
+  mutate(T1 = str_extract(traditional, "^."),
+         T2 = str_extract(traditional, "^.."),
+         T3 = str_extract(traditional, "^..."),
+         T4 = str_extract(traditional, "^....")) %>%
+  mutate(T2 = str_replace(T2, "^.", ""),
+         T3 = str_replace(T3, "^..", ""),
+         T4 = str_replace(T4, "^...", "")) %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("T1"= "zi")) %>%
+  rename("m1" = "middle",
+         "o1" = "old") %>% # this lef_join and rename function gets repeated but the number is changed
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("T2"= "zi")) %>%
+  rename("m2" = "middle",
+         "o2" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("T3"= "zi")) %>%
+  rename("m3" = "middle",
+         "o3" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("T4"= "zi")) %>%
+  rename("m4" = "middle",
+         "o4" = "old") -> midandoldpercharacter
+
+nummers <- 1:4
+middles <- paste0("m", nummers)
+olds <- paste0("o", nummers)
+
+midold <- midandoldpercharacter %>%
+  unite(middles, col = "MC", sep = "~") %>%
+  unite(olds, col = "OC", sep = "~") %>%
+  mutate(OC = str_replace(OC, "NA~NA~NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA", "NA"),
+         OC = str_replace(OC, "~NA$", ""),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA", "NA"),
+         MC = str_replace(MC, "~NA$", "")
+         )
+```
+
+## Morphology
+```{r}
+midold %>%
+  mutate(morphology = case_when( #guideline rules, needs checking
+    is.na(S2) & is.na(S3) & is.na(S4) ~ "A",
+    S1 == S2 & is.na(S3) & is.na(S4) ~ "BB",
+    S1 == S2 & S1 == S3 & is.na(S4) ~ "BBB",
+    is.na(S1) == FALSE & S2 == S3 ~ "ARR",
+    str_count(pinyinnum, "~") == 1 ~ "RR",
+    str_count(pinyinnum, "~") == 2 ~ "RRR",
+    str_count(pinyinnum, "~") == 3 ~ "RRRR",
+    TRUE ~ as.character("NA")
+  )) -> morphology
+```
+
+## Radsup
+```{r}
+morphology %>%
+  mutate(radsup = case_when(
+    # semantic part
+    morphology == "A" & S1.sem == "口"  ~ "口",
+    S1.sem == S2.sem & S1.sem == S3.sem & S1.sem == S4.sem ~ S1.sem,
+    S1.sem == S2.sem & S1.sem == S3.sem & is.na(S4.sem) ~ S1.sem,
+    S1.sem == S2.sem & is.na(S3.sem) & is.na(S4.sem) ~ S1.sem,
+    TRUE ~ "NA"
+  )) -> radsup
+```
+
+# Semantic variables
+
+Kroll is not necessary -- so that leaves zdic and Hanyu Dacidian
+
+##zdic
+```{r opzoeken.function, cache=TRUE}
+opzoeken <- function(query){
+  Sys.sleep(1)
+  # Specify URL
+  url <- "http://wap.zdic.net/"
+  session <- html_session(url)
+  # Grab Initial Form
+  #  Form is filled in stages. Here, only do country and date
+  form.unfilled <- 
+    session %>% 
+    html_node("form") %>% 
+    html_form()
+
+  form.filled <- 
+    form.unfilled %>%
+    set_values("q" = query)
+
+  # submit the form and save as a new session
+  submitted <- submit_form(session, form.filled) 
+
+  # look for a definition in the nodes
+  definitie <- 
+    submitted %>% 
+    html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
+    html_text()
+  
+  if (is_empty(definitie) == TRUE){
+    definitie <- "NA"
+  } else {
+    definitie <- definitie
+  }
+
+  pronunciation <-
+    submitted %>%
+    html_nodes(xpath = "//rtc//rt") %>%
+    html_text()
+
+  pinyin <- pronunciation[1]
+  zhuyin <- pronunciation[2]
+
+  df <- data.frame(
+    woord = query,
+    pinyin = pinyin,
+    zhuyin = zhuyin,
+    definitie = definitie %>%
+      paste(collapse = "")
+  )
+  #write_csv(df, "meanings.csv", append = TRUE)
+}
+
+opzoeken <- possibly(opzoeken, otherwise = NA_real_)
+```
+
+run function
+```{r}
+radsup %>%
+  select(simplified) %>%
+  distinct() %>%
+  pull() -> DB.simp
+
+lijst <- map_df(DB.simp, opzoeken) %>% 
+  map_if(is.factor, as.character) %>% 
+  as_tibble() %>%
+  select(-pinyin, -zhuyin) %>%
+  rename(zdic = definitie)  -> lijst
+# lijst
+```
+joining the two
+```{r}
+zdic <- radsup %>%
+  left_join(lijst, by = c("simplified" = "woord"))
+# zdic
+```
+
+## Hanyu da cidian
+```{r}
+hanyudacidian <- zdic %>%
+  select(traditional) %>%
+  left_join(hydcd, by = c("traditional" = "item")) %>%
+  rename(hydcd = computemeaning) %>%
+  distinct() %>%
+  right_join(zdic, by = "traditional") %>%
+  rename(HYDCD = hydcd)
+```
+
+# Other variables
+This section should be written if necessary (simple mutations in dplyr)
+
+## Variant
+
+## Notes
+
+## Datasource
+
+# Joining the new dataframe with big database
+
+```{r}
+hanyudacidian
+
+chideod %>%
+  full_join(hanyudacidian) %>%
+  filter(traditional == "輝輝")
+```
+
+# Add and update database
+
+If all is according to desire, time to update the database
+```{r}
+datum <- Sys.Date()
+
+# chideod %>%
+  # full_join(hanyudacidian) %>%
+  # write_csv(sprintf("CHIDEOD-%s.csv", datum), col_names = TRUE)
+```
+
+

@@ -1,0 +1,441 @@
+---
+title: "combiningdbs"
+author: "Thomas Van Hoey"
+date: "3/5/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(reticulate)
+library(xlsx)
+```
+
+
+# Goals
+
+Combine the following database spreadsheets
+
+* onomatopoeia (based on Li, Gong, Wang)
+* full database (mostly based on Kroll)
+* Tang shi san bai shou
+* Shijing
+
+Pro: we can add many more in the future
+
+# Read in these databases
+
+```{r}
+onom <- read_csv("onomatopoeiadb.csv")
+# full <- read_csv("Kroll.csv")
+full <- read_excel("fulldatabase_onomgreen.xlsx")
+tang <- read_csv("300.csv")
+shijing <- read_csv("Shijing.csv")
+
+# the partial kroll ones as well for 
+
+```
+
+# Add datasource to every file + select relevant columns
+
+`onom` already ok.
+```{r}
+onomds <- onom
+```
+
+```{r tangds}
+# tang
+tangds <- tang %>%
+  select(`mim simpl`, `mim trad`, `HIERARCHIE DINGEMANSE`,
+         #`Gloss meaning`,
+         Morf,
+         pinyin) %>%
+  rename(simplified = `mim simpl`,
+         traditional = `mim trad`,
+         sensorymod = `HIERARCHIE DINGEMANSE`,
+         morphology = Morf,
+         pyoriginal = pinyin
+         ) %>%
+  distinct() %>%
+  mutate(datasource = "Tang")
+```
+
+```{r full}
+fullds <- full %>%
+  mutate(datasource = case_when(
+    Kroll == "NA" ~ "NA",
+    Kroll != "NA" ~ "Kroll"
+  )) 
+```
+
+```{r shijing}
+shijingds <- shijing %>% 
+  select(TRAD, SIMPL, PINYIN, SEMANTIC, `FORM-MECH`) %>%
+  rename(simplified = SIMPL,
+         traditional = TRAD,
+         pyoriginal = PINYIN,
+         sensorymod = SEMANTIC,
+         morphology = `FORM-MECH`) %>%
+  mutate(datasource = "Shijing")
+```
+
+# Adding pinyin 
+`onomds`, `fullds` are okay in this respect
+`tangds`, `shijingds` need to be checked
+
+## Tangds pinyin
+
+```{r}
+file <- tangds
+```
+
+load in
+```{r pythonreticulate}
+use_python("/usr/local/bin/python3", required = T)
+reticulate::py_config()
+```
+
+get only the characters from our list
+```{r unlisting}
+list <- file %>%
+  select(traditional) %>%
+  unlist()
+```
+
+
+```{python pyscript}
+import pinyin
+a = r.list
+
+richard = []
+for i in a:
+    richard.append(i)
+
+thomas = []
+for i in a:
+    j = pinyin.get(i, delimiter="~")
+    thomas.append(j)
+    
+cj = []
+for i in a:
+    j = pinyin.get(i, format= "strip", delimiter="~")
+    cj.append(j)
+    
+arthur = []
+for i in a:
+    j = pinyin.get(i, format="numerical", delimiter="~")
+    arthur.append(j)
+#print (thomas)
+#print(type(thomas))
+```
+
+```{r pythonvars}
+#py_run_file("script.py")
+#py_run_string("x = 10")
+
+# access the python main module via the 'py' object
+#py$x
+thomas <- py$thomas #%>% tibble()
+thomas <- tibble(thomas)
+
+cj <- py$cj #%>% tibble()
+cj <- tibble(cj)
+
+arthur <- py$arthur #%>% tibble()
+arthur <- tibble(arthur)
+
+#thomas
+#cj
+#arthur
+```
+
+```{r joiningnewpinyin, cache=TRUE}
+tangpy <- cbind(file, arthur, thomas, cj) %>%
+  rename(pinyinnum = arthur,
+         pinyintone = thomas,
+         pinyinnone = cj, 
+         traditional  = traditional)
+```
+
+## Shijingds pinyin
+
+```{r}
+file <- shijingds
+```
+
+load in
+```{r pythonreticulate}
+use_python("/usr/local/bin/python3", required = T)
+reticulate::py_config()
+```
+
+get only the characters from our list
+```{r unlisting}
+list <- file %>%
+  select(traditional) %>%
+  unlist()
+```
+
+
+```{python pyscript}
+import pinyin
+a = r.list
+
+richard = []
+for i in a:
+    richard.append(i)
+
+thomas = []
+for i in a:
+    j = pinyin.get(i, delimiter="~")
+    thomas.append(j)
+    
+cj = []
+for i in a:
+    j = pinyin.get(i, format= "strip", delimiter="~")
+    cj.append(j)
+    
+arthur = []
+for i in a:
+    j = pinyin.get(i, format="numerical", delimiter="~")
+    arthur.append(j)
+#print (thomas)
+#print(type(thomas))
+```
+
+```{r pythonvars}
+#py_run_file("script.py")
+#py_run_string("x = 10")
+
+# access the python main module via the 'py' object
+#py$x
+thomas <- py$thomas #%>% tibble()
+thomas <- tibble(thomas)
+
+cj <- py$cj #%>% tibble()
+cj <- tibble(cj)
+
+arthur <- py$arthur #%>% tibble()
+arthur <- tibble(arthur)
+
+#thomas
+#cj
+#arthur
+```
+
+```{r joiningnewpinyin, cache=TRUE}
+shijingpy <- cbind(file, arthur, thomas, cj) %>%
+  rename(pinyinnum = arthur,
+         pinyintone = thomas,
+         pinyinnone = cj, 
+         traditional  = traditional)
+shijingpy
+```
+
+```{r}
+names(shijingpy)
+names(tangpy)
+```
+
+```{r}
+tangpy <- tangpy %>%
+  select(traditional, simplified, 
+         pyoriginal, pinyintone, pinyinnum,
+         morphology,
+         sensorymod,
+         datasource)
+
+shijingpy <- shijingpy %>%
+  select(traditional, simplified, 
+         pyoriginal, pinyintone, pinyinnum,
+         morphology,
+         sensorymod,
+         datasource)
+
+full_join(tangpy, shijingpy) %>%
+  mutate(inbetween = str_replace(pinyintone,"~", "")) %>%
+  mutate(same = case_when(
+    pyoriginal == inbetween ~ "same",
+    pyoriginal != inbetween ~ "different"
+  )) %>%
+  write_csv("tang_shijing_pinyin.csv", col_names = TRUE)
+```
+
+This file has been checked for erroneous pinyin generation
+```{r}
+shijingtangpy <- read_csv("tang_shijing_pinyin_checked.csv") %>%
+  distinct() %>%
+  select(-inbetween, -same, -pyoriginal) %>%
+  mutate(pinyinnone = str_replace_all(pinyinnum, "[12345]", ""))
+shijingtangpy
+```
+
+# Middle Chinese and Old Chinese
+
+`onomds`, `fullds` are okay in this respect
+`shijingtangpy` needs to be checked
+
+```{r}
+splitcharacters <- shijingtangpy %>%
+  mutate(c1 = str_extract(traditional, "^."),
+         c2 = str_extract(traditional, "^.."),
+         c3 = str_extract(traditional, "^...")
+         ) %>%
+  mutate(c2 = str_replace(c2, "^.", ""),
+         c3 = str_replace(c3, "^..", ""))
+splitcharacters
+```
+
+load in Baxter Sagart
+
+```{r}
+baxter <- readxl::read_excel("../BaxterSagartOC2015-10-13.xlsx") %>%
+  rename("middle" = "MC", "old" = "OC") %>%
+  select(zi, middle, old)
+head(baxter)
+```
+
+```{r}
+midandoldpercharacter <- splitcharacters %>% 
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c1"= "zi")) %>%
+  rename("m1" = "middle",
+         "o1" = "old") %>% # this lef_join and rename function gets repeated but the number is changed
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c2"= "zi")) %>%
+  rename("m2" = "middle",
+         "o2" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c3"= "zi")) %>%
+  rename("m3" = "middle",
+         "o3" = "old") 
+
+# combinations
+nummers <- 1:3
+middles <- paste0("m", nummers)
+olds <- paste0("o", nummers)
+
+tangshijingMO <- midandoldpercharacter %>%
+  unite(middles, col = "MC", sep = "~") %>%
+  unite(olds, col = "OC", sep = "~") %>%
+  mutate(OC = str_replace(OC, "NA~NA~NA", "NA"),
+         OC = str_replace(OC, "~NA$", ""),
+         MC = str_replace(MC, "NA~NA~NA", "NA"),
+         MC = str_replace(MC, "~NA$", "")
+         )
+tangshijingMO
+```
+
+# Joining
+
+```{r}
+joinedtable <- full_join(fullds, tangshijingMO)
+joinedtable
+```
+
+Do the ones that occur with NA for datasource occur minimally in Shijing or Tang? If so, they probably came from there and can be changed in Shijing and/or Tang
+
+As the anti_join shows, there are no rows that do not occur already elsewhere in the table.
+So they can be safely dropped.
+
+```{r}
+joinedtable %>%
+  group_by(datasource) %>%
+  tally()
+
+anti <- joinedtable %>%
+  filter(datasource == "NA") %>%
+  select(traditional)
+
+anti %>%
+  anti_join(joinedtable, by = c("traditional" = "traditional"))
+
+```
+
+```{r}
+joineddropsourcena <- joinedtable %>%
+  filter(datasource != "NA")
+# joineddropsourcena
+```
+
+Let's add the onomatopoeia
+
+```{r}
+finaltable <- joineddropsourcena %>%
+  full_join(onomds) %>%
+  select(-c1, -c2, -c3) %>%
+  distinct()
+```
+
+
+# Write output
+
+```{r}
+# write.xlsx(finaltable, "combinedtable.xlsx", col.names = TRUE, showNA = FALSE)
+
+finaltable
+
+# write_csv(finaltable, "combinedtable.csv", col_names = TRUE)
+
+finaltable %>%
+  group_by(morph) %>%
+  tally()
+
+# taking the non-ideophones out
+finaltable %>%
+  filter(morph == 'NOTIDEOPHONE') %>%
+  write_csv("notideophones.csv", col_names = TRUE)
+
+finaltable <- finaltable %>%
+  filter(morph != 'NOTIDEOPHONE' | is.na(morph))
+
+write_csv(finaltable, "combinedtable.csv", col_names = TRUE)
+
+finaltable
+```
+
+
+
+
+# Aftercare
+
+check modality in the new database
+(esp. in Kroll)
+
+# Statistics
+
+```{r}
+syllength <- 
+  finaltable %>%
+  select(traditional) %>%
+  mutate(length = nchar(traditional)) %>%
+  group_by(length) %>%
+  count() %>%
+  filter(length != "5" & length != "6")# %>%
+
+
+  
+syl.chi <- syllength %>%
+  ungroup() %>%
+  mutate(expected = sum(n)/4)
+
+syl.chi
+
+as.table(syl.chi$expected, syl.chi$n)
+
+chisq.test(syllength$n, p = c(0.25, 0.25, 0.25, 0.25))
+
+syllength
+
+``` 
+
+
+

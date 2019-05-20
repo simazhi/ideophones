@@ -1,0 +1,347 @@
+---
+title: "radicalsupport"
+author: "Thomas Van Hoey"
+date: "3/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+Load in current version of full database
+```{r}
+db_csv <- read_csv("basereduplicant3.csv",
+                   col_types = cols(H4 = col_character(),
+                                    H3.freq = col_double(),
+                                    H3.freq = col_double(),
+                                    H3.freq = col_double(),
+                                    H4.freq = col_double(),
+                                    H1.comb.freq = col_double(),
+                                    H2.comb.freq = col_double(),
+                                    H3.comb.freq = col_double(),
+                                    H4.comb.freq =col_double())
+                   )
+
+db_csv
+```
+
+Load in CLD database
+```{r}
+load("/Users/Thomas/Google\ Drive/cld/chineselexicaldatabase2.1.rda")
+```
+
+```{r}
+#check variables
+cld
+# gather the relevant ones and transform into two variable df
+chars <- cld %>%
+  select(C1, C2, C3, C4) %>%
+  gather(key = "character", value = "hanzi",
+         C1:C4)
+
+rads <- cld %>%
+  select(C1SR, C2SR, C3SR, C4SR) %>%
+  gather(key = "key", value = "semrad",
+         C1SR:C4SR) %>%
+  select(-key)
+
+radfreq <- cld %>%
+  select(C1SRFrequency, C2SRFrequency, 
+         C3SRFrequency, C4SRFrequency) %>%
+  gather(key = "key", value = "semradfreq",
+         C1SRFrequency:C4SRFrequency) %>%
+  select(-key)
+
+radfam <- cld %>%
+  select(C1SRFamilySize, C2SRFamilySize, 
+         C3SRFamilySize, C4SRFamilySize) %>%
+  gather(key = "key", value = "radfam",
+         C1SRFamilySize:C4SRFamilySize) %>%
+  select(-key)
+
+phonetic <- cld %>%
+  select(C1PR, C2PR, 
+         C3PR, C4PR) %>%
+  gather(key = "key", value = "phonetic",
+         C1PR:C4PR) %>%
+  select(-key)
+
+phonfreq <- cld %>%
+  select(C1PRFrequency, C2PRFrequency, 
+         C3PRFrequency, C4PRFrequency) %>%
+  gather(key = "key", value = "phonfreq",
+         C1PRFrequency:C4PRFrequency) %>%
+  select(-key)
+
+phonfam <- cld %>%
+  select(C1PRFamilySize, C2PRFamilySize, 
+         C3PRFamilySize, C4PRFamilySize) %>%
+  gather(key = "key", value = "phonfam",
+         C1PRFamilySize:C4PRFamilySize) %>%
+  select(-key)
+
+
+cldfreq <- cbind(chars, 
+                 rads, radfreq, radfam,
+                 phonetic, phonfreq, phonfam)
+
+cld.freq.list <- cldfreq %>%
+  distinct() %>%
+  select(-character)
+cld.freq.list
+```
+
+Merging
+```{r}
+chideor.freqs <- db_csv %>%
+  left_join(cld.freq.list, by = c("H1" = "hanzi")) %>%
+  rename(H1.sem = semrad,
+         H1.semfreq = semradfreq,
+         H1.semfam = radfam,
+         H1.phon = phonetic,
+         H1.phonfreq = phonfreq,
+         H1.phonfam = phonfam) %>%
+  left_join(cld.freq.list, by = c("H2" = "hanzi")) %>%
+  rename(H2.sem = semrad,
+         H2.semfreq = semradfreq,
+         H2.semfam = radfam,
+         H2.phon = phonetic,
+         H2.phonfreq = phonfreq,
+         H2.phonfam = phonfam) %>%
+  left_join(cld.freq.list, by = c("H3" = "hanzi")) %>%
+  rename(H3.sem = semrad,
+         H3.semfreq = semradfreq,
+         H3.semfam = radfam,
+         H3.phon = phonetic,
+         H3.phonfreq = phonfreq,
+         H3.phonfam = phonfam) %>%
+  left_join(cld.freq.list, by = c("H4" = "hanzi")) %>%
+  rename(H4.sem = semrad,
+         H4.semfreq = semradfreq,
+         H4.semfam = radfam,
+         H4.phon = phonetic,
+         H4.phonfreq = phonfreq,
+         H4.phonfam = phonfam) %>%
+  distinct()
+
+chideor.freqs <- chideor.freqs %>%
+  select(-morph, -morphnew) %>%
+  rename(morphology = morphnewer)
+```
+
+# Combine this new database into the old one
+```{r}
+bigdb <- read_csv("combinedtable.csv") %>%
+  select(-morphology, -morph)
+```
+
+```{r}
+bigdb %>%
+  select(traditional) %>%
+  distinct()
+
+
+DB <- bigdb %>%
+  left_join(chideor.freqs, 
+            by = c("pinyinnum", "traditional", "simplified")) %>%
+  distinct() 
+
+DB %>%
+  filter(is.na(morphology))
+```
+It turns out there are two misbehaving ideophones, I need to save and reload the new database.
+
+```{r}
+#write_csv(DB, "DATABASE_20190311.csv", col_names = TRUE)
+DB <- read_csv("DATABASE_20190311.csv", 
+               col_types = cols(.default = "c"))
+DB %>%
+  count(morphology)
+
+
+
+DB %>%
+  select(pinyinnum,
+         traditional,
+         simplified,
+         radsup,
+         morphology,
+         #sensorymod,
+         H1.sem,
+         H2.sem,
+         H3.sem,
+         H4.sem) %>%
+  mutate(radsupNEW = case_when(
+    # semantic part
+    is.na(radsup) == FALSE ~ radsup,
+    morphology == "A" & H1.sem == "口"  ~ "口",
+    H1.sem == H2.sem & H1.sem == H3.sem & H1.sem == H4.sem ~ H1.sem,
+    H1.sem == H2.sem & H1.sem == H3.sem & is.na(H4.sem) ~ H1.sem,
+    H1.sem == H2.sem & is.na(H3.sem) & is.na(H4.sem) ~ H1.sem,
+    TRUE ~ "NA"
+  )) %>%
+  select(traditional, radsup, radsupNEW, morphology) %>%
+  distinct() #%>%
+  #write_csv("radsuptest.csv", col_names = TRUE)
+```
+
+
+# Read in the new dataframe
+
+```{r}
+radsuptest <- read_csv("radsuptest.csv") %>%
+  select(-radsup) %>%
+  rename(radsup = radsupNEW) %>%
+  distinct()
+radsuptest
+
+DB <- read_csv("DATABASE_20190311.csv", 
+               col_types = cols(.default = "c")) %>%
+  select(-radsup, -morphology)
+
+DB <- DB %>%
+  left_join(radsuptest, by = "traditional") %>%
+  distinct()
+
+DB
+```
+
+```{r}
+DB %>%
+  filter(traditional == "凜然")
+```
+is okay
+
+```{r}
+write_csv(DB, "DATABASE_20190312.csv", col_names = TRUE)
+```
+
+# Add in HYDCD
+
+## set up and load in files
+```{r}
+# packages
+library(tidyverse)
+# load in file
+wb <- read_csv("/Users/Thomas/Google\ Drive/hydcd/hanyudacidian-csv.zip", 
+               col_names = TRUE) %>%
+  select(-printmeaning)
+
+head(wb)
+
+DB <- DB %>%
+  select(traditional) %>%
+  left_join(wb, by = c("traditional" = "item")) %>%
+  distinct() %>%
+  right_join(DB, by = "traditional") 
+```
+
+
+```{r}
+DB <- DB %>%
+  rename(HYDCD = computemeaning)
+
+DB %>%
+  select(traditional, HYDCD) %>%
+  distinct() %>%
+  count(is.na(HYDCD))
+
+DB %>%
+  filter(is.na(HYDCD))
+```
+
+# Adding in zdic
+
+```{r}
+DB %>%
+  select(simplified) %>%
+  distinct() %>%
+  pull() -> DB.simp
+```
+
+## set up
+```{r}
+library(rvest)
+```
+
+```{r opzoeken.function, cache=TRUE}
+opzoeken <- function(query){
+  Sys.sleep(1)
+  # Specify URL
+  url <- "http://wap.zdic.net/"
+  session <- html_session(url)
+  # Grab Initial Form
+  #  Form is filled in stages. Here, only do country and date
+  form.unfilled <- 
+    session %>% 
+    html_node("form") %>% 
+    html_form()
+
+  form.filled <- 
+    form.unfilled %>%
+    set_values("q" = query)
+
+  # submit the form and save as a new session
+  submitted <- submit_form(session, form.filled) 
+
+  # look for a definition in the nodes
+  definitie <- 
+    submitted %>% 
+    html_nodes(xpath = "/html/body/div/div[1]/div/ol/div/li/p[1]") %>%
+    html_text()
+  
+  if (is_empty(definitie) == TRUE){
+    definitie <- "NA"
+  } else {
+    definitie <- definitie
+  }
+
+  pronunciation <-
+    submitted %>%
+    html_nodes(xpath = "//rtc//rt") %>%
+    html_text()
+
+  pinyin <- pronunciation[1]
+  zhuyin <- pronunciation[2]
+
+  df <- data.frame(
+    woord = query,
+    pinyin = pinyin,
+    zhuyin = zhuyin,
+    definitie = definitie %>%
+      paste(collapse = "")
+  )
+  write_csv(df, "meanings.csv", append = TRUE)
+}
+
+opzoeken <- possibly(opzoeken, otherwise = NA_real_)
+```
+
+```{r}
+lijst <- map_df(DB.simp, opzoeken)
+```
+
+```{r}
+lijst %>%
+  select(woord, definitie) %>%
+  distinct() %>%
+  rename(simplified = woord, zdicnew = definitie) %>%
+  right_join(DB, by = "simplified") %>%
+  mutate(zdicNEWER = case_when(
+    is.na(zdic) == FALSE ~ as.character(zdic),
+    is.na(zdic) == TRUE ~ as.character(zdicnew)
+  )) %>%
+  select(-zdic, -zdicnew) %>%
+  rename(zdic = zdicNEWER) %>%
+  distinct() -> DB
+
+DB
+```
+
+```{r}
+write_csv(DB, "DATABASE_20190312.csv", col_names = TRUE)
+```
+

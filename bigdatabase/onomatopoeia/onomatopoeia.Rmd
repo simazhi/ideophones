@@ -1,0 +1,318 @@
+---
+title: "onomatopoeia_database"
+author: "Thomas Van Hoey"
+date: "3/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(tmcn)
+library(reticulate)
+library(readxl)
+library(xlsx)
+```
+
+# Goal columns
+
+## with R
+pinyinnum
+pinyintone
+pinyinnone
+traditional
+simplified
+middlechinese MC (not super relevant, but still try to)
+oldchinese OC (not super relevant, but still try to)
+datasource
+sensory_modality ('SOUND')
+
+## manually
+
+variants
+check for pinyin errors
+
+# Datasources
+
+There are three
+
+* "LiJingEr"
+* "GongLiangYu"
+* "WangWanRen"
+
+
+Read in
+```{r}
+name <- "LiJingEr"
+file <- read_lines(sprintf("%s.txt", name)) %>%
+  as.tibble() %>%
+  rename(onom = value)
+file
+```
+
+## add pinyin with python
+
+load in
+```{r pythonreticulate}
+use_python("/usr/local/bin/python3", required = T)
+reticulate::py_config()
+```
+
+get only the characters from our list
+```{r unlisting}
+list <- file %>%
+  select(onom) %>%
+  unlist()
+```
+
+
+```{python pyscript}
+import pinyin
+a = r.list
+
+richard = []
+for i in a:
+    richard.append(i)
+
+thomas = []
+for i in a:
+    j = pinyin.get(i, delimiter="~")
+    thomas.append(j)
+    
+cj = []
+for i in a:
+    j = pinyin.get(i, format= "strip", delimiter="~")
+    cj.append(j)
+    
+arthur = []
+for i in a:
+    j = pinyin.get(i, format="numerical", delimiter="~")
+    arthur.append(j)
+#print (thomas)
+#print(type(thomas))
+```
+
+```{r pythonvars}
+#py_run_file("script.py")
+#py_run_string("x = 10")
+
+# access the python main module via the 'py' object
+#py$x
+thomas <- py$thomas #%>% tibble()
+thomas <- tibble(thomas)
+
+cj <- py$cj #%>% tibble()
+cj <- tibble(cj)
+
+arthur <- py$arthur #%>% tibble()
+arthur <- tibble(arthur)
+
+#thomas
+#cj
+#arthur
+```
+
+```{r joiningnewpinyin, cache=TRUE}
+joined <- cbind(file, arthur, thomas, cj) %>%
+  rename(pinyinnum = arthur,
+         pinyintone = thomas,
+         pinyinnone = cj, 
+         traditional  = onom)
+head(joined)
+joined
+```
+
+## Add simplified
+
+```{r}
+tradsimp <- joined %>% 
+  mutate(simplified = toTrad(traditional, rev = TRUE))
+```
+
+## Add middle and old chinese
+
+```{r}
+splitcharacters <- tradsimp %>%
+  mutate(c1 = str_extract(traditional, "^."),
+         c2 = str_extract(traditional, "^.."),
+         c3 = str_extract(traditional, "^..."),
+         c4 = str_extract(traditional, "^...."),
+         c5 = str_extract(traditional, "^....."),
+         c6 = str_extract(traditional, "^......"),
+         c7 = str_extract(traditional, "^.......")
+         ) %>%
+  mutate(c2 = str_replace(c2, "^.", ""),
+         c3 = str_replace(c3, "^..", ""),
+         c4 = str_replace(c4, "^...", ""),
+         c5 = str_replace(c5, "^....", ""),
+         c6 = str_replace(c6, "^.....", ""),
+         c7 = str_replace(c7, "^......", ""))
+splitcharacters
+```
+
+load in Baxter Sagart
+
+```{r}
+baxter <- readxl::read_excel("../BaxterSagartOC2015-10-13.xlsx") %>%
+  rename("middle" = "MC", "old" = "OC") %>%
+  select(zi, middle, old)
+head(baxter)
+```
+
+```{r}
+midandoldpercharacter <- splitcharacters %>% 
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c1"= "zi")) %>%
+  rename("m1" = "middle",
+         "o1" = "old") %>% # this lef_join and rename function gets repeated but the number is changed
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c2"= "zi")) %>%
+  rename("m2" = "middle",
+         "o2" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c3"= "zi")) %>%
+  rename("m3" = "middle",
+         "o3" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c4"= "zi")) %>%
+  rename("m4" = "middle",
+         "o4" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c5"= "zi")) %>%
+  rename("m5" = "middle",
+         "o5" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c6"= "zi")) %>%
+  rename("m6" = "middle",
+         "o6" = "old") %>%
+  dplyr::left_join(dplyr::distinct(baxter,
+                                   zi,
+                                   .keep_all = T),
+                   by = c("c7"= "zi")) %>%
+  rename("m7" = "middle",
+         "o7" = "old")  
+
+# combinations
+nummers <- 1:7
+middles <- paste0("m", nummers)
+olds <- paste0("o", nummers)
+
+midold <- midandoldpercharacter %>%
+  unite(middles, col = "MC", sep = "~") %>%
+  unite(olds, col = "OC", sep = "~") %>%
+  mutate(OC = str_replace(OC, "NA~NA~NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA~NA", "NA"),
+         OC = str_replace(OC, "NA~NA~NA", "NA"),
+         OC = str_replace(OC, "~NA$", ""),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA~NA", "NA"),
+         MC = str_replace(MC, "NA~NA~NA", "NA"),
+         MC = str_replace(MC, "~NA$", "")
+         )
+```
+
+## Data source and sensory modality
+
+```{r}
+arrangeddb <- midold %>%
+  mutate(datasource = name,
+         sensorymod = "SOUND") %>%
+  select(pinyintone,
+         pinyinnone,
+         pinyinnum,
+         traditional,
+         simplified,
+         MC,
+         OC,
+         datasource,
+         sensorymod)
+```
+
+# Write into new csv file
+
+```{r}
+write_csv(arrangeddb, sprintf("%s.csv", name), col_names = TRUE)
+write.xlsx(arrangeddb, sprintf("%s.xlsx", name), col.names = TRUE)
+
+```
+
+# After manually checking
+
+Read in checked files
+
+```{r}
+li <- read_excel("LiJingEr_checked.xlsx") #%>% select(`..1`)
+wang <- read_csv("WangWanRen_checked.csv")
+gong <- read_csv("GongLiangYu_checked.csv")
+wang
+gong
+li
+```
+
+```{r}
+onom <- full_join(wang, gong) %>%
+  full_join(li) %>%
+  mutate(datasource = case_when(
+    datasource == "WangWanRen" ~ "Wang",
+    datasource == "GongLiangYu" ~ "Gong",
+    datasource == "LiJingEr" ~ "Li"
+    )) %>%
+  mutate(pinyinnone = str_replace_all(pinyinnum, "[12345]", ""))
+onom
+
+write_csv(onom, "onomatopoeiadb.csv", col_names = TRUE)
+
+onom %>%
+  group_by(datasource) %>%
+  tally()
+
+```
+
+```{r}
+onom %>%
+  distinct(traditional) %>%
+  mutate(syllength = nchar(traditional)) %>%
+  group_by(syllength) %>%
+  tally() %>%
+  filter(syllength != 5 & syllength !=6) %>%
+  mutate(expected = sum(n)/4) %>%
+  ungroup() %>%
+  summarise(pval = chisq.test(n, syllength)$p.value)
+```
+
+```{r}
+test <- onom %>%
+  distinct(traditional) %>%
+  mutate(syllength = nchar(traditional)) %>%
+  group_by(syllength) %>%
+  tally() %>%
+  filter(syllength != 5 & syllength !=6) %>%
+  group_by(syllength, n) %>%
+  summarise(
+    count = n(),
+    mean = mean(n, na.rm = TRUE),
+    sd = sd(n, na.rm = TRUE)
+  )
+
+  res.aov <- aov(n ~ syllength, data = test)
+  res.aov
+```
+
+
+

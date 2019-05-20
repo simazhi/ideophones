@@ -1,0 +1,167 @@
+---
+title: "base-reduplicant"
+author: "Thomas Van Hoey"
+date: "3/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(xlsx)
+```
+
+# Read in both databases
+```{r}
+load("/Users/Thomas/Google\ Drive/cld/chineselexicaldatabase2.1.rda")
+# cld
+
+chideor <- read_csv("combinedtable.csv")
+chideor
+```
+
+# Get all characters in chideor
+
+```{r}
+chideor.hanzis <- chideor %>%
+  filter(!nchar(simplified) > 4) %>% # take out the rare 5 and 6 syllables
+  select(simplified) %>%
+  mutate(H1 = str_extract(simplified, "^."),
+         H2 = str_extract(simplified, "^.."),
+         H3 = str_extract(simplified, "^..."),
+         H4 = str_extract(simplified, "^....")) %>%
+  mutate(H2 = str_replace(H2, "^.", ""),
+         H3 = str_replace(H3, "^..", ""),
+         H4 = str_replace(H4, "^...", ""))
+#now add the frequencies based on the other list
+  
+```
+
+
+# CLD into one list + frequency
+
+```{r}
+# cld
+
+chars <- cld %>%
+  select(C1, C2, C3, C4) %>%
+  gather(key = "character", value = "hanzi",
+         C1:C4)
+freqs <- cld %>%
+  select(C1Frequency, C2Frequency, C3Frequency, C4Frequency) %>%
+  gather(key = "characterfreq", value = "value",
+         C1Frequency:C4Frequency)
+typefreq <- cld %>%
+  select(C1FamilySize, C2FamilySize, C3FamilySize, C4FamilySize) %>%
+  gather(key = "key", value = "combfreq",
+         C1FamilySize:C4FamilySize)
+
+# chars
+# freqs
+cldfreq <- cbind(chars, freqs, typefreq)
+cld.freq.list <- cldfreq %>%
+  distinct() %>%
+  select(hanzi, value, combfreq)
+cld.freq.list
+```
+
+
+
+# Add frequencies to chideor
+
+```{r}
+chideor.hanzis
+
+chideor.freqs <- chideor.hanzis %>%
+  left_join(cld.freq.list, by = c("H1" = "hanzi")) %>%
+  rename(H1.freq = value, H1.comb.freq = combfreq) %>%
+  left_join(cld.freq.list, by = c("H2" = "hanzi")) %>%
+  rename(H2.freq = value, H2.comb.freq = combfreq) %>%
+  left_join(cld.freq.list, by = c("H3" = "hanzi")) %>%
+  rename(H3.freq = value, H3.comb.freq = combfreq) %>%
+  left_join(cld.freq.list, by = c("H4" = "hanzi")) %>%
+  rename(H4.freq = value, H4.comb.freq = combfreq) %>%
+  distinct()
+
+chideor.freqs  
+biggerdb <- full_join(chideor, chideor.freqs) %>%
+  select(pinyinnum, traditional, simplified, 
+         morph,
+         H1, H2, H3, H4,
+         H1.freq, H2.freq, H3.freq, H4.freq,
+         H1.comb.freq, H2.comb.freq, H3.comb.freq, H4.comb.freq) %>%
+  distinct()
+
+biggerdb
+biggerdb%>%
+  write.xlsx("basereduplicant.xlsx",showNA = FALSE)
+
+write_csv(biggerdb, "basereduplicant.csv", na = "", col_names = TRUE)
+
+
+```
+
+
+
+```{r}
+chideor %>%
+  select(traditional) %>%
+  distinct()
+```
+
+---
+
+```{r}
+db <- read_csv("basereduplicant.csv",
+               col_types = cols(
+                 H4 = col_character()
+               ))
+db
+db %>%
+  mutate(morphnew = case_when(
+    is.na(H2) & is.na(H3) & is.na(H4) ~ "A",
+    H1 == H2 & is.na(H3) & is.na(H4) ~ "BB",
+    H1 == H2 & H1 == H3 & is.na(H4) ~ "BBB",
+    is.na(H1) == FALSE & H2 == H3 ~ "ARR",
+    TRUE ~ as.character(morph)
+  )) %>%
+  write_csv("basereduplicant2.csv", na = "", col_names = TRUE)
+```
+
+
+```{r}
+db2 <- read_csv("basereduplicant2.csv",
+               col_types = cols(
+                 H4 = col_character()
+               )) %>%
+  select(-H4)
+db
+db %>%
+  select(traditional, H4) %>%
+  full_join(db2, by = c("traditional" = "traditional")) %>%
+  distinct() %>%
+  mutate(morphnewer = case_when(
+    is.na(morphnew) == FALSE ~ as.character(morphnew),
+    str_count(pinyinnum, "~") == 1 ~ "RR",
+    str_count(pinyinnum, "~") == 2 ~ "RRR",
+    str_count(pinyinnum, "~") == 3 ~ "RRRR",
+  )) %>%
+  select(-`morphnew_1`) %>%
+  write_csv("basereduplicant3.csv", na = "", col_names = TRUE)
+
+
+
+  mutate(morphnew = case_when(
+    is.na(H2) & is.na(H3) & is.na(H4) ~ "A",
+    H1 == H2 & is.na(H3) & is.na(H4) ~ "BB",
+    H1 == H2 & H1 == H3 & is.na(H4) ~ "BBB",
+    is.na(H1) == FALSE & H2 == H3 ~ "ARR",
+    TRUE ~ as.character(morph)
+  )) %>%
+  write_csv("basereduplicant2.csv", na = "", col_names = TRUE)
+```
+
+
+
+
+

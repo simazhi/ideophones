@@ -1,0 +1,939 @@
+traditional,simplified,pyoriginal,pinyintone,pinyinnum,morphology,sensorymod,datasource,inbetween,same
+黯黯,黯黯,ànàn,àn~àn,an4~an4,RED,VISUAL,Tang,ànàn,same
+黯黯,黯黯,ànàn,àn~àn,an4~an4,RED,VISUAL+INNER_FEELINGS,Tang,ànàn,same
+黯然,黯然,ànrán,àn~rán,an4~ran2,RAN,COGNITIVE_STATE,Tang,ànrán,same
+崩騰,崩腾,bēngténg,bēng~téng,beng1~teng2,RHYME,MOVEMENT,Tang,bēngténg,same
+蒼蒼,苍苍,cāngcāng,cāng~cāng,cang1~cang1,RED,VISUAL,Tang,cāngcāng,same
+蒼茫,苍茫,cāngmáng,cāng~máng,cang1~mang2,RHYME,VISUAL,Tang,cāngmáng,same
+嘈嘈,嘈嘈,cáocáo,cáo~cáo,cao2~cao2,RED,SOUND,Tang,cáocáo,same
+惻惻,恻恻,cècè,cè~cè,ce4~ce4,RED,INNER_FEELINGS,Tang,cècè,same
+參差,参差,cēncī,cān~chà,can1~cha4,ALLIT,MOVEMENT+EVALUATION,Tang,cānchà,different
+悵望,怅望,chàngwàng,chàng~wàng,chang4~wang4,RHYME,INNER_FEELINGS,Tang,chàngwàng,same
+嬋娟,婵娟,chánjuān,chán~juān,chan2~juan1,RHYME,VISUAL+EVALUATION,Tang,chánjuān,same
+嘲哳,嘲哳,cháozhā,cháo~zhā,chao2~zha1,ALLIT,SOUND,Tang,cháozhā,same
+沈沈,沉沉,chénchén,shěn~shěn,shen3~shen3,RED,VISUAL,Tang,shěnshěn,different
+澄澄,澄澄,chéngchéng,chéng~chéng,cheng2~cheng2,RED,VISUAL,Tang,chéngchéng,same
+遲遲,迟迟,chíchí,chí~chí,chi2~chi2,RED,TIME,Tang,chíchí,same
+惆悵,惆怅,chóuchàng,chóu~chàng,chou2~chang4,ALLIT,INNER_FEELINGS,Tang,chóuchàng,same
+躊躇,踌躇,chóuchú,chóu~chú,chou2~chu2,ALLIT,MOVEMENT,Tang,chóuchú,same
+躊躇,踌躇,chóuchú,chóu~chú,chou2~chu2,ALLIT,INNER_FEELINGS,Tang,chóuchú,same
+愴然,怆然,chuàngrán,chuàng~rán,chuang4~ran2,RAN,INNER_FEELINGS,Tang,chuàngrán,same
+翠微,翠微,cuìwēi,cùi~wēi,cui4~wei1,CON,VISUAL,Tang,cùiwēi,different
+崔嵬,崔嵬,cuīwéi,cūi~wéi,cui1~wei2,RHYME,VISUAL,Tang,cūiwéi,different
+嵯峨,嵯峨,cuó'é,cuó~é,cuo2~e2,RHYME,VISUAL,Tang,cuóé,different
+蹉跎,蹉跎,cuōtuó,cuō~tuó,cuo1~tuo2,RHYME,EVALUATION,Tang,cuōtuó,same
+蹉跎,蹉跎,cuōtuó,cuō~tuó,cuo1~tuo2,RHYME,TIME+EVALUATION,Tang,cuōtuó,same
+澹澹,澹澹,dàndàn,dàn~dàn,dan4~dan4,RED,MOVEMENT,Tang,dàndàn,same
+蕩漾,荡漾,dàngyàng,dàng~yàng,dang4~yang4,RHYME,MOVEMENT,Tang,dàngyàng,same
+澹然,澹然,dànrán,dàn~rán,dan4~ran2,RAN,COGNITIVE_STATE,Tang,dànrán,same
+澹然,澹然,dànrán,dàn~rán,dan4~ran2,RAN,MOVEMENT,Tang,dànrán,same
+汎汎,泛泛,fànfàn,fàn~fàn,fan4~fan4,RED,MOVEMENT,Tang,fànfàn,same
+翡翠,翡翠,fěicuì,fěi~cùi,fei3~cui4,CON,VISUAL,Tang,fěicùi,different
+霏霏,霏霏,fēifēi,fēi~fēi,fei1~fei1,RED,WETNESS,Tang,fēifēi,same
+芬芳,芬芳,fēnfāng,fēn~fāng,fen1~fang1,ALLIT,VISUAL+EVALUATION,Tang,fēnfāng,same
+紛紛,纷纷,fēnfēn,fēn~fēn,fen1~fen1,RED,VISUAL,Tang,fēnfēn,same
+紛綸,纷纶,fēnlún,fēn~lún,fen1~lun2,RHYME,MOVEMENT,Tang,fēnlún,same
+奮迅,奋迅,fènxùn,fèn~xùn,fen4~xun4,RHYME,MOVEMENT,Tang,fènxùn,same
+杲杲,杲杲,gǎogǎo,gǎo~gǎo,gao3~gao3,RED,VISUAL,Tang,gǎogǎo,same
+高閣,高阁,gāogé,gāo~gé,gao1~ge2,ALLIT,VISUAL,Tang,gāogé,same
+耿耿,耿耿,gěnggěng,gěng~gěng,geng3~geng3,RED,VISUAL,Tang,gěnggěng,same
+孤獨,孤独,gūdú,gū~dú,gu1~du2,ASS,INNER_FEELINGS,Tang,gūdú,same
+孤高,孤高,gūgāo,gū~gāo,gu1~gao1,ALLIT,VISUAL+INNER_FEELINGS,Tang,gūgāo,same
+滾滾,滚滚,gǔngǔn,gǔn~gǔn,gun3~gun3,RED,MOVEMENT,Tang,gǔngǔn,same
+浩浩,浩浩,hàohào ,hào~hào,hao4~hao4,RED,VISUAL,Tang,hàohào,different
+浩然,浩然,hàorán,hào~rán,hao4~ran2,RAN,EVALUATION,Tang,hàorán,same
+迴合,回合,huíhé,húi~hé,hui2~he2,ALLIT,VISUAL,Tang,húihé,different
+恢恢,恢恢,huīhuī,hūi~hūi,hui1~hui1,RED,VISUAL,Tang,hūihūi,different
+晦昧,晦昧,huìmèi,hùi~mèi,hui4~mei4,RHYME,VISUAL,Tang,hùimèi,different
+忽然,忽然,hūrán,hū~rán,hu1~ran2,RAN,EVALUATION,Tang,hūrán,same
+寂寂,寂寂,jìjì,jì~jì,ji4~ji4,RED,SOUND,Tang,jìjì,same
+寂寂,寂寂,jìjì,jì~jì,ji4~ji4,RED,INNER_FEELINGS,Tang,jìjì,same
+唧唧,唧唧,jījī,jī~jī,ji1~ji1,RED,SOUND+EVALUATION,Tang,jījī,same
+激激,激激,jījī,jī~jī,ji1~ji1,RED,SOUND,Tang,jījī,same
+啾啾,啾啾,jiūjiū,jīu~jīu,jiu1~jiu1,RED,SOUND,Tang,jīujīu,different
+娟娟,娟娟,juānjuān,juān~juān,juan1~juan1,RED,VISUAL+EVALUATION,Tang,juānjuān,same
+寥落,寥落,liáoluò,liáo~luò,liao2~luo4,ALLIT,VISUAL+INNER_FEELINGS,Tang,liáoluò,same
+離離,离离,lílí,lí~lí,li2~li2,RED,VISUAL,Tang,lílí,same
+歷歷,历历,lìlì,lì~lì,li4~li4,RED,VISUAL,Tang,lìlì,same
+離亂,离乱,líluàn,lí~luàn,li2~luan4,ALLIT,MOVEMENT+EVALUATION,Tang,líluàn,same
+泠泠,泠泠,línglíng,líng~líng,ling2~ling2,RED,TEMPERATURE,Tang,línglíng,same
+玲瓏,玲珑,línglóng,líng~lóng,ling2~long2,PARARH,VISUAL,Tang,línglóng,same
+零亂,零乱,língluàn,líng~luàn,ling2~luan4,ALLIT,VISUAL+MOVEMENT,Tang,língluàn,same
+零落,零落,língluò,líng~luò,ling2~luo4,ALLIT,MOVEMENT+EVALUATION,Tang,língluò,same
+淋漓,淋漓,línlí,lín~lí,lin2~li2,ALLIT,WETNESS,Tang,línlí,same
+轔轔,辚辚,línlín,lín~lín,lin2~lin2,RED,SOUND,Tang,línlín,same
+凜然,凛然,lǐnrán,lǐn~rán,lin3~ran2,RAN,EVALUATION,Tang,lǐnrán,same
+流落,流落,liúluò,líu~luò,liu2~luo4,ALLIT,MOVEMENT,Tang,líuluò,different
+邐迤,逦迤,lǐyí,lǐ~yǐ,li3~yi3,RHYME,MOVEMENT,Tang,lǐyǐ,different
+龍鐘,龙钟,lóngzhōng,lóng~zhōng,long2~zhong1,RHYME,WETNESS,Tang,lóngzhōng,same
+落落,落落,luòluò,luò~luò,luo4~luo4,RED,VISUAL,Tang,luòluò,same
+茫茫,茫茫,mángmáng,máng~máng,mang2~mang2,RED,VISUAL,Tang,mángmáng,same
+莽莽,莽莽,mǎngmǎng,mǎng~mǎng,mang3~mang3,RED,VISUAL,Tang,mǎngmǎng,same
+茫然,茫然,mángrán,máng~rán,mang2~ran2,RAN,VISUAL+INNER_FEELINGS,Tang,mángrán,same
+茫然,茫然,mángrán,máng~rán,mang2~ran2,RAN,COGNITIVE_STATE,Tang,mángrán,same
+茫然,茫然,mángrán,máng~rán,mang2~ran2,RAN,VISUAL,Tang,mángrán,same
+漫漫,漫漫,mànmàn,màn~màn,man4~man4,RED,VISUAL,Tang,mànmàn,same
+漫漫,漫漫,mànmàn,màn~màn,man4~man4,RED,TIME,Tang,mànmàn,same
+濛濛,濛濛,méngméng,méng~méng,meng2~meng2,RED,VISUAL,Tang,méngméng,same
+密密,密密,mì mi ,mì~mì,mi4~mi4,RED,VISUAL,Tang,mìmì,different
+綿綿,绵绵,miánmián,mián~mián,mian2~mian2,RED,VISUAL,Tang,miánmián,same
+渺然,渺然,miǎorán,miǎo~rán,miao3~ran2,RAN,COGNITIVE_STATE,Tang,miǎorán,same
+冥冥,冥冥,míngmíng,míng~míng,ming2~ming2,RED,VISUAL,Tang,míngmíng,same
+冥冥,冥冥,míngmíng,míng~míng,ming2~ming2,RED,EVALUATION,Tang,míngmíng,same
+漠漠,漠漠,mòmò,mò~mò,mo4~mo4,RED,VISUAL,Tang,mòmò,same
+默默,默默,mòmò,mò~mò,mo4~mo4,RED,VISUAL,Tang,mòmò,same
+褭褭,袅袅,niǎoniǎo,niǎo~niǎo,niao3~niao3,RED,VISUAL,Tang,niǎoniǎo,same
+凝情,凝情,níngqíng,níng~qíng,ning2~qing2,RHYME,COGNITIVE_STATE,Tang,níngqíng,same
+嘔啞,呕哑,ǒuyǎ,ōu~yǎ,ou1~ya3,ALLIT,SOUND,Tang,ōuyǎ,different
+徘徊,徘徊,páihuái,pái~huái,pai2~huai2,CON,MOVEMENT,Tang,páihuái,same
+盤盤,盘盘,pánpán,pán~pán,pan2~pan2,RED,VISUAL,Tang,pánpán,same
+縹緲,缥缈,piāomiǎo,piǎo~miǎo,piao3~miao3,RHYME,VISUAL,Tang,piǎomiǎo,different
+飄飄,飘飘,piāopiāo,piāo~piāo,piao1~piao1,RED,MOVEMENT,Tang,piāopiāo,same
+飄颻,飘飖,piāoyáo,piāo~yáo,piao1~yao2,RHYME,MOVEMENT,Tang,piāoyáo,same
+霹靂,霹雳,pīlì,pī~lì,pi1~li4,RHYME,VISUAL,Tang,pīlì,same
+霹靂,霹雳,pīlì,pī~lì,pi1~li4,RHYME,SOUND+VISUAL,Tang,pīlì,same
+霹靂,霹雳,pīlì,pī~lì,pi1~li4,RHYME,MOVEMENT+VISUAL,Tang,pīlì,same
+娉娉,娉娉,pīngpīng,pīng~pīng,ping1~ping1,RED,VISUAL,Tang,pīngpīng,same
+悄然,悄然,qiǎorán,qiǎo~rán,qiao3~ran2,RAN,INNER_FEELINGS,Tang,qiǎorán,same
+切切,切切,qièqiè,qiē~qiē,qie1~qie1,RED,SOUND,Tang,qiēqiē,different
+淒涼,凄凉,qīliáng,qī~liáng,qi1~liang2,DIFF,EVALUATION,Tang,qīliáng,same
+青青,青青,qīngqīng,qīng~qīng,qing1~qing1,RED,VISUAL,Tang,qīngqīng,same
+萋萋,x,qīqī,qī~qī,qi1~qi1,RED,VISUAL,Tang,qīqī,same
+淒淒,凄凄,qīqī,qī~qī,qi1~qi1,RED,SOUND+EVALUATION,Tang,qīqī,same
+萋萋,萋萋,qīqī,qī~qī,qi1~qi1,RED,COGNITIVE_STATE,Tang,qīqī,same
+萋萋,萋萋,qīqī,qī~qī,qi1~qi1,RED,VISUAL,Tang,qīqī,same
+淒淒,凄凄,qīqī,qī~qī,qi1~qi1,RED,VISUAL+INNER_FEELINGS,Tang,qīqī,same
+淒淒,凄凄,qīqī,qī~qī,qi1~qi1,RED,TEMPERATURE,Tang,qīqī,same
+棲棲,栖栖,qīqī,qī~qī,qi1~qi1,RED,MOVEMENT,Tang,qīqī,same
+悽悽,凄凄,qīqī,qī~qī,qi1~qi1,RED,INNER_FEELINGS,Tang,qīqī,same
+慼慼,戚戚,qīqī,qī~qī,qi1~qi1,RED,INNER_FEELINGS,Tang,qīqī,same
+苒苒,苒苒,rǎnrǎn,rǎn~rǎn,ran3~ran3,RED,TIME,Tang,rǎnrǎn,same
+溶溶,溶溶,róngróng,róng~róng,rong2~rong2,RED,MOVEMENT,Tang,róngróng,same
+濡染,濡染,rúrǎn,rú~rǎn,ru2~ran3,ALLIT,WETNESS,Tang,rúrǎn,same
+颯颯,飒飒,sàsà,sà~sà,sa4~sa4,RED,MOVEMENT,Tang,sàsà,same
+颯颯,飒飒,sàsà,sà~sà,sa4~sa4,RED,SOUND,Tang,sàsà,same
+森森,森森,sēnsēn,sēn~sēn,sen1~sen1,RED,VISUAL,Tang,sēnsēn,same
+瑟瑟,瑟瑟,sèsè,sè~sè,se4~se4,RED,TEMPERATURE,Tang,sèsè,same
+颼飀,飕飗,sōuliú,sōu~líu,sou1~liu2,RHYME,SOUND,Tang,sōulíu,different
+陶然,陶然,táorán,táo~rán,tao2~ran2,RAN,COGNITIVE_STATE,Tang,táorán,same
+迢遞,迢递,tiáodì,tiáo~dì,tiao2~di4,ALLIT,VISUAL,Tang,tiáodì,same
+迢迢,迢迢,tiáotiáo,tiáo~tiáo,tiao2~tiao2,RED,VISUAL,Tang,tiáotiáo,same
+岧嶤,岧嶤,tiáoyáo,tiáo~yáo,tiao2~yao2,RHYME,VISUAL,Tang,tiáoyáo,same
+突兀,突兀,tūwù,tū~wù,tu1~wu4,RHYME,VISUAL,Tang,tūwù,same
+惘然,惘然,wǎngrán,wǎng~rán,wang3~ran2,RAN,INNER_FEELINGS+EVALUATION,Tang,wǎngrán,same
+嗚呼,呜呼,wūhū,wū~hū,wu1~hu1,RHYME,SOUND+INNER_FEELINGS,Tang,wūhū,same
+霧露,雾露,wùlù,wù~lù,wu4~lu4,RHYME,VISUAL,Tang,wùlù,same
+悟悅,悟悅,wùyuè,wù~yuè,wu4~yue4,DIFF,INNER_FEELINGS,Tang,wùyuè,same
+閑閑,闲闲,xiánxián,xián~xián,xian2~xian2,RED,MOVEMENT,Tang,xiánxián,same
+蕭瑟,萧瑟,xiāosè,xiāo~sè,xiao1~se4,ALLIT,VISUAL,Tang,xiāosè,same
+蕭條,萧条,xiāotiáo,xiāo~tiáo,xiao1~tiao2,RHYME,MOVEMENT+COGNITIVE_STATE,Tang,xiāotiáo,same
+蕭條,萧条,xiāotiáo,xiāo~tiáo,xiao1~tiao2,RHYME,VISUAL,Tang,xiāotiáo,same
+蕭蕭,萧萧,xiāoxiāo,xiāo~xiāo,xiao1~xiao1,RED,SOUND,Tang,xiāoxiāo,same
+蕭蕭,萧萧,xiāoxiāo,xiāo~xiāo,xiao1~xiao1,RED,VISUAL,Tang,xiāoxiāo,same
+蕭蕭,萧萧,xiāoxiāo,xiāo~xiāo,xiao1~xiao1,RED,VISUAL+INNER_FEELINGS,Tang,xiāoxiāo,same
+欣欣,欣欣,xīnxīn,xīn~xīn,xin1~xin1,RED,INNER_FEELINGS,Tang,xīnxīn,same
+細細,细细,xìxì,xì~xì,xi4~xi4,RED,TIME,Tang,xìxì,same
+喧喧,喧喧,xuānxuān,xuān~xuān,xuan1~xuan1,RED,SOUND,Tang,xuānxuān,same
+揚揚,扬扬,yángyáng,yáng~yáng,yang2~yang2,RED,VISUAL+EVALUATION,Tang,yángyáng,same
+颺颺,飏飏,yángyáng,yáng~yáng,yang2~yang2,RED,MOVEMENT,Tang,yángyáng,same
+漾漾,漾漾,yàngyàng,yàng~yàng,yang4~yang4,RED,MOVEMENT,Tang,yàngyàng,same
+巖巒,岩峦,yánluán,yán~luán,yan2~luan2,RHYME,VISUAL,Tang,yánluán,same
+演漾,演漾,yǎnyàng,yǎn~yàng,yan3~yang4,ALLIT,MOVEMENT,Tang,yǎnyàng,same
+掩抑,掩抑,yǎnyì,yǎn~yì,yan3~yi4,ALLIT,COGNITIVE_STATE,Tang,yǎnyì,same
+饜飫,餍饫,yànyù,yàn~yù,yan4~yu4,ALLIT,VISUAL,Tang,yànyù,same
+窈窕,窈窕,yǎotiǎo,yǎo~tiǎo,yao3~tiao3,RHYME,INNER_FEELINGS,Tang,yǎotiǎo,same
+搖搖,摇摇,yáoyáo,yáo~yáo,yao2~yao2,RED,MOVEMENT,Tang,yáoyáo,same
+杳杳,杳杳,yǎoyǎo,yǎo~yǎo,yao3~yao3,RED,VISUAL,Tang,yǎoyǎo,same
+隱隱,隐隐,yǐnyǐn,yǐn~yǐn,yin3~yin3,RED,VISUAL,Tang,yǐnyǐn,same
+陰陰,阴阴,yīnyīn,yīn~yīn,yin1~yin1,RED,VISUAL,Tang,yīnyīn,same
+怡然,怡然,yírán,yí~rán,yi2~ran2,RAN,COGNITIVE_STATE,Tang,yírán,same
+依依,依依,yīyī,yī~yī,yi1~yi1,RED,INNER_FEELINGS,Tang,yīyī,same
+依依,依依,yīyī,yī~yī,yi1~yi1,RED,COGNITIVE_STATE,Tang,yīyī,same
+怡悅,怡悦,yíyuè,yí~yuè,yi2~yue4,ALLIT,INNER_FEELINGS,Tang,yíyuè,same
+悠悠,悠悠,yōuyōu,yōu~yōu,you1~you1,RED,TIME,Tang,yōuyōu,same
+悠悠,悠悠,yōuyōu,yōu~yōu,you1~you1,RED,TIME+EVALUATION,Tang,yōuyōu,same
+呦呦,呦呦,yōuyōu,yōu~yōu,you1~you1,RED,SOUND,Tang,yōuyōu,same
+悠悠,悠悠,yōuyōu,yōu~yōu,you1~you1,RED,INNER_FEELINGS,Tang,yōuyōu,same
+崢嶸,峥嵘,zhēngróng,zhēng~róng,zheng1~rong2,RHYME,VISUAL+EVALUATION,Tang,zhēngróng,same
+崢嶸,峥嵘,zhēngróng,zhēng~róng,zheng1~rong2,RHYME,VISUAL,Tang,zhēngróng,same
+哀哀,哀哀,āi āi,āi~āi,ai1~ai1,REDUPLICATION,SOUND+FEELING,Shijing,āiāi,different
+哀哀,哀哀,āi āi,āi~āi,ai1~ai1,REDUPLICATION,SOUND+FEELING,Shijing,āiāi,different
+藹藹,蔼蔼,ǎi'ǎi,ǎi~ǎi,ai3~ai3,REDUPLICATION,VISUAL,Shijing,ǎiǎi,different
+藹藹,蔼蔼,ǎi'ǎi,ǎi~ǎi,ai3~ai3,REDUPLICATION,VISUAL,Shijing,ǎiǎi,different
+安安,安安,ān'ān,ān~ān,an1~an1,REDUPLICATION,VISUAL+EVALUATION,Shijing,ānān,different
+卬卬,卬卬,áng áng,áng~áng,ang2~ang2,REDUPLICATION,EVALUATION,Shijing,ángáng,different
+嗷嗷,嗷嗷,áo áo,áo~áo,ao2~ao2,REDUPLICATION,SOUND,Shijing,áoáo,different
+敖敖,敖敖,áo áo,áo~áo,ao2~ao2,REDUPLICATION,VISUAL,Shijing,áoáo,different
+翱翔,翱翔,áoxiáng,áo~xiáng,ao2~xiang2,DIFFERENT,VISUAL,Shijing,áoxiáng,same
+翱翔,翱翔,áoxiáng,áo~xiáng,ao2~xiang2,DIFFERENT,VISUAL,Shijing,áoxiáng,same
+板板,板板,bǎn bǎn,bǎn~bǎn,ban3~ban3,REDUPLICATION,EVALUATION,Shijing,bǎnbǎn,different
+伴奐,伴奂,bàn huàn,bàn~huàn,ban4~huan4,RHYME,EVALUATION,Shijing,bànhuàn,different
+傍傍,傍傍,bàng bàng,bàng~bàng,bang4~bang4,REDUPLICATION,MOVEMENT,Shijing,bàngbàng,different
+薄薄,薄薄,báo báo,bó~bó,bo2~bo2,REDUPLICATION,SOUND,Shijing,bóbó,different
+奔奔,奔奔,bēn bēn,bēn~bēn,ben1~ben1,REDUPLICATION,MOVEMENT,Shijing,bēnbēn,different
+奔奔,奔奔,bēn bēn,bēn~bēn,ben1~ben1,REDUPLICATION,MOVEMENT,Shijing,bēnbēn,different
+菶菶,菶菶,běng běng,běng~běng,beng3~beng3,REDUPLICATION,VISUAL,Shijing,běngběng,different
+怭怭,怭怭,bì bì,bì~bì,bi4~bi4,REDUPLICATION,EVALUATION,Shijing,bìbì,different
+苾苾,苾苾,bì bì,bì~bì,bi4~bi4,REDUPLICATION,SMELL,Shijing,bìbì,different
+觱發,觱发,bì fā,bì~fā,bi4~fa1,PARARHYME,TEMPERATURE,Shijing,bìfā,different
+觱沸,觱沸,bì fèi,bì~fèi,bi4~fei4,PARARHYME,MOVEMENT+VISUAL,Shijing,bìfèi,different
+觱沸,觱沸,bì fèi,bì~fèi,bi4~fei4,PARARHYME,MOVEMENT+VISUAL,Shijing,bìfèi,different
+儦儦,儦儦,biāo biāo,biāo~biāo,biao1~biao1,REDUPLICATION,MOVEMENT+VISUAL,Shijing,biāobiāo,different
+儦儦,儦儦,biāo biāo,biāo~biāo,biao1~biao1,REDUPLICATION,MOVEMENT+VISUAL,Shijing,biāobiāo,different
+瀌瀌,瀌瀌,biāo biāo,biāo~biāo,biao1~biao1,REDUPLICATION,VISUAL,Shijing,biāobiāo,different
+鑣鑣,镳镳,biāo biāo,biāo~biāo,biao1~biao1,REDUPLICATION,VISUAL,Shijing,biāobiāo,different
+怲怲,怲怲,bǐng bǐng,bǐng~bǐng,bing3~bing3,REDUPLICATION,FEELING,Shijing,bǐngbǐng,different
+番番,番番,bō bō,fān~fān,fan1~fan1,REDUPLICATION,EVALUATION,Shijing,fānfān,different
+采采,采采,cǎi cǎi,cǎi~cǎi,cai3~cai3,REDUPLICATION,VISUAL,Shijing,cǎicǎi,different
+采采,采采,cǎi cǎi,cǎi~cǎi,cai3~cai3,REDUPLICATION,VISUAL,Shijing,cǎicǎi,different
+粲粲,粲粲,càn càn,càn~càn,can4~can4,REDUPLICATION,VISUAL,Shijing,càncàn,different
+摻摻,掺掺,càn càn,shǎn~shǎn,shan3~shan3,REDUPLICATION,VISUAL+EVALUATION,Shijing,shǎnshǎn,different
+慘慘,惨惨,cǎn cǎn,cǎn~cǎn,can3~can3,REDUPLICATION,FEELING,Shijing,cǎncǎn,different
+慘慘,惨惨,cǎn cǎn,cǎn~cǎn,can3~can3,REDUPLICATION,FEELING,Shijing,cǎncǎn,different
+慘慘,惨惨,cǎn cǎn,cǎn~cǎn,can3~can3,REDUPLICATION,FEELING,Shijing,cǎncǎn,different
+慘慘,惨惨,cǎn cǎn,cǎn~cǎn,can3~can3,REDUPLICATION,FEELING,Shijing,cǎncǎn,different
+憯憯,憯憯,cǎn cǎn,cǎn~cǎn,can3~can3,REDUPLICATION,FEELING,Shijing,cǎncǎn,different
+鶬鶬,鶬鶬,cāng cāng,cāng~cāng,cang1~cang1,REDUPLICATION,SOUND,Shijing,cāngcāng,different
+蒼蒼,苍苍,cāngcāng,cāng~cāng,cang1~cang1,REDUPLICATION,VISUAL,Shijing,cāngcāng,same
+懆懆,懆懆,cǎo cǎo,cǎo~cǎo,cao3~cao3,REDUPLICATION,FEELING,Shijing,cǎocǎo,different
+草草,草草,cǎocǎo,cǎo~cǎo,cao3~cao3,REDUPLICATION,FEELING,Shijing,cǎocǎo,same
+畟畟,畟畟,cè cè,cè~cè,ce4~ce4,REDUPLICATION,TACTILE,Shijing,cècè,different
+參差,参差,cēncī,cān~chà,can1~cha4,ALLITERATION,VISUAL,Shijing,cānchà,different
+參差,参差,cēncī,cān~chà,can1~cha4,ALLITERATION,VISUAL,Shijing,cānchà,different
+參差,参差,cēncī,cān~chà,can1~cha4,ALLITERATION,VISUAL,Shijing,cānchà,different
+差池,差池,chāchí,chà~chí,cha4~chi2,RHYME,VISUAL,Shijing,chàchí,different
+嘽嘽,啴啴,chǎn chǎn,tān~tān,tan1~tan1,REDUPLICATION,SOUND,Shijing,tāntān,different
+嘽嘽,啴啴,chǎn chǎn,tān~tān,tan1~tan1,REDUPLICATION,SOUND+VISUAL,Shijing,tāntān,different
+嘽嘽,啴啴,chǎn chǎn,tān~tān,tan1~tan1,REDUPLICATION,SOUND+VISUAL,Shijing,tāntān,different
+嘽嘽,啴啴,chǎn chǎn,tān~tān,tan1~tan1,REDUPLICATION,SOUND+VISUAL,Shijing,tāntān,different
+嘽嘽,啴啴,chǎn chǎn,tān~tān,tan1~tan1,REDUPLICATION,SOUND+VISUAL,Shijing,tāntān,different
+幝幝,幝幝,chǎn chǎn,chǎn~chǎn,chan3~chan3,REDUPLICATION,VISUAL,Shijing,chǎnchǎn,different
+裳裳,裳裳,cháng cháng,cháng~cháng,chang2~chang2,REDUPLICATION,VISUAL,Shijing,chángcháng,different
+裳裳,裳裳,cháng cháng,cháng~cháng,chang2~chang2,REDUPLICATION,VISUAL,Shijing,chángcháng,different
+裳裳,裳裳,cháng cháng,cháng~cháng,chang2~chang2,REDUPLICATION,VISUAL,Shijing,chángcháng,different
+遲遲,迟迟,chí chí,chí~chí,chi2~chi2,REDUPLICATION,EVALUATION,Shijing,chíchí,different
+遲遲,迟迟,chí chí,chí~chí,chi2~chi2,REDUPLICATION,MOVEMENT,Shijing,chíchí,different
+遲遲,迟迟,chí chí,chí~chí,chi2~chi2,REDUPLICATION,TIME,Shijing,chíchí,different
+遲遲,迟迟,chí chí,chí~chí,chi2~chi2,REDUPLICATION,TIME,Shijing,chíchí,different
+遲遲,迟迟,chí chí,chí~chí,chi2~chi2,REDUPLICATION,TIME+EVALUATION,Shijing,chíchí,different
+蚩蚩,蚩蚩,chī chī,chī~chī,chi1~chi1,REDUPLICATION,VISUAL+EVALUATION,Shijing,chīchī,different
+踟躕,踟蹰,chíchú,chí~chú,chi2~chu2,REDUPLICATION,FEELING,Shijing,chíchú,same
+馳驅,驰驱,chíqū,chí~qū,chi2~qu1,REDUPLICATION,MOVEMENT,Shijing,chíqū,same
+蟲蟲,虫虫,chóng chóng,chóng~chóng,chong2~chong2,REDUPLICATION,TEMPERATURE+EVALUATION,Shijing,chóngchóng,different
+忡忡,忡忡,chōngchōng,chōng~chōng,chong1~chong1,REDUPLICATION,FEELING,Shijing,chōngchōng,same
+忡忡,忡忡,chōngchōng,chōng~chōng,chong1~chong1,REDUPLICATION,FEELING,Shijing,chōngchōng,same
+沖沖,冲冲,chōngchōng,chōng~chōng,chong1~chong1,REDUPLICATION,SOUND,Shijing,chōngchōng,same
+忡忡,忡忡,chōngchōng,chōng~chōng,chong1~chong1,REDUPLICATION,VISUAL,Shijing,chōngchōng,same
+仇仇,仇仇,chóu chóu,chóu~chóu,chou2~chou2,REDUPLICATION,EVALUATION,Shijing,chóuchóu,different
+綢繆,绸缪,chóumóu,chóu~móu,chou2~mou2,RHYME,MOVEMENT+VISUAL,Shijing,chóumóu,same
+綢繆,绸缪,chóumóu,chóu~móu,chou2~mou2,RHYME,MOVEMENT+VISUAL,Shijing,chóumóu,same
+綢繆,绸缪,chóumóu,chóu~móu,chou2~mou2,RHYME,MOVEMENT+VISUAL,Shijing,chóumóu,same
+綢繆,绸缪,chóumóu,chóu~móu,chou2~mou2,RHYME,MOVEMENT+VISUAL,Shijing,chóumóu,same
+倉兄 chuànghua3ng,仓兄 chuànghua3ng,chuànghua3ng,cāng~xiōng~ ~c~h~u~à~n~g~h~u~a~3~n~g,cang1~xiong1~ ~c~h~u~à~n~g~h~u~a~3~n~g,RHYME,FEELING,Shijing,cāngxiōng~ ~c~h~u~à~n~g~h~u~a~3~n~g,different
+楚楚,楚楚,chǔchǔ,chǔ~chǔ,chu3~chu3,REDUPLICATION,VISUAL,Shijing,chǔchǔ,same
+楚楚,楚楚,chǔchǔ,chǔ~chǔ,chu3~chu3,REDUPLICATION,VISUAL,Shijing,chǔchǔ,same
+綽綽,绰绰,chuò chuò,chuò~chuò,chuo4~chuo4,REDUPLICATION,EVALUATION,Shijing,chuòchuò,different
+惙惙,惙惙,chuò chuò,chuò~chuò,chuo4~chuo4,REDUPLICATION,FEELING,Shijing,chuòchuò,different
+佌佌,佌佌,cǐ cǐ,cǐ~cǐ,ci3~ci3,REDUPLICATION,VISUAL,Shijing,cǐcǐ,different
+蹙蹙,蹙蹙,cù cù,cù~cù,cu4~cu4,REDUPLICATION,EVALUATION,Shijing,cùcù,different
+踧踧,踧踧,cù cù,cù~cù,cu4~cu4,REDUPLICATION,VISUAL,Shijing,cùcù,different
+崔崔,崔崔,cuī cuī,cūi~cūi,cui1~cui1,REDUPLICATION,VISUAL,Shijing,cūicūi,different
+崔嵬,崔嵬,cuīwéi,cūi~wéi,cui1~wei2,REDUPLICATION,VISUAL,Shijing,cūiwéi,different
+崔嵬,崔嵬,cuīwéi,cūi~wéi,cui1~wei2,REDUPLICATION,VISUAL,Shijing,cūiwéi,different
+怛怛,怛怛,dá dá,dá~dá,da2~da2,REDUPLICATION,FEELING,Shijing,dádá,different
+旦旦,旦旦,dàn dàn,dàn~dàn,dan4~dan4,REDUPLICATION,EVALUATION,Shijing,dàndàn,different
+蕩蕩,荡荡,dàng dàng,dàng~dàng,dang4~dang4,REDUPLICATION,EVALUATION,Shijing,dàngdàng,different
+忉忉,忉忉,dāo dāo,dāo~dāo,dao1~dao1,REDUPLICATION,FEELING,Shijing,dāodāo,different
+忉忉,忉忉,dāo dāo,dāo~dāo,dao1~dao1,REDUPLICATION,FEELING,Shijing,dāodāo,different
+登登,登登,dēng dēng,dēng~dēng,deng1~deng1,REDUPLICATION,SOUND,Shijing,dēngdēng,different
+滌滌,涤涤,dí dí,dí~dí,di2~di2,REDUPLICATION,VISUAL,Shijing,dídí,different
+棣棣,棣棣,dì dì,dì~dì,di4~di4,REDUPLICATION,EVALUATION,Shijing,dìdì,different
+峨峨/峩峩,峨峨/峩峩,é é,é~é~/~é~é,e2~e2~/~e2~e2,REDUPLICATION,EVALUATION,Shijing,éé~/~é~é,different
+猗儺,猗傩,ē nuó,yī~nuó,yi1~nuo2,DIFFERENT,VISUAL,Shijing,yīnuó,different
+猗儺,猗傩,ē nuó,yī~nuó,yi1~nuo2,DIFFERENT,VISUAL,Shijing,yīnuó,different
+猗儺,猗傩,ē nuó,yī~nuó,yi1~nuo2,DIFFERENT,VISUAL,Shijing,yīnuó,different
+耳耳,耳耳,ěr ěr,ěr~ěr,er3~er3,REDUPLICATION,VISUAL,Shijing,ěrěr,different
+茷茷,茷茷,fá fá,fá~fá,fa2~fa2,REDUPLICATION,MOVEMENT+VISUAL,Shijing,fáfá,different
+發發 bō bō,发发 bō bō,fā fā,fā~fā~ ~b~ō~ ~b~ō,fa1~fa1~ ~b~ō~ ~b~ō,REDUPLICATION,SOUND+MOVEMENT,Shijing,fāfā~ ~b~ō~ ~b~ō,different
+發發 bō bō,发发 bō bō,fā fā,fā~fā~ ~b~ō~ ~b~ō,fa1~fa1~ ~b~ō~ ~b~ō,REDUPLICATION,SOUND+MOVEMENT,Shijing,fāfā~ ~b~ō~ ~b~ō,different
+發發 bō bō,发发 bō bō,fā fā,fā~fā~ ~b~ō~ ~b~ō,fa1~fa1~ ~b~ō~ ~b~ō,REDUPLICATION,VISUAL,Shijing,fāfā~ ~b~ō~ ~b~ō,different
+反反,反反,fǎn fǎn,fǎn~fǎn,fan3~fan3,REDUPLICATION,EVALUATION,Shijing,fǎnfǎn,different
+反反,反反,fǎn fǎn,fǎn~fǎn,fan3~fan3,REDUPLICATION,EVALUATION,Shijing,fǎnfǎn,different
+幡幡,幡幡,fān fān,fān~fān,fan1~fan1,REDUPLICATION,EVALUATION,Shijing,fānfān,different
+幡幡,幡幡,fān fān,fān~fān,fan1~fan1,REDUPLICATION,MOVEMENT,Shijing,fānfān,different
+幡幡,幡幡,fān fān,fān~fān,fan1~fan1,REDUPLICATION,MOVEMENT,Shijing,fānfān,different
+汎汎,泛泛,fànfàn,fàn~fàn,fan4~fan4,REDUPLICATION,MOVEMENT,Shijing,fànfàn,same
+汎汎,泛泛,fànfàn,fàn~fàn,fan4~fan4,REDUPLICATION,MOVEMENT,Shijing,fànfàn,same
+汎汎,泛泛,fànfàn,fàn~fàn,fan4~fan4,REDUPLICATION,MOVEMENT,Shijing,fànfàn,same
+汎汎,泛泛,fànfàn,fàn~fàn,fan4~fan4,REDUPLICATION,MOVEMENT,Shijing,fànfàn,same
+肺肺 pèi pèi,肺肺 pèi pèi,fèi fèi,fèi~fèi~ ~p~è~i~ ~p~è~i,fei4~fei4~ ~p~è~i~ ~p~è~i,REDUPLICATION,VISUAL,Shijing,fèifèi~ ~p~è~i~ ~p~è~i,different
+霏霏,霏霏,fēi fēi,fēi~fēi,fei1~fei1,REDUPLICATION,VISUAL,Shijing,fēifēi,different
+騑騑,騑騑,fēifēi,fēi~fēi,fei1~fei1,REDUPLICATION,MOVEMENT,Shijing,fēifēi,same
+騑騑,騑騑,fēifēi,fēi~fēi,fei1~fei1,REDUPLICATION,MOVEMENT,Shijing,fēifēi,same
+騑騑,騑騑,fēifēi,fēi~fēi,fei1~fei1,REDUPLICATION,MOVEMENT,Shijing,fēifēi,same
+芬芬,芬芬,fēn fēn,fēn~fēn,fen1~fen1,REDUPLICATION,SMELL,Shijing,fēnfēn,different
+芬芬,芬芬,fēn fēn,fēn~fēn,fen1~fen1,REDUPLICATION,SMELL,Shijing,fēnfēn,different
+雰雰,氛氛,fēn fēn,fēn~fēn,fen1~fen1,REDUPLICATION,VISUAL,Shijing,fēnfēn,different
+馮馮,冯冯,féng féng,féng~féng,feng2~feng2,REDUPLICATION,SOUND,Shijing,féngféng,different
+逢逢 péng péng,逢逢 péng péng,féng féng,féng~féng~ ~p~é~n~g~ ~p~é~n~g,feng2~feng2~ ~p~é~n~g~ ~p~é~n~g,REDUPLICATION,SOUND,Shijing,féngféng~ ~p~é~n~g~ ~p~é~n~g,different
+唪唪,唪唪,fěng fěng,fěng~fěng,feng3~feng3,REDUPLICATION,VISUAL,Shijing,fěngfěng,different
+浮浮,浮浮,fú fú,fú~fú,fu2~fu2,REDUPLICATION,MOVEMENT+VISUAL,Shijing,fúfú,different
+弗弗,弗弗,fú fú,fú~fú,fu2~fu2,REDUPLICATION,SOUND+MOVEMENT,Shijing,fúfú,different
+浮浮,浮浮,fú fú,fú~fú,fu2~fu2,REDUPLICATION,VISUAL,Shijing,fúfú,different
+浮浮,浮浮,fú fú,fú~fú,fu2~fu2,REDUPLICATION,VISUAL,Shijing,fúfú,different
+茀茀,茀茀,fú fú,fú~fú,fu2~fu2,REDUPLICATION,VISUAL,Shijing,fúfú,different
+甫甫,甫甫,fǔ fǔ,fǔ~fǔ,fu3~fu3,REDUPLICATION,VISUAL,Shijing,fǔfǔ,different
+杲杲,杲杲,gǎo gǎo,gǎo~gǎo,gao3~gao3,REDUPLICATION,VISUAL,Shijing,gǎogǎo,different
+皐皐/臯臯,皋皋/皋皋,gāo gāo,gāo~gāo~/~gāo~gāo,gao1~gao1~/~gao1~gao1,REDUPLICATION,EVALUATION,Shijing,gāogāo~/~gāo~gāo,different
+高高,高高,gāo gāo,gāo~gāo,gao1~gao1,REDUPLICATION,VISUAL,Shijing,gāogāo,different
+閣閤,阁合,gé hé,gé~gé,ge2~ge2,REDUPLICATION,VISUAL,Shijing,gégé,different
+耿耿,耿耿,gěnggěng,gěng~gěng,geng3~geng3,REDUPLICATION,FEELING,Shijing,gěnggěng,same
+灌灌,灌灌,guàn guàn,guàn~guàn,guan4~guan4,REDUPLICATION,EVALUATION,Shijing,guànguàn,different
+管管,管管,guǎn guǎn,guǎn~guǎn,guan3~guan3,REDUPLICATION,FEELING,Shijing,guǎnguǎn,different
+痯痯,痯痯,guǎn guǎn,guǎn~guǎn,guan3~guan3,REDUPLICATION,VISUAL+EVALUATION,Shijing,guǎnguǎn,different
+關關,关关,guān guān,guān~guān,guan1~guan1,REDUPLICATION,SOUND,Shijing,guānguān,different
+洸洸,洸洸,guāng guāng,guāng~guāng,guang1~guang1,REDUPLICATION,EVALUATION,Shijing,guāngguāng,different
+浩浩,浩浩,hào hào,hào~hào,hao4~hao4,REDUPLICATION,VISUAL,Shijing,hàohào,different
+好好,好好,hǎohǎo,hǎo~hǎo,hao3~hao3,REDUPLICATION,FEELING,Shijing,hǎohǎo,same
+翯翯,翯翯,hè hè,hè~hè,he4~he4,REDUPLICATION,VISUAL,Shijing,hèhè,different
+熇熇,熇熇,hè hè,hè~hè,he4~he4,REDUPLICATION,VISUAL+EVALUATION,Shijing,hèhè,different
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,EVALUATION,Shijing,hèhè,same
+赫赫,赫赫,hèhè,hè~hè,he4~he4,REDUPLICATION,VISUAL,Shijing,hèhè,same
+薨薨,薨薨,hōng hōng,hōng~hōng,hong1~hong1,REDUPLICATION,SOUND,Shijing,hōnghōng,different
+薨薨,薨薨,hōng hōng,hōng~hōng,hong1~hong1,REDUPLICATION,SOUND,Shijing,hōnghōng,different
+薨薨,薨薨,hōng hōng,hōng~hōng,hong1~hong1,REDUPLICATION,SOUND,Shijing,hōnghōng,different
+膴膴,膴膴,hū hū,hū~hū,hu1~hu1,REDUPLICATION,VISUAL,Shijing,hūhū,different
+許許,许许,hǔ hǔ ,xǔ~xǔ,xu3~xu3,REDUPLICATION,SOUND,Shijing,xǔxǔ,different
+桓桓,桓桓,huán huán,huán~huán,huan2~huan2,REDUPLICATION,EVALUATION,Shijing,huánhuán,different
+桓桓,桓桓,huán huán,huán~huán,huan2~huan2,REDUPLICATION,EVALUATION,Shijing,huánhuán,different
+嬛嬛,嬛嬛,huán huán,huán~huán,huan2~huan2,REDUPLICATION,VISUAL+EVALUATION,Shijing,huánhuán,different
+渙渙,涣涣,huàn huàn,huàn~huàn,huan4~huan4,REDUPLICATION,VISUAL,Shijing,huànhuàn,different
+喤喤,喤喤,huáng huáng,huáng~huáng,huang2~huang2,REDUPLICATION,SOUND,Shijing,huánghuáng,different
+喤喤,喤喤,huáng huáng,huáng~huáng,huang2~huang2,REDUPLICATION,SOUND,Shijing,huánghuáng,different
+喤喤,喤喤,huáng huáng,huáng~huáng,huang2~huang2,REDUPLICATION,SOUND,Shijing,huánghuáng,different
+黃黃,黄黄,huáng huáng,huáng~huáng,huang2~huang2,REDUPLICATION,VISUAL,Shijing,huánghuáng,different
+皇皇,皇皇,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,EVALUATION,Shijing,huánghuáng,same
+皇皇,皇皇,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,EVALUATION,Shijing,huánghuáng,same
+皇皇,皇皇,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,EVALUATION,Shijing,huánghuáng,same
+皇皇,皇皇,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,VISUAL,Shijing,huánghuáng,same
+煌煌,煌煌,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,VISUAL,Shijing,huánghuáng,same
+煌煌,煌煌,huánghuáng,huáng~huáng,huang2~huang2,REDUPLICATION,VISUAL,Shijing,huánghuáng,same
+嘒嘒,嘒嘒,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND,Shijing,hùihùi,different
+嘒嘒,嘒嘒,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND,Shijing,hùihùi,different
+濊濊,濊濊,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND,Shijing,hùihùi,different
+噦噦,哕哕,huì huì,yuě~yuě,yue3~yue3,REDUPLICATION,SOUND,Shijing,yuěyuě,different
+嘒嘒,嘒嘒,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND,Shijing,hùihùi,different
+噦噦,哕哕,huì huì,yuě~yuě,yue3~yue3,REDUPLICATION,SOUND,Shijing,yuěyuě,different
+翽翽,翙翙,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND+MOVEMENT,Shijing,hùihùi,different
+翽翽,翙翙,huì huì,hùi~hùi,hui4~hui4,REDUPLICATION,SOUND+MOVEMENT,Shijing,hùihùi,different
+噦噦,哕哕,huì huì,yuě~yuě,yue3~yue3,REDUPLICATION,VISUAL,Shijing,yuěyuě,different
+虺虺,虺虺,huī huī,hǔi~hǔi,hui3~hui3,REDUPLICATION,SOUND,Shijing,hǔihǔi,different
+活活,活活,huóhuó,huó~huó,huo2~huo2,REDUPLICATION,MOVEMENT,Shijing,huóhuó,same
+踖踖,踖踖,jí jí,jí~jí,ji2~ji2,REDUPLICATION,EVALUATION,Shijing,jíjí,different
+濈濈,濈濈,jí jí,jí~jí,ji2~ji2,REDUPLICATION,VISUAL,Shijing,jíjí,different
+伎伎,伎伎,jì jì,jì~jì,ji4~ji4,REDUPLICATION,MOVEMENT,Shijing,jìjì,different
+几几,几几,jǐ jǐ,jī~jī,ji1~ji1,REDUPLICATION,EVALUATION,Shijing,jījī,different
+緝緝,缉缉,jī jī,jī~jī,ji1~ji1,REDUPLICATION,SOUND,Shijing,jījī,different
+間關/閒關,间关/闲关,jiān guān,jiān~guān~/~xián~guān,jian1~guan1~/~xian2~guan1,PARARHYME,SOUND+MOVEMENT,Shijing,jiānguān~/~xián~guān,different
+簡簡,简简,jiǎn jiǎn,jiǎn~jiǎn,jian3~jian3,REDUPLICATION,SOUND,Shijing,jiǎnjiǎn,different
+簡簡,简简,jiǎn jiǎn,jiǎn~jiǎn,jian3~jian3,REDUPLICATION,VISUAL,Shijing,jiǎnjiǎn,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,SOUND,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,SOUND,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,SOUND,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,SOUND+VISUAL,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,SOUND+VISUAL,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,VISUAL,Shijing,jiāngjiāng,different
+將將,将将,jiāng jiāng,jiāng~jiāng,jiang1~jiang1,REDUPLICATION,VISUAL,Shijing,jiāngjiāng,different
+漸漸,渐渐,jiànjiàn,jiàn~jiàn,jian4~jian4,REDUPLICATION,VISUAL,Shijing,jiànjiàn,same
+漸漸,渐渐,jiànjiàn,jiàn~jiàn,jian4~jian4,REDUPLICATION,VISUAL,Shijing,jiànjiàn,same
+蹻蹻,蹻蹻,jiǎo jiǎo,qiāo~qiāo,qiao1~qiao1,REDUPLICATION,EVALUATION,Shijing,qiāoqiāo,different
+蹻蹻,蹻蹻,jiǎo jiǎo,qiāo~qiāo,qiao1~qiao1,REDUPLICATION,EVALUATION,Shijing,qiāoqiāo,different
+皎皎,皎皎,jiǎo jiǎo,jiǎo~jiǎo,jiao3~jiao3,REDUPLICATION,VISUAL,Shijing,jiǎojiǎo,different
+皎皎,皎皎,jiǎo jiǎo,jiǎo~jiǎo,jiao3~jiao3,REDUPLICATION,VISUAL,Shijing,jiǎojiǎo,different
+皎皎,皎皎,jiǎo jiǎo,jiǎo~jiǎo,jiao3~jiao3,REDUPLICATION,VISUAL,Shijing,jiǎojiǎo,different
+皎皎,皎皎,jiǎo jiǎo,jiǎo~jiǎo,jiao3~jiao3,REDUPLICATION,VISUAL,Shijing,jiǎojiǎo,different
+蹻蹻,蹻蹻,jiǎo jiǎo,qiāo~qiāo,qiao1~qiao1,REDUPLICATION,VISUAL+EVALUATION,Shijing,qiāoqiāo,different
+蹻蹻,蹻蹻,jiǎo jiǎo,qiāo~qiāo,qiao1~qiao1,REDUPLICATION,VISUAL+EVALUATION,Shijing,qiāoqiāo,different
+蹻蹻,蹻蹻,jiǎo jiǎo,qiāo~qiāo,qiao1~qiao1,REDUPLICATION,VISUAL+EVALUATION,Shijing,qiāoqiāo,different
+膠膠,胶胶,jiāo jiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,SOUND,Shijing,jiāojiāo,different
+驕驕,骄骄,jiāo jiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,VISUAL,Shijing,jiāojiāo,different
+矯矯,矫矫,jiǎojiǎo,jiǎo~jiǎo,jiao3~jiao3,REDUPLICATION,VISUAL+EVALUATION,Shijing,jiǎojiǎo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+交交,交交,jiāojiāo,jiāo~jiāo,jiao1~jiao1,REDUPLICATION,MOVEMENT,Shijing,jiāojiāo,same
+捷捷,捷捷,jié jié,jié~jié,jie2~jie2,REDUPLICATION,FEELING,Shijing,jiéjié,different
+捷捷,捷捷,jié jié,jié~jié,jie2~jie2,REDUPLICATION,FEELING,Shijing,jiéjié,different
+桀桀,桀桀,jié jié,jié~jié,jie2~jie2,REDUPLICATION,VISUAL,Shijing,jiéjié,different
+湝湝,湝湝,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,MOVEMENT,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+喈喈,喈喈,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND,Shijing,jiējiē,different
+嗟嗟,嗟嗟,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND+FEELING,Shijing,jiējiē,different
+嗟嗟,嗟嗟,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND+FEELING,Shijing,jiējiē,different
+嗟嗟,嗟嗟,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,SOUND+FEELING,Shijing,jiējiē,different
+揭揭,揭揭,jiē jiē,jiē~jiē,jie1~jie1,REDUPLICATION,VISUAL,Shijing,jiējiē,different
+孑孑,孑孑,jiéjié,jié~jié,jie2~jie2,REDUPLICATION,VISUAL,Shijing,jiéjié,same
+孑孑,孑孑,jiéjié,jié~jié,jie2~jie2,REDUPLICATION,VISUAL,Shijing,jiéjié,same
+孑孑,孑孑,jiéjié,jié~jié,jie2~jie2,REDUPLICATION,VISUAL,Shijing,jiéjié,same
+拮据,拮据,jiéjū,jié~jù,jie2~ju4,ALLITERATION,VISUAL,Shijing,jiéjù,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,EVALUATION,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,EVALUATION,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,EVALUATION,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL+EVALUATION,Shijing,jìjì,different
+濟濟,济济,jǐjǐ,jì~jì,ji4~ji4,REDUPLICATION,VISUAL+EVALUATION,Shijing,jìjì,different
+矜矜,矜矜,jīn jīn,jīn~jīn,jin1~jin1,REDUPLICATION,EVALUATION,Shijing,jīnjīn,different
+兢兢,兢兢,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,FEELING,Shijing,jīngjīng,different
+兢兢,兢兢,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,FEELING,Shijing,jīngjīng,different
+兢兢,兢兢,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,FEELING,Shijing,jīngjīng,different
+兢兢,兢兢,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,FEELING,Shijing,jīngjīng,different
+菁菁,菁菁,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,VISUAL,Shijing,jīngjīng,different
+菁菁,菁菁,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,VISUAL,Shijing,jīngjīng,different
+兢兢,兢兢,jīng jīng,jīng~jīng,jing1~jing1,REDUPLICATION,VISUAL+EVALUATION,Shijing,jīngjīng,different
+京京,京京,jīngjīng,jīng~jīng,jing1~jing1,REDUPLICATION,FEELING,Shijing,jīngjīng,same
+菁菁,菁菁,jīngjīng,jīng~jīng,jing1~jing1,REDUPLICATION,VISUAL,Shijing,jīngjīng,same
+菁菁,菁菁,jīngjīng,jīng~jīng,jing1~jing1,REDUPLICATION,VISUAL,Shijing,jīngjīng,same
+斤斤,斤斤,jīnjīn,jīn~jīn,jin1~jin1,REDUPLICATION,EVALUATION,Shijing,jīnjīn,same
+駉駉,駉駉,jiōng jiōng,jiōng~jiōng,jiong1~jiong1,REDUPLICATION,VISUAL+EVALUATION,Shijing,jiōngjiōng,different
+駉駉,駉駉,jiōng jiōng,jiōng~jiōng,jiong1~jiong1,REDUPLICATION,VISUAL+EVALUATION,Shijing,jiōngjiōng,different
+駉駉,駉駉,jiōng jiōng,jiōng~jiōng,jiong1~jiong1,REDUPLICATION,VISUAL+EVALUATION,Shijing,jiōngjiōng,different
+駉駉,駉駉,jiōng jiōng,jiōng~jiōng,jiong1~jiong1,REDUPLICATION,VISUAL+EVALUATION,Shijing,jiōngjiōng,different
+究究,究究,jiū jiū,jīu~jīu,jiu1~jiu1,REDUPLICATION,EVALUATION,Shijing,jīujīu,different
+糾糾,纠纠,jiū jiū,jīu~jīu,jiu1~jiu1,REDUPLICATION,VISUAL,Shijing,jīujīu,different
+糾糾,纠纠,jiū jiū,jīu~jīu,jiu1~jiu1,REDUPLICATION,VISUAL,Shijing,jīujīu,different
+赳赳,赳赳,jiū jiū,jǐu~jǐu,jiu3~jiu3,REDUPLICATION,VISUAL+EVALUATION,Shijing,jǐujǐu,different
+赳赳,赳赳,jiū jiū,jǐu~jǐu,jiu3~jiu3,REDUPLICATION,VISUAL+EVALUATION,Shijing,jǐujǐu,different
+赳赳,赳赳,jiū jiū,jǐu~jǐu,jiu3~jiu3,REDUPLICATION,VISUAL+EVALUATION,Shijing,jǐujǐu,different
+瞿瞿,瞿瞿,jù jù,jù~jù,ju4~ju4,REDUPLICATION,VISUAL,Shijing,jùjù,different
+瞿瞿,瞿瞿,jù jù,jù~jù,ju4~ju4,REDUPLICATION,VISUAL,Shijing,jùjù,different
+踽踽,踽踽,jǔ jǔ,jǔ~jǔ,ju3~ju3,REDUPLICATION,FEELING,Shijing,jǔjǔ,different
+居居,居居,jū jū,jū~jū,ju1~ju1,REDUPLICATION,EVALUATION,Shijing,jūjū,different
+沮洳,沮洳,jù rù,jū~rù,ju1~ru4,REDUPLICATION,VISUAL,Shijing,jūrù,different
+睠睠,眷眷,juànjuàn,juàn~juàn,juan4~juan4,REDUPLICATION,VISUAL,Shijing,juànjuàn,same
+蹶蹶,蹶蹶,jué jué,jué~jué,jue2~jue2,REDUPLICATION,EVALUATION,Shijing,juéjué,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+豈弟,岂弟,kǎi tì,qǐ~dì,qi3~di4,RHYME,EVALUATION,Shijing,qǐdì,different
+坎坎,坎坎,kǎn kǎn,kǎn~kǎn,kan3~kan3,REDUPLICATION,SOUND,Shijing,kǎnkǎn,different
+坎坎,坎坎,kǎn kǎn,kǎn~kǎn,kan3~kan3,REDUPLICATION,SOUND,Shijing,kǎnkǎn,different
+坎坎,坎坎,kǎn kǎn,kǎn~kǎn,kan3~kan3,REDUPLICATION,SOUND,Shijing,kǎnkǎn,different
+坎坎,坎坎,kǎn kǎn,kǎn~kǎn,kan3~kan3,REDUPLICATION,SOUND,Shijing,kǎnkǎn,different
+檻檻 jiàn jiàn,槛槛 jiàn jiàn,kǎn kǎn,jiàn~jiàn~ ~j~i~à~n~ ~j~i~à~n,jian4~jian4~ ~j~i~à~n~ ~j~i~à~n,REDUPLICATION,SOUND+MOVEMENT,Shijing,jiànjiàn~ ~j~i~à~n~ ~j~i~à~n,different
+噲噲,哙哙,kuài kuài,kuài~kuài,kuai4~kuai4,REDUPLICATION,VISUAL,Shijing,kuàikuài,different
+騤騤,騤騤,kuí kuí,kúi~kúi,kui2~kui2,REDUPLICATION,VISUAL,Shijing,kúikúi,different
+騤騤,騤騤,kuí kuí,kúi~kúi,kui2~kui2,REDUPLICATION,VISUAL,Shijing,kúikúi,different
+騤騤,騤騤,kuí kuí,kúi~kúi,kui2~kui2,REDUPLICATION,VISUAL+EVALUATION,Shijing,kúikúi,different
+騤騤,騤騤,kuí kuí,kúi~kúi,kui2~kui2,REDUPLICATION,VISUAL+EVALUATION,Shijing,kúikúi,different
+潰潰,溃溃,kuì kuì,kùi~kùi,kui4~kui4,REDUPLICATION,EVALUATION,Shijing,kùikùi,different
+離離,离离,lí lí,lí~lí,li2~li2,REDUPLICATION,VISUAL,Shijing,lílí,different
+離離,离离,lí lí,lí~lí,li2~li2,REDUPLICATION,VISUAL,Shijing,lílí,different
+離離,离离,lí lí,lí~lí,li2~li2,REDUPLICATION,VISUAL,Shijing,lílí,different
+離離,离离,lí lí,lí~lí,li2~li2,REDUPLICATION,VISUAL,Shijing,lílí,different
+栗栗,栗栗,lì lì,lì~lì,li4~li4,REDUPLICATION,VISUAL,Shijing,lìlì,different
+栗烈,栗烈,lì liè,lì~liè,li4~lie4,PARARHYME,TEMPERATURE,Shijing,lìliè,different
+漣漣,涟涟,lián lián,lián~lián,lian2~lian2,REDUPLICATION,VISUAL,Shijing,liánlián,different
+連連,连连,liánlián,lián~lián,lian2~lian2,REDUPLICATION,VISUAL,Shijing,liánlián,same
+蓼蓼,蓼蓼,liǎo liǎo,liǎo~liǎo,liao3~liao3,REDUPLICATION,VISUAL,Shijing,liǎoliǎo,different
+蓼蓼,蓼蓼,liǎo liǎo,liǎo~liǎo,liao3~liao3,REDUPLICATION,VISUAL,Shijing,liǎoliǎo,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,EVALUATION,Shijing,lièliè,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,FEELING,Shijing,lièliè,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,TEMPERATURE+EVALUATION,Shijing,lièliè,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,VISUAL,Shijing,lièliè,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,VISUAL+EVALUATION,Shijing,lièliè,different
+烈烈,烈烈,liè liè,liè~liè,lie4~lie4,REDUPLICATION,VISUAL+EVALUATION,Shijing,lièliè,different
+鄰鄰,邻邻,lín lín,lín~lín,lin2~lin2,REDUPLICATION,SOUND+VISUAL,Shijing,línlín,different
+粼粼,粼粼,lín lín,lín~lín,lin2~lin2,REDUPLICATION,VISUAL,Shijing,línlín,different
+令令,令令,lìng lìng,lìng~lìng,ling4~ling4,REDUPLICATION,SOUND,Shijing,lìnglìng,different
+流離,流离,liúlí,líu~lí,liu2~li2,ALLITERATION,MOVEMENT,Shijing,líulí,different
+律律,律律,lǜ lǜ,lv̀~lv̀,lv4~lv4,REDUPLICATION,VISUAL,Shijing,lv̀lv̀,different
+欒欒,栾栾,luán luán,luán~luán,luan2~luan2,REDUPLICATION,VISUAL,Shijing,luánluán,different
+亂離,乱离,luànlí,luàn~lí,luan4~li2,ALLITERATION,EVALUATION,Shijing,luànlí,same
+邁邁,迈迈,mài mài,mài~mài,mai4~mai4,REDUPLICATION,FEELING+EVALUATION,Shijing,màimài,different
+霢霂,霡霂,mài mù,mài~mù,mai4~mu4,ALLITERATION,VISUAL,Shijing,màimù,different
+芒芒,芒芒,máng máng,máng~máng,mang2~mang2,REDUPLICATION,VISUAL,Shijing,mángmáng,different
+芒芒,芒芒,máng máng,máng~máng,mang2~mang2,REDUPLICATION,VISUAL+EVALUATION,Shijing,mángmáng,different
+枚枚,枚枚,méi méi,méi~méi,mei2~mei2,REDUPLICATION,VISUAL,Shijing,méiméi,different
+浼浼,浼浼,měi měi,měi~měi,mei3~mei3,REDUPLICATION,MOVEMENT,Shijing,měiměi,different
+亹亹,亹亹,mén mén,wěi~wěi,wei3~wei3,REDUPLICATION,EVALUATION,Shijing,wěiwěi,different
+亹亹,亹亹,mén mén,wěi~wěi,wei3~wei3,REDUPLICATION,EVALUATION,Shijing,wěiwěi,different
+幪幪,幪幪,méng méng,méng~méng,meng2~meng2,REDUPLICATION,VISUAL,Shijing,méngméng,different
+夢夢,梦梦,mèng mèng,mèng~mèng,meng4~meng4,REDUPLICATION,VISUAL,Shijing,mèngmèng,different
+夢夢,梦梦,mèng mèng,mèng~mèng,meng4~meng4,REDUPLICATION,VISUAL,Shijing,mèngmèng,different
+瀰瀰,弥弥,mí mí,mí~mí,mi2~mi2,REDUPLICATION,VISUAL,Shijing,mímí,different
+緜蠻 / 綿蠻,绵蛮 / 绵蛮,mián mán,mián~mán~ ~/~ ~mián~mán,mian2~man2~ ~/~ ~mian2~man2,ALLITERATION,VISUAL,Shijing,miánmán~ ~/~ ~mián~mán,different
+緜蠻 / 綿蠻,绵蛮 / 绵蛮,mián mán,mián~mán~ ~/~ ~mián~mán,mian2~man2~ ~/~ ~mian2~man2,ALLITERATION,VISUAL,Shijing,miánmán~ ~/~ ~mián~mán,different
+緜蠻 / 綿蠻,绵蛮 / 绵蛮,mián mán,mián~mán~ ~/~ ~mián~mán,mian2~man2~ ~/~ ~mian2~man2,ALLITERATION,VISUAL,Shijing,miánmán~ ~/~ ~mián~mán,different
+勉勉,勉勉,miǎn miǎn,miǎn~miǎn,mian3~mian3,REDUPLICATION,EVALUATION,Shijing,miǎnmiǎn,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+緜緜/綿綿,绵绵/绵绵,miánmián,mián~mián~/~mián~mián,mian2~mian2~/~mian2~mian2,REDUPLICATION,VISUAL,Shijing,miánmián~/~mián~mián,different
+藐藐,藐藐,miǎo miǎo,miǎo~miǎo,miao3~miao3,REDUPLICATION,EVALUATION,Shijing,miǎomiǎo,different
+藐藐,藐藐,miǎo miǎo,miǎo~miǎo,miao3~miao3,REDUPLICATION,EVALUATION,Shijing,miǎomiǎo,different
+藐藐,藐藐,miǎo miǎo,miǎo~miǎo,miao3~miao3,REDUPLICATION,VISUAL+EVALUATION,Shijing,miǎomiǎo,different
+靡靡,靡靡,mímí,mǐ~mǐ,mi3~mi3,REDUPLICATION,MOVEMENT,Shijing,mǐmǐ,different
+靡靡,靡靡,mímí,mǐ~mǐ,mi3~mi3,REDUPLICATION,MOVEMENT,Shijing,mǐmǐ,different
+靡靡,靡靡,mímí,mǐ~mǐ,mi3~mi3,REDUPLICATION,MOVEMENT,Shijing,mǐmǐ,different
+冥冥,冥冥,míng míng,míng~míng,ming2~ming2,REDUPLICATION,VISUAL,Shijing,míngmíng,different
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,EVALUATION,Shijing,míngmíng,same
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,EVALUATION,Shijing,míngmíng,same
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,EVALUATION,Shijing,míngmíng,same
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,EVALUATION,Shijing,míngmíng,same
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,EVALUATION,Shijing,míngmíng,same
+明明,明明,míngmíng,míng~míng,ming2~ming2,REDUPLICATION,VISUAL,Shijing,míngmíng,same
+莫莫,莫莫,mò mò,mò~mò,mo4~mo4,REDUPLICATION,EVALUATION,Shijing,mòmò,different
+莫莫,莫莫,mò mò,mò~mò,mo4~mo4,REDUPLICATION,VISUAL,Shijing,mòmò,different
+莫莫,莫莫,mò mò,mò~mò,mo4~mo4,REDUPLICATION,VISUAL,Shijing,mòmò,different
+穆穆,穆穆,mù mù,mù~mù,mu4~mu4,REDUPLICATION,EVALUATION,Shijing,mùmù,different
+穆穆,穆穆,mù mù,mù~mù,mu4~mu4,REDUPLICATION,EVALUATION,Shijing,mùmù,different
+穆穆,穆穆,mù mù,mù~mù,mu4~mu4,REDUPLICATION,EVALUATION,Shijing,mùmù,different
+穆穆,穆穆,mù mù,mù~mù,mu4~mu4,REDUPLICATION,EVALUATION,Shijing,mùmù,different
+穆穆,穆穆,mù mù,mù~mù,mu4~mu4,REDUPLICATION,EVALUATION,Shijing,mùmù,different
+泥泥,泥泥,ní ní,ní~ní,ni2~ni2,REDUPLICATION,VISUAL,Shijing,níní,different
+泥泥,泥泥,ní ní,ní~ní,ni2~ni2,REDUPLICATION,VISUAL,Shijing,níní,different
+濔濔,沵沵,nǐ nǐ,mǐ~mǐ,mi3~mi3,REDUPLICATION,VISUAL,Shijing,mǐmǐ,different
+薿薿,薿薿,nǐ nǐ,nǐ~nǐ,ni3~ni3,REDUPLICATION,VISUAL,Shijing,nǐnǐ,different
+孽孽,孽孽,niè niè,niè~niè,nie4~nie4,REDUPLICATION,VISUAL+EVALUATION,Shijing,nièniè,different
+濃濃,浓浓,nóng nóng,nóng~nóng,nong2~nong2,REDUPLICATION,VISUAL,Shijing,nóngnóng,different
+謔謔,谑谑,nüè nüè,nvè~nvè,nve4~nve4,REDUPLICATION,EVALUATION,Shijing,nvènvè,different
+旁旁,旁旁,páng páng,páng~páng,pang2~pang2,REDUPLICATION,MOVEMENT,Shijing,pángpáng,different
+龐龐 bēng bēng,庞庞 bēng bēng,páng páng,páng~páng~ ~b~ē~n~g~ ~b~ē~n~g,pang2~pang2~ ~b~ē~n~g~ ~b~ē~n~g,REDUPLICATION,VISUAL,Shijing,pángpáng~ ~b~ē~n~g~ ~b~ē~n~g,different
+麃麃,麃麃,páo páo,biāo~biāo,biao1~biao1,REDUPLICATION,VISUAL+EVALUATION,Shijing,biāobiāo,different
+炰烋 páoxiáo,炰烋 páoxiáo,páoxiáo,páo~xiāo~ ~p~á~o~x~i~á~o,pao2~xiao1~ ~p~á~o~x~i~á~o,RHYME,EVALUATION,Shijing,páoxiāo~ ~p~á~o~x~i~á~o,different
+斾斾/旆旆,斾斾/旆旆,pèi pèi,pèi~pèi~/~pèi~pèi,pei4~pei4~/~pei4~pei4,REDUPLICATION,MOVEMENT,Shijing,pèipèi~/~pèi~pèi,different
+斾斾/旆旆,斾斾/旆旆,pèi pèi,pèi~pèi~/~pèi~pèi,pei4~pei4~/~pei4~pei4,REDUPLICATION,VISUAL,Shijing,pèipèi~/~pèi~pèi,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,EVALUATION,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,EVALUATION,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,MOVEMENT,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,MOVEMENT,Shijing,péngpéng,different
+芃芃,芃芃,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+芃芃,芃芃,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+蓬蓬,蓬蓬,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+芃芃,芃芃,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+芃芃,芃芃,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL,Shijing,péngpéng,different
+彭彭,彭彭,péng péng,péng~péng,peng2~peng2,REDUPLICATION,VISUAL+EVALUATION,Shijing,péngpéng,different
+淠淠 pèi pèi,淠淠 pèi pèi,pì pì,pì~pì~ ~p~è~i~ ~p~è~i,pi4~pi4~ ~p~è~i~ ~p~è~i,REDUPLICATION,MOVEMENT,Shijing,pìpì~ ~p~è~i~ ~p~è~i,different
+淠淠,淠淠,pì pì,pì~pì,pi4~pi4,REDUPLICATION,MOVEMENT,Shijing,pìpì,different
+淠淠 pèi pèi,淠淠 pèi pèi,pì pì,pì~pì~ ~p~è~i~ ~p~è~i,pi4~pi4~ ~p~è~i~ ~p~è~i,REDUPLICATION,VISUAL,Shijing,pìpì~ ~p~è~i~ ~p~è~i,different
+淠淠,淠淠,pì pì,pì~pì,pi4~pi4,REDUPLICATION,VISUAL,Shijing,pìpì,different
+伾伾,伾伾,pī pī,pī~pī,pi1~pi1,REDUPLICATION,VISUAL+EVALUATION,Shijing,pīpī,different
+翩翩,翩翩,piānpiān,piān~piān,pian1~pian1,REDUPLICATION,MOVEMENT,Shijing,piānpiān,same
+翩翩,翩翩,piānpiān,piān~piān,pian1~pian1,REDUPLICATION,MOVEMENT,Shijing,piānpiān,same
+翩翩,翩翩,piānpiān,piān~piān,pian1~pian1,REDUPLICATION,MOVEMENT,Shijing,piānpiān,same
+翩翩,翩翩,piānpiān,piān~piān,pian1~pian1,REDUPLICATION,MOVEMENT,Shijing,piānpiān,same
+漂搖,漂摇,piào yáo,piāo~yáo,piao1~yao2,RHYME,MOVEMENT,Shijing,piāoyáo,different
+平平,平平,píngpíng,píng~píng,ping2~ping2,REDUPLICATION,EVALUATION,Shijing,píngpíng,same
+匍匐,匍匐,púfú,pú~fú,pu2~fu2,ALLITERATION,MOVEMENT,Shijing,púfú,same
+匍匐,匍匐,púfú,pú~fú,pu2~fu2,ALLITERATION,MOVEMENT,Shijing,púfú,same
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,MOVEMENT,Shijing,qíqí,different
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,MOVEMENT,Shijing,qíqí,different
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,MOVEMENT,Shijing,qíqí,different
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,VISUAL,Shijing,qíqí,different
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,VISUAL,Shijing,qíqí,different
+祁祁,祁祁,qí qí,qí~qí,qi2~qi2,REDUPLICATION,VISUAL,Shijing,qíqí,different
+契契,契契,qì qì,qì~qì,qi4~qi4,REDUPLICATION,FEELING,Shijing,qìqì,different
+戚戚,戚戚,qī qī,qī~qī,qi1~qi1,REDUPLICATION,EVALUATION,Shijing,qīqī,different
+僛僛,僛僛,qī qī,qī~qī,qi1~qi1,REDUPLICATION,MOVEMENT,Shijing,qīqī,different
+棲棲,栖栖,qī qī,qī~qī,qi1~qi1,REDUPLICATION,MOVEMENT,Shijing,qīqī,different
+淒淒,凄凄,qī qī,qī~qī,qi1~qi1,REDUPLICATION,TEMPERATURE,Shijing,qīqī,different
+淒淒,凄凄,qī qī,qī~qī,qi1~qi1,REDUPLICATION,TEMPERATURE,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+萋萋,萋萋,qī qī,qī~qī,qi1~qi1,REDUPLICATION,VISUAL,Shijing,qīqī,different
+彊彊,强强,qiáng qiáng,qiáng~qiáng,qiang2~qiang2,REDUPLICATION,VISUAL+EVALUATION,Shijing,qiángqiáng,different
+彊彊,强强,qiáng qiáng,qiáng~qiáng,qiang2~qiang2,REDUPLICATION,VISUAL+EVALUATION,Shijing,qiángqiáng,different
+蹌蹌,跄跄,qiàng qiàng,qiāng~qiāng,qiang1~qiang1,REDUPLICATION,EVALUATION,Shijing,qiāngqiāng,different
+蹌蹌,跄跄,qiàng qiàng,qiāng~qiāng,qiang1~qiang1,REDUPLICATION,MOVEMENT,Shijing,qiāngqiāng,different
+鏘鏘,锵锵,qiāng qiāng,qiāng~qiāng,qiang1~qiang1,REDUPLICATION,SOUND,Shijing,qiāngqiāng,different
+瑲瑲,玱玱,qiāng qiāng,qiāng~qiāng,qiang1~qiang1,REDUPLICATION,SOUND,Shijing,qiāngqiāng,different
+鏘鏘,锵锵,qiāng qiāng,qiāng~qiāng,qiang1~qiang1,REDUPLICATION,SOUND,Shijing,qiāngqiāng,different
+繾綣,缱绻,qiǎnquǎn,qiǎn~quǎn,qian3~quan3,RHYME,EVALUATION,Shijing,qiǎnquǎn,same
+譙譙,谯谯,qiáo qiáo,qiáo~qiáo,qiao2~qiao2,REDUPLICATION,VISUAL,Shijing,qiáoqiáo,different
+翹翹,翘翘,qiào qiào,qiáo~qiáo,qiao2~qiao2,REDUPLICATION,VISUAL,Shijing,qiáoqiáo,different
+翹翹,翘翘,qiào qiào,qiáo~qiáo,qiao2~qiao2,REDUPLICATION,VISUAL,Shijing,qiáoqiáo,different
+翹翹,翘翘,qiào qiào,qiáo~qiáo,qiao2~qiao2,REDUPLICATION,VISUAL,Shijing,qiáoqiáo,different
+悄悄,悄悄,qiāoqiāo,qiǎo~qiǎo,qiao3~qiao3,REDUPLICATION,FEELING,Shijing,qiǎoqiǎo,different
+悄悄,悄悄,qiāoqiāo,qiǎo~qiǎo,qiao3~qiao3,REDUPLICATION,FEELING,Shijing,qiǎoqiǎo,different
+契闊,契阔,qiè kuò,qì~kuò,qi4~kuo4,PARARHYME,VISUAL,Shijing,qìkuò,different
+欽欽,钦钦,qīn qīn,qīn~qīn,qin1~qin1,REDUPLICATION,FEELING,Shijing,qīnqīn,different
+駸駸,骎骎,qīn qīn,qīn~qīn,qin1~qin1,REDUPLICATION,MOVEMENT,Shijing,qīnqīn,different
+欽欽,钦钦,qīn qīn,qīn~qīn,qin1~qin1,REDUPLICATION,SOUND,Shijing,qīnqīn,different
+磬控,磬控,qìng kòng,qìng~kòng,qing4~kong4,PARARHYME,MOVEMENT,Shijing,qìngkòng,different
+清揚,清扬,qīng yáng,qīng~yáng,qing1~yang2,RHYME,VISUAL,Shijing,qīngyáng,different
+清揚,清扬,qīng yáng,qīng~yáng,qing1~yang2,RHYME,VISUAL,Shijing,qīngyáng,different
+清揚,清扬,qīng yáng,qīng~yáng,qing1~yang2,RHYME,VISUAL+EVALUATION,Shijing,qīngyáng,different
+清揚,清扬,qīng yáng,qīng~yáng,qing1~yang2,RHYME,VISUAL+EVALUATION,Shijing,qīngyáng,different
+清明,清明,qīngmíng,qīng~míng,qing1~ming2,RHYME,VISUAL,Shijing,qīngmíng,same
+青青,青青,qīngqīng,qīng~qīng,qing1~qing1,REDUPLICATION,VISUAL,Shijing,qīngqīng,same
+惸惸,茕茕,qióng qióng,qióng~qióng,qiong2~qiong2,REDUPLICATION,FEELING,Shijing,qióngqióng,different
+睘睘,睘睘,qióng qióng,qióng~qióng,qiong2~qiong2,REDUPLICATION,FEELING,Shijing,qióngqióng,different
+俅俅,俅俅,qiú qiú,qíu~qíu,qiu2~qiu2,REDUPLICATION,EVALUATION,Shijing,qíuqíu,different
+渠渠,渠渠,qú qú,qú~qú,qu2~qu2,REDUPLICATION,VISUAL,Shijing,qúqú,different
+祛祛,祛祛,qū qū,qū~qū,qu1~qu1,REDUPLICATION,VISUAL+EVALUATION,Shijing,qūqū,different
+蹲蹲,蹲蹲,qūn qūn,dūn~dūn,dun1~dun1,REDUPLICATION,VISUAL,Shijing,dūndūn,different
+瀼瀼,瀼瀼,ráng ráng,ráng~ráng,rang2~rang2,REDUPLICATION,VISUAL,Shijing,rángráng,different
+瀼瀼,瀼瀼,ráng ráng,ráng~ráng,rang2~rang2,REDUPLICATION,VISUAL,Shijing,rángráng,different
+穰穰,穰穰,ráng ráng,ráng~ráng,rang2~rang2,REDUPLICATION,VISUAL+EVALUATION,Shijing,rángráng,different
+穰穰,穰穰,ráng ráng,ráng~ráng,rang2~rang2,REDUPLICATION,VISUAL+EVALUATION,Shijing,rángráng,different
+陾陾,陾陾,réng réng,réng~réng,reng2~reng2,REDUPLICATION,VISUAL,Shijing,réngréng,different
+汕汕,汕汕,shàn shàn,shàn~shàn,shan4~shan4,REDUPLICATION,VISUAL,Shijing,shànshàn,different
+湯湯,汤汤,shāng shāng,tāng~tāng,tang1~tang1,REDUPLICATION,MOVEMENT,Shijing,tāngtāng,different
+湯湯,汤汤,shāng shāng,tāng~tāng,tang1~tang1,REDUPLICATION,MOVEMENT,Shijing,tāngtāng,different
+湯湯,汤汤,shāng shāng,tāng~tāng,tang1~tang1,REDUPLICATION,MOVEMENT,Shijing,tāngtāng,different
+湯湯,汤汤,shāng shāng,tāng~tāng,tang1~tang1,REDUPLICATION,MOVEMENT,Shijing,tāngtāng,different
+湯湯,汤汤,shāng shāng,tāng~tāng,tang1~tang1,REDUPLICATION,MOVEMENT,Shijing,tāngtāng,different
+甡甡,甡甡,shēn shēn,shēn~shēn,shen1~shen1,REDUPLICATION,VISUAL,Shijing,shēnshēn,different
+駪駪,駪駪,shēn shēn,shēn~shēn,shen1~shen1,REDUPLICATION,VISUAL,Shijing,shēnshēn,different
+詵詵,诜诜,shēn shēn,shēn~shēn,shen1~shen1,REDUPLICATION,VISUAL,Shijing,shēnshēn,different
+繩繩,绳绳,shéng shéng,shéng~shéng,sheng2~sheng2,REDUPLICATION,VISUAL,Shijing,shéngshéng,different
+繩繩,绳绳,shéng shéng,shéng~shéng,sheng2~sheng2,REDUPLICATION,VISUAL,Shijing,shéngshéng,different
+湜湜,湜湜,shí shí,shí~shí,shi2~shi2,REDUPLICATION,VISUAL,Shijing,shíshí,different
+實實,实实,shí shí,shí~shí,shi2~shi2,REDUPLICATION,VISUAL,Shijing,shíshí,different
+濕濕,湿湿,shī shī,shī~shī,shi1~shi1,REDUPLICATION,MOVEMENT,Shijing,shīshī,different
+施施,施施,shī shī,shī~shī,shi1~shi1,REDUPLICATION,MOVEMENT,Shijing,shīshī,different
+俟俟,俟俟,sì sì,sì~sì,si4~si4,REDUPLICATION,MOVEMENT,Shijing,sìsì,different
+叟叟,叟叟,sǒu sǒu,sǒu~sǒu,sou3~sou3,REDUPLICATION,SOUND,Shijing,sǒusǒu,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+蔌蔌,蔌蔌,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,EVALUATION,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,MOVEMENT,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,MOVEMENT,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,SOUND,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,SOUND,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,SOUND,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,SOUND,Shijing,sùsù,different
+肅肅,肃肃,sù sù,sù~sù,su4~su4,REDUPLICATION,VISUAL+EVALUATION,Shijing,sùsù,different
+綏綏,绥绥,suí suí,sūi~sūi,sui1~sui1,REDUPLICATION,MOVEMENT,Shijing,sūisūi,different
+綏綏,绥绥,suí suí,sūi~sūi,sui1~sui1,REDUPLICATION,MOVEMENT,Shijing,sūisūi,different
+綏綏,绥绥,suí suí,sūi~sūi,sui1~sui1,REDUPLICATION,MOVEMENT,Shijing,sūisūi,different
+綏綏,绥绥,suí suí,sūi~sūi,sui1~sui1,REDUPLICATION,MOVEMENT,Shijing,sūisūi,different
+穟穟,穟穟,suì suì,sùi~sùi,sui4~sui4,REDUPLICATION,VISUAL,Shijing,sùisùi,different
+瑣瑣,琐琐,suǒ suǒ,suǒ~suǒ,suo3~suo3,REDUPLICATION,EVALUATION,Shijing,suǒsuǒ,different
+傞傞,傞傞,suō suō,suō~suō,suo1~suo1,REDUPLICATION,MOVEMENT,Shijing,suōsuō,different
+慆慆,慆慆,tāo tāo,tāo~tāo,tao1~tao1,REDUPLICATION,TIME,Shijing,tāotāo,different
+慆慆,慆慆,tāo tāo,tāo~tāo,tao1~tao1,REDUPLICATION,TIME,Shijing,tāotāo,different
+慆慆,慆慆,tāo tāo,tāo~tāo,tao1~tao1,REDUPLICATION,TIME,Shijing,tāotāo,different
+慆慆,慆慆,tāo tāo,tāo~tāo,tao1~tao1,REDUPLICATION,TIME,Shijing,tāotāo,different
+陶陶,陶陶,táotáo,táo~táo,tao2~tao2,REDUPLICATION,VISUAL+EVALUATION,Shijing,táotáo,same
+陶陶,陶陶,táotáo,táo~táo,tao2~tao2,REDUPLICATION,VISUAL+FEELING,Shijing,táotáo,same
+滔滔,滔滔,tāotāo,tāo~tāo,tao1~tao1,REDUPLICATION,MOVEMENT,Shijing,tāotāo,same
+滔滔,滔滔,tāotāo,tāo~tāo,tao1~tao1,REDUPLICATION,MOVEMENT,Shijing,tāotāo,same
+滔滔,滔滔,tāotāo,tāo~tāo,tao1~tao1,REDUPLICATION,MOVEMENT,Shijing,tāotāo,same
+提提,提提,tí tí,tí~tí,ti2~ti2,REDUPLICATION,MOVEMENT,Shijing,títí,different
+提提,提提,tí tí,tí~tí,ti2~ti2,REDUPLICATION,MOVEMENT,Shijing,títí,different
+惕惕,惕惕,tì tì,tì~tì,ti4~ti4,REDUPLICATION,FEELING,Shijing,tìtì,different
+趯趯,趯趯,tì tì,tì~tì,ti4~ti4,REDUPLICATION,MOVEMENT,Shijing,tìtì,different
+趯趯,趯趯,tì tì,tì~tì,ti4~ti4,REDUPLICATION,MOVEMENT,Shijing,tìtì,different
+籊籊,籊籊,tì tì,tì~tì,ti4~ti4,REDUPLICATION,VISUAL+TEXTURE,Shijing,tìtì,different
+町畽 tia3ntu3an,町畽 tia3ntu3an,tia3ntu3an,tǐng~tuǎn~ ~t~i~a~3~n~t~u~3~a~n,ting3~tuan3~ ~t~i~a~3~n~t~u~3~a~n,ALLITERATION,VISUAL,Shijing,tǐngtuǎn~ ~t~i~a~3~n~t~u~3~a~n,different
+闐闐,阗阗,tián tián,tián~tián,tian2~tian2,REDUPLICATION,SOUND,Shijing,tiántián,different
+佻佻,佻佻,tiāo tiāo,tiāo~tiāo,tiao1~tiao1,REDUPLICATION,EVALUATION,Shijing,tiāotiāo,different
+僮僮,童童,tóng tóng,tóng~tóng,tong2~tong2,REDUPLICATION,VISUAL,Shijing,tóngtóng,different
+塗塗,涂涂,tú tú,tú~tú,tu2~tu2,REDUPLICATION,VISUAL,Shijing,tútú,different
+慱慱,慱慱,tuán tuán,tuán~tuán,tuan2~tuan2,REDUPLICATION,FEELING,Shijing,tuántuán,different
+啍啍,啍啍,tūn tūn,tūn~tūn,tun1~tun1,REDUPLICATION,SOUND+MOVEMENT,Shijing,tūntūn,different
+焞焞,焞焞,tūn tūn,tūn~tūn,tun1~tun1,REDUPLICATION,VISUAL,Shijing,tūntūn,different
+佗佗,佗佗,tuó tuó,tuó~tuó,tuo2~tuo2,REDUPLICATION,EVALUATION,Shijing,tuótuó,different
+橐橐,橐橐,tuó tuó,tuó~tuó,tuo2~tuo2,REDUPLICATION,SOUND,Shijing,tuótuó,different
+脫脫,脱脱,tuō tuō,tuō~tuō,tuo1~tuo1,REDUPLICATION,MOVEMENT,Shijing,tuōtuō,different
+丸丸,丸丸,wánwán,wán~wán,wan2~wan2,REDUPLICATION,VISUAL,Shijing,wánwán,same
+唯唯,唯唯,wěi wěi,wéi~wéi,wei2~wei2,REDUPLICATION,MOVEMENT,Shijing,wéiwéi,different
+韡韡,韡韡,wěi wěi,wěi~wěi,wei3~wei3,REDUPLICATION,VISUAL,Shijing,wěiwěi,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委蛇,委蛇,wēi yí,wěi~shé,wei3~she2,RHYME,EVALUATION,Shijing,wěishé,different
+委委,委委,wěiwěi,wěi~wěi,wei3~wei3,REDUPLICATION,MOVEMENT,Shijing,wěiwěi,same
+溫溫,温温,wēn wēn,wēn~wēn,wen1~wen1,REDUPLICATION,EVALUATION,Shijing,wēnwēn,different
+溫溫,温温,wēn wēn,wēn~wēn,wen1~wen1,REDUPLICATION,EVALUATION,Shijing,wēnwēn,different
+溫溫,温温,wēn wēn,wēn~wēn,wen1~wen1,REDUPLICATION,EVALUATION,Shijing,wēnwēn,different
+沃沃,沃沃,wò wò,wò~wò,wo4~wo4,REDUPLICATION,VISUAL,Shijing,wòwò,different
+沃沃,沃沃,wò wò,wò~wò,wo4~wo4,REDUPLICATION,VISUAL,Shijing,wòwò,different
+沃沃,沃沃,wò wò,wò~wò,wo4~wo4,REDUPLICATION,VISUAL,Shijing,wòwò,different
+潝潝,潝潝,xī xī,xī~xī,xi1~xi1,REDUPLICATION,EVALUATION,Shijing,xīxī,different
+睍睆,睍睆,xiàn huàn,xiàn~huǎn,xian4~huan3,PARARHYME,VISUAL,Shijing,xiànhuǎn,different
+閑閑,闲闲,xián xián,xián~xián,xian2~xian2,REDUPLICATION,VISUAL+EVALUATION,Shijing,xiánxián,different
+閑閑,闲闲,xián xián,xián~xián,xian2~xian2,REDUPLICATION,VISUAL+EVALUATION,Shijing,xiánxián,different
+憲憲,宪宪,xiàn xiàn,xiàn~xiàn,xian4~xian4,REDUPLICATION,EVALUATION,Shijing,xiànxiàn,different
+顯顯,显显,xiǎn xiǎn,xiǎn~xiǎn,xian3~xian3,REDUPLICATION,EVALUATION,Shijing,xiǎnxiǎn,different
+僊僊,仙仙,xiān xiān,xiān~xiān,xian1~xian1,REDUPLICATION,MOVEMENT,Shijing,xiānxiān,different
+囂囂,嚣嚣,xiāo xiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,EVALUATION,Shijing,xiāoxiāo,different
+蕭蕭,萧萧,xiāo xiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,SOUND,Shijing,xiāoxiāo,different
+囂囂,嚣嚣,xiāo xiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,SOUND,Shijing,xiāoxiāo,different
+囂囂,嚣嚣,xiāo xiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,SOUND,Shijing,xiāoxiāo,different
+翛翛,翛翛,xiāo xiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,VISUAL,Shijing,xiāoxiāo,different
+瀟瀟,潇潇,xiāoxiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,MOVEMENT+WETNESS,Shijing,xiāoxiāo,same
+嘵嘵,哓哓,xiāoxiāo,xiāo~xiāo,xiao1~xiao1,REDUPLICATION,SOUND,Shijing,xiāoxiāo,same
+逍遙,逍遥,xiāoyáo,xiāo~yáo,xiao1~yao2,RHYME,MOVEMENT,Shijing,xiāoyáo,same
+逍遙,逍遥,xiāoyáo,xiāo~yáo,xiao1~yao2,RHYME,MOVEMENT,Shijing,xiāoyáo,same
+偕偕,偕偕,xié xié,xié~xié,xie2~xie2,REDUPLICATION,EVALUATION,Shijing,xiéxié,different
+騂騂,骍骍,xīng xīng,xīng~xīng,xing1~xing1,REDUPLICATION,VISUAL+EVALUATION,Shijing,xīngxīng,different
+欣欣,欣欣,xīnxīn,xīn~xīn,xin1~xin1,REDUPLICATION,SMELL+EVALUATION,Shijing,xīnxīn,same
+休休,休休,xiū xiū,xīu~xīu,xiu1~xiu1,REDUPLICATION,EVALUATION,Shijing,xīuxīu,different
+習習,习习,xíxí,xí~xí,xi2~xi2,REDUPLICATION,MOVEMENT,Shijing,xíxí,same
+習習,习习,xíxí,xí~xí,xi2~xi2,REDUPLICATION,MOVEMENT,Shijing,xíxí,same
+習習,习习,xíxí,xí~xí,xi2~xi2,REDUPLICATION,MOVEMENT,Shijing,xíxí,same
+習習,习习,xíxí,xí~xí,xi2~xi2,REDUPLICATION,MOVEMENT,Shijing,xíxí,same
+湑湑,湑湑,xǔ xǔ,xǔ~xǔ,xu3~xu3,REDUPLICATION,VISUAL,Shijing,xǔxǔ,different
+訏訏,訏訏,xū xū,xū~xū,xu1~xu1,REDUPLICATION,VISUAL,Shijing,xūxū,different
+鞙鞙,鞙鞙,xuàn xuàn,xuàn~xuàn,xuan4~xuan4,REDUPLICATION,VISUAL,Shijing,xuànxuàn,different
+熏熏,熏熏,xūn xūn,xūn~xūn,xun1~xun1,REDUPLICATION,EVALUATION,Shijing,xūnxūn,different
+言言,言言,yán yán,yán~yán,yan2~yan2,REDUPLICATION,SOUND,Shijing,yányán,different
+言言,言言,yán yán,yán~yán,yan2~yan2,REDUPLICATION,VISUAL,Shijing,yányán,different
+巖巖,岩岩,yán yán,yán~yán,yan2~yan2,REDUPLICATION,VISUAL,Shijing,yányán,different
+巖巖,岩岩,yán yán,yán~yán,yan2~yan2,REDUPLICATION,VISUAL,Shijing,yányán,different
+厭厭,厌厌,yàn yàn,yàn~yàn,yan4~yan4,REDUPLICATION,FEELING,Shijing,yànyàn,different
+厭厭,厌厌,yàn yàn,yàn~yàn,yan4~yan4,REDUPLICATION,FEELING,Shijing,yànyàn,different
+咽咽,咽咽,yàn yàn,yān~yān,yan1~yan1,REDUPLICATION,SOUND,Shijing,yānyān,different
+咽咽,咽咽,yàn yàn,yān~yān,yan1~yan1,REDUPLICATION,SOUND,Shijing,yānyān,different
+厭厭,厌厌,yàn yàn,yàn~yàn,yan4~yan4,REDUPLICATION,VISUAL,Shijing,yànyàn,different
+厭厭,厌厌,yàn yàn,yàn~yàn,yan4~yan4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yànyàn,different
+晏晏,晏晏,yàn yàn,yàn~yàn,yan4~yan4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yànyàn,different
+偃仰,偃仰,yǎn yǎng,yǎn~yǎng,yan3~yang3,RHYME,VISUAL,Shijing,yǎnyǎng,different
+陽陽,阳阳,yáng yáng,yáng~yáng,yang2~yang2,REDUPLICATION,FEELING,Shijing,yángyáng,different
+陽陽,阳阳,yáng yáng,yáng~yáng,yang2~yang2,REDUPLICATION,VISUAL,Shijing,yángyáng,different
+養養,养养,yǎng yǎng,yǎng~yǎng,yang3~yang3,REDUPLICATION,FEELING,Shijing,yǎngyǎng,different
+央央,央央,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,SOUND,Shijing,yāngyāng,different
+央央,央央,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+央央,央央,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+央央,央央,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+泱泱,泱泱,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+泱泱,泱泱,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+泱泱,泱泱,yāng yāng,yāng~yāng,yang1~yang1,REDUPLICATION,VISUAL,Shijing,yāngyāng,different
+洋洋,洋洋,yángyáng,yáng~yáng,yang2~yang2,REDUPLICATION,VISUAL,Shijing,yángyáng,same
+洋洋,洋洋,yángyáng,yáng~yáng,yang2~yang2,REDUPLICATION,VISUAL,Shijing,yángyáng,same
+洋洋,洋洋,yángyáng,yáng~yáng,yang2~yang2,REDUPLICATION,VISUAL,Shijing,yángyáng,same
+洋洋,洋洋,yángyáng,yáng~yáng,yang2~yang2,REDUPLICATION,VISUAL,Shijing,yángyáng,same
+炎炎,炎炎,yányán,yán~yán,yan2~yan2,REDUPLICATION,VISUAL,Shijing,yányán,same
+搖搖,摇摇,yáo yáo,yáo~yáo,yao2~yao2,REDUPLICATION,FEELING,Shijing,yáoyáo,different
+夭夭,夭夭,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,EVALUATION,Shijing,yāoyāo,different
+喓喓,喓喓,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,SOUND,Shijing,yāoyāo,different
+喓喓,喓喓,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,SOUND,Shijing,yāoyāo,different
+夭夭,夭夭,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,VISUAL,Shijing,yāoyāo,different
+夭夭,夭夭,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,VISUAL,Shijing,yāoyāo,different
+夭夭,夭夭,yāo yāo,yāo~yāo,yao1~yao1,REDUPLICATION,VISUAL,Shijing,yāoyāo,different
+窈窕,窈窕,yǎotiǎo,yǎo~tiǎo,yao3~tiao3,RHYME,EVALUATION,Shijing,yǎotiǎo,same
+窈窕,窈窕,yǎotiǎo,yǎo~tiǎo,yao3~tiao3,RHYME,EVALUATION,Shijing,yǎotiǎo,same
+窈窕,窈窕,yǎotiǎo,yǎo~tiǎo,yao3~tiao3,RHYME,EVALUATION,Shijing,yǎotiǎo,same
+窈窕,窈窕,yǎotiǎo,yǎo~tiǎo,yao3~tiao3,RHYME,EVALUATION,Shijing,yǎotiǎo,same
+業業,业业,yè yè,yè~yè,ye4~ye4,REDUPLICATION,FEELING,Shijing,yèyè,different
+業業,业业,yè yè,yè~yè,ye4~ye4,REDUPLICATION,FEELING,Shijing,yèyè,different
+業業,业业,yè yè,yè~yè,ye4~ye4,REDUPLICATION,FEELING,Shijing,yèyè,different
+爗爗,爗爗,yè yè,yè~yè,ye4~ye4,REDUPLICATION,VISUAL,Shijing,yèyè,different
+業業,业业,yè yè,yè~yè,ye4~ye4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yèyè,different
+業業,业业,yè yè,yè~yè,ye4~ye4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yèyè,different
+猗嗟,猗嗟,yī jiē,yī~jiē,yi1~jie1,RHYME,SOUND+FEELING,Shijing,yījiē,different
+猗嗟,猗嗟,yī jiē,yī~jiē,yi1~jie1,RHYME,SOUND+FEELING,Shijing,yījiē,different
+猗嗟,猗嗟,yī jiē,yī~jiē,yi1~jie1,RHYME,SOUND+FEELING,Shijing,yījiē,different
+噫嘻,噫嘻,yī xī,yī~xī,yi1~xi1,ASSONANCE,SOUND+FEELING,Shijing,yīxī,different
+熠燿,熠耀,yì yào,yì~yào,yi4~yao4,DIFFERENT,VISUAL,Shijing,yìyào,different
+熠燿,熠耀,yì yào,yì~yào,yi4~yao4,DIFFERENT,VISUAL,Shijing,yìyào,different
+蛇蛇,蛇蛇,yí yí,shé~shé,she2~she2,REDUPLICATION,SOUND+EVALUATION,Shijing,shéshé,different
+泄泄,泄泄,yì yì,xiè~xiè,xie4~xie4,REDUPLICATION,EVALUATION,Shijing,xièxiè,different
+弈弈,弈弈,yì yì,yì~yì,yi4~yi4,REDUPLICATION,FEELING,Shijing,yìyì,different
+繹繹,绎绎,yì yì,yì~yì,yi4~yi4,REDUPLICATION,MOVEMENT,Shijing,yìyì,different
+仡仡,仡仡,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,different
+驛驛,驿驿,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,different
+奕奕,奕奕,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,different
+泄泄,泄泄,yì yì,xiè~xiè,xie4~xie4,REDUPLICATION,VISUAL,Shijing,xièxiè,different
+奕奕,奕奕,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,different
+奕奕,奕奕,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,different
+奕奕,奕奕,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,different
+泄泄,泄泄,yì yì,xiè~xiè,xie4~xie4,REDUPLICATION,VISUAL+EVALUATION,Shijing,xièxiè,different
+奕奕,奕奕,yì yì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,different
+揖揖,揖揖,yī yī,yī~yī,yi1~yi1,REDUPLICATION,VISUAL,Shijing,yīyī,different
+猗猗,猗猗,yī yī,yī~yī,yi1~yi1,REDUPLICATION,VISUAL,Shijing,yīyī,different
+猗與 / 猗歟,猗与 / 猗欤,yī yǔ,yī~yǔ~ ~/~ ~yī~yú,yi1~yu3~ ~/~ ~yi1~yu2,DIFFERENT,SOUND,Shijing,yīyǔ~ ~/~ ~yī~yú,different
+猗與 / 猗歟,猗与 / 猗欤,yī yǔ,yī~yǔ~ ~/~ ~yī~yú,yi1~yu3~ ~/~ ~yi1~yu2,DIFFERENT,SOUND,Shijing,yīyǔ~ ~/~ ~yī~yú,different
+慇慇,殷殷,yīn yīn,yīn~yīn,yin1~yin1,REDUPLICATION,FEELING,Shijing,yīnyīn,different
+慇慇,殷殷,yīn yīn,yīn~yīn,yin1~yin1,REDUPLICATION,FEELING,Shijing,yīnyīn,different
+營營,营营,yíng yíng,yíng~yíng,ying2~ying2,REDUPLICATION,MOVEMENT,Shijing,yíngyíng,different
+營營,营营,yíng yíng,yíng~yíng,ying2~ying2,REDUPLICATION,MOVEMENT,Shijing,yíngyíng,different
+營營,营营,yíng yíng,yíng~yíng,ying2~ying2,REDUPLICATION,MOVEMENT,Shijing,yíngyíng,different
+嚶嚶,嘤嘤,yīng yīng,yīng~yīng,ying1~ying1,REDUPLICATION,SOUND,Shijing,yīngyīng,different
+英英,英英,yīng yīng,yīng~yīng,ying1~ying1,REDUPLICATION,VISUAL,Shijing,yīngyīng,different
+慇慇,殷殷,yīnyīn,yīn~yīn,yin1~yin1,REDUPLICATION,FEELING,Shijing,yīnyīn,same
+慇慇,殷殷,yīnyīn,yīn~yīn,yin1~yin1,REDUPLICATION,FEELING,Shijing,yīnyīn,same
+殷殷,殷殷,yīnyīn,yīn~yīn,yin1~yin1,REDUPLICATION,FEELING,Shijing,yīnyīn,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+抑抑,抑抑,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+抑抑,抑抑,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+抑抑,抑抑,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,EVALUATION,Shijing,yìyì,same
+逸逸,逸逸,yìyì,yì~yì,yi4~yi4,REDUPLICATION,MOVEMENT,Shijing,yìyì,same
+曀曀,曀曀,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,same
+翼翼,翼翼,yìyì,yì~yì,yi4~yi4,REDUPLICATION,VISUAL+EVALUATION,Shijing,yìyì,same
+依依,依依,yīyī,yī~yī,yi1~yi1,REDUPLICATION,VISUAL,Shijing,yīyī,same
+顒顒,颙颙,yóng yóng,yóng~yóng,yong2~yong2,REDUPLICATION,EVALUATION,Shijing,yóngyóng,different
+雝雝,雍雍,yōng yōng,yōng~yōng,yong1~yong1,REDUPLICATION,SOUND,Shijing,yōngyōng,different
+雝雝,雍雍,yōng yōng,yōng~yōng,yong1~yong1,REDUPLICATION,SOUND,Shijing,yōngyōng,different
+雝雝,雍雍,yōng yōng,yōng~yōng,yong1~yong1,REDUPLICATION,SOUND,Shijing,yōngyōng,different
+雝雝,雍雍,yōng yōng,yōng~yōng,yong1~yong1,REDUPLICATION,SOUND,Shijing,yōngyōng,different
+雝雝,雍雍,yōng yōng,yōng~yōng,yong1~yong1,REDUPLICATION,SOUND+VISUAL,Shijing,yōngyōng,different
+遊敖/遊遨,游敖/游遨,yóu áo/yóu áo,yóu~áo~/~yóu~áo,you2~ao2~/~you2~ao2,DIFFERENT,MOVEMENT,Shijing,yóuáo~/~yóu~áo,different
+游衍,游衍,yóu yǎn,yóu~yǎn,you2~yan3,ASSONANCE,MOVEMENT,Shijing,yóuyǎn,different
+優優,优优,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,EVALUATION,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,FEELING,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME+FEELING,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,TIME,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+悠悠,悠悠,yōu yōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,different
+優游,优游,yōuyóu,yōu~yóu,you1~you2,RHYME,EVALUATION,Shijing,yōuyóu,same
+優游,优游,yōuyóu,yōu~yóu,you1~you2,RHYME,EVALUATION,Shijing,yōuyóu,same
+滺滺,滺滺,yōuyōu,yóu~yóu,you2~you2,REDUPLICATION,MOVEMENT,Shijing,yóuyóu,different
+呦呦,呦呦,yōuyōu,yōu~yōu,you1~you1,REDUPLICATION,SOUND,Shijing,yōuyōu,same
+呦呦,呦呦,yōuyōu,yōu~yōu,you1~you1,REDUPLICATION,SOUND,Shijing,yōuyōu,same
+呦呦,呦呦,yōuyōu,yōu~yōu,you1~you1,REDUPLICATION,SOUND,Shijing,yōuyōu,same
+幽幽,幽幽,yōuyōu,yōu~yōu,you1~you1,REDUPLICATION,VISUAL,Shijing,yōuyōu,same
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+EVALUATION,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+EVALUATION,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+EVALUATION,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+EVALUATION,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+EVALUATION,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+FEELING,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+FEELING,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+FEELING,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+FEELING,Shijing,yúhū,different
+於乎,于乎,yú hū,yú~hū,yu2~hu1,RHYME,SOUND+FEELING,Shijing,yúhū,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND+EVALUATION,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND+EVALUATION,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND+EVALUATION,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND+FEELING,Shijing,yújiē,different
+于嗟,于嗟,yú jiē,yú~jiē,yu2~jie1,DIFFERENT,SOUND+FEELING,Shijing,yújiē,different
+于嗟乎,于嗟乎,yú jiē hū,yú~jiē~hū,yu2~jie1~hu1,DIFFERENT,SOUND+EVALUATION,Shijing,yújiē~hū,different
+于嗟乎,于嗟乎,yú jiē hū,yú~jiē~hū,yu2~jie1~hu1,DIFFERENT,SOUND+EVALUATION,Shijing,yújiē~hū,different
+于嗟乎,于嗟乎,yú jiē hū,yú~jiē~hū,yu2~jie1~hu1,DIFFERENT,SOUND+FEELING,Shijing,yújiē~hū,different
+于嗟乎,于嗟乎,yú jiē hū,yú~jiē~hū,yu2~jie1~hu1,DIFFERENT,SOUND+FEELING,Shijing,yújiē~hū,different
+愈愈,愈愈,yù yù,yù~yù,yu4~yu4,REDUPLICATION,FEELING,Shijing,yùyù,different
+彧彧,彧彧,yù yù,yù~yù,yu4~yu4,REDUPLICATION,VISUAL,Shijing,yùyù,different
+語語,语语,yǔ yǔ,yǔ~yǔ,yu3~yu3,REDUPLICATION,SOUND,Shijing,yǔyǔ,different
+麌麌/噳噳,麌麌/噳噳,yǔ yǔ,wú~wú~/~yǔ~yǔ,wu2~wu2~/~yu3~yu3,REDUPLICATION,VISUAL,Shijing,wúwú~/~yǔ~yǔ,different
+麌麌/噳噳,麌麌/噳噳,yǔ yǔ,wú~wú~/~yǔ~yǔ,wu2~wu2~/~yu3~yu3,REDUPLICATION,VISUAL,Shijing,wúwú~/~yǔ~yǔ,different
+俁俁,俣俣,yǔ yǔ,yǔ~yǔ,yu3~yu3,REDUPLICATION,VISUAL,Shijing,yǔyǔ,different
+爰爰,爰爰,yuán yuán,yuán~yuán,yuan2~yuan2,REDUPLICATION,MOVEMENT,Shijing,yuányuán,different
+爰爰,爰爰,yuán yuán,yuán~yuán,yuan2~yuan2,REDUPLICATION,MOVEMENT,Shijing,yuányuán,different
+爰爰,爰爰,yuán yuán,yuán~yuán,yuan2~yuan2,REDUPLICATION,MOVEMENT,Shijing,yuányuán,different
+悁悁,悁悁,yuān yuān,yuān~yuān,yuan1~yuan1,REDUPLICATION,FEELING,Shijing,yuānyuān,different
+蜎蜎,蜎蜎,yuān yuān,yuān~yuān,yuan1~yuan1,REDUPLICATION,MOVEMENT,Shijing,yuānyuān,different
+淵淵,渊渊,yuān yuān,yuān~yuān,yuan1~yuan1,REDUPLICATION,SOUND,Shijing,yuānyuān,different
+淵淵,渊渊,yuān yuān,yuān~yuān,yuan1~yuan1,REDUPLICATION,SOUND,Shijing,yuānyuān,different
+躍躍,跃跃,yuè yuè,yuè~yuè,yue4~yue4,REDUPLICATION,MOVEMENT,Shijing,yuèyuè,different
+畇畇,畇畇,yún yún,yún~yún,yun2~yun2,REDUPLICATION,VISUAL,Shijing,yúnyún,different
+牂牂,牂牂,zāng zāng,zāng~zāng,zang1~zang1,REDUPLICATION,VISUAL,Shijing,zāngzāng,different
+鑿鑿,凿凿,záozáo,záo~záo,zao2~zao2,REDUPLICATION,VISUAL,Shijing,záozáo,same
+澤澤,泽泽,zé zé,zé~zé,ze2~ze2,REDUPLICATION,VISUAL,Shijing,zézé,different
+增增,增增,zēng zēng,zēng~zēng,zeng1~zeng1,REDUPLICATION,VISUAL,Shijing,zēngzēng,different
+戰戰,战战,zhàn zhàn,zhàn~zhàn,zhan4~zhan4,REDUPLICATION,MOVEMENT+FEELING,Shijing,zhànzhàn,different
+戰戰,战战,zhàn zhàn,zhàn~zhàn,zhan4~zhan4,REDUPLICATION,MOVEMENT+FEELING,Shijing,zhànzhàn,different
+湛湛,湛湛,zhàn zhàn,zhàn~zhàn,zhan4~zhan4,REDUPLICATION,VISUAL,Shijing,zhànzhàn,different
+湛湛,湛湛,zhàn zhàn,zhàn~zhàn,zhan4~zhan4,REDUPLICATION,VISUAL,Shijing,zhànzhàn,different
+湛湛,湛湛,zhàn zhàn,zhàn~zhàn,zhan4~zhan4,REDUPLICATION,VISUAL,Shijing,zhànzhàn,different
+輾轉,辗转,zhǎnzhuǎn,zhǎn~zhuǎn,zhan3~zhuan3,PARARHYME,MOVEMENT,Shijing,zhǎnzhuǎn,same
+輾轉,辗转,zhǎnzhuǎn,zhǎn~zhuǎn,zhan3~zhuan3,PARARHYME,MOVEMENT,Shijing,zhǎnzhuǎn,same
+罩罩,罩罩,zhào zhào,zhào~zhào,zhao4~zhao4,REDUPLICATION,VISUAL,Shijing,zhàozhào,different
+招招,招招,zhāo zhāo,zhāo~zhāo,zhao1~zhao1,REDUPLICATION,MOVEMENT,Shijing,zhāozhāo,different
+昭昭,昭昭,zhāozhāo,zhāo~zhāo,zhao1~zhao1,REDUPLICATION,VISUAL+EVALUATION,Shijing,zhāozhāo,same
+晢晢/晣晣,晢晢/晣晣,zhé zhé,zhé~zhé~/~zhē~zhē,zhe2~zhe2~/~zhe1~zhe1,REDUPLICATION,VISUAL,Shijing,zhézhé~/~zhē~zhē,different
+晢晢/晣晣,晢晢/晣晣,zhé zhé,zhé~zhé~/~zhē~zhē,zhe2~zhe2~/~zhe1~zhe1,REDUPLICATION,VISUAL,Shijing,zhézhé~/~zhē~zhē,different
+蟄蟄,蛰蛰,zhé zhé,zhé~zhé,zhe2~zhe2,REDUPLICATION,VISUAL,Shijing,zhézhé,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,EVALUATION,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,MOVEMENT,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,MOVEMENT,Shijing,zhènzhèn,different
+振振,振振,zhèn zhèn,zhèn~zhèn,zhen4~zhen4,REDUPLICATION,VISUAL,Shijing,zhènzhèn,different
+溱溱,溱溱,zhēn zhēn,zhēn~zhēn,zhen1~zhen1,REDUPLICATION,VISUAL,Shijing,zhēnzhēn,different
+蓁蓁,蓁蓁,zhēn zhēn,zhēn~zhēn,zhen1~zhen1,REDUPLICATION,VISUAL,Shijing,zhēnzhēn,different
+烝烝,烝烝,zhēng zhēng,zhēng~zhēng,zheng1~zheng1,REDUPLICATION,EVALUATION,Shijing,zhēngzhēng,different
+丁丁,丁丁,zhēng zhēng,dīng~dīng,ding1~ding1,REDUPLICATION,SOUND,Shijing,dīngdīng,different
+丁丁,丁丁,zhēng zhēng,dīng~dīng,ding1~ding1,REDUPLICATION,SOUND,Shijing,dīngdīng,different
+殖殖,殖殖,zhí zhí,zhí~zhí,zhi2~zhi2,REDUPLICATION,VISUAL,Shijing,zhízhí,different
+秩秩,秩秩,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,EVALUATION,Shijing,zhìzhì,different
+秩秩,秩秩,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,EVALUATION,Shijing,zhìzhì,different
+秩秩,秩秩,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,EVALUATION,Shijing,zhìzhì,different
+秩秩,秩秩,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,EVALUATION,Shijing,zhìzhì,different
+秩秩,秩秩,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,MOVEMENT,Shijing,zhìzhì,different
+挃挃,挃挃,zhì zhì,zhì~zhì,zhi4~zhi4,REDUPLICATION,SOUND,Shijing,zhìzhì,different
+惴惴,惴惴,zhuì zhuì,zhùi~zhùi,zhui4~zhui4,REDUPLICATION,FEELING,Shijing,zhùizhùi,different
+惴惴,惴惴,zhuì zhuì,zhùi~zhùi,zhui4~zhui4,REDUPLICATION,VISUAL+FEELING,Shijing,zhùizhùi,different
+惴惴,惴惴,zhuì zhuì,zhùi~zhùi,zhui4~zhui4,REDUPLICATION,VISUAL+FEELING,Shijing,zhùizhùi,different
+惴惴,惴惴,zhuì zhuì,zhùi~zhùi,zhui4~zhui4,REDUPLICATION,VISUAL+FEELING,Shijing,zhùizhùi,different
+諄諄,谆谆,zhūnzhūn,zhūn~zhūn,zhun1~zhun1,REDUPLICATION,EVALUATION,Shijing,zhūnzhūn,same
+濯濯,濯濯,zhuózhuó,zhuó~zhuó,zhuo2~zhuo2,REDUPLICATION,VISUAL,Shijing,zhuózhuó,same
+濯濯,濯濯,zhuózhuó,zhuó~zhuó,zhuo2~zhuo2,REDUPLICATION,VISUAL,Shijing,zhuózhuó,same
+濯濯,濯濯,zhuózhuó,zhuó~zhuó,zhuo2~zhuo2,REDUPLICATION,VISUAL,Shijing,zhuózhuó,same
+灼灼,灼灼,zhuózhuó,zhuó~zhuó,zhuo2~zhuo2,REDUPLICATION,VISUAL,Shijing,zhuózhuó,same
+訿訿/訾訾,訿訿/訾訾,zī zī,zǐ~zǐ~/~zǐ~zǐ,zi3~zi3~/~zi3~zi3,REDUPLICATION,EVALUATION,Shijing,zǐzǐ~/~zǐ~zǐ,different
+訿訿/訾訾,訿訿/訾訾,zī zī,zǐ~zǐ~/~zǐ~zǐ,zi3~zi3~/~zi3~zi3,REDUPLICATION,EVALUATION,Shijing,zǐzǐ~/~zǐ~zǐ,different
