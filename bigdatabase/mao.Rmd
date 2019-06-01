@@ -34,12 +34,15 @@ db_hydcd <- db %>%
   left_join(tidy.hydcd, by = c("traditional" = "item")) %>%
   select(-computemeaning)
 
-# only numbered meanngs, examples gone
+# only numbered meanings, examples gone
 db_hydcd %>%
   filter(str_detect(printmeaning, "^[:digit:]")) %>%
   separate(printmeaning, into = c("meaning", "example"), sep = "\n") %>%
   distinct() -> db_tidy
 ```
+
+
+
 
 
 How many have the marker mao in their definition?
@@ -112,6 +115,23 @@ hydcd_sheng %>%
 #hydcd_sheng2
 ```
 
+Numbers of groups.
+```{r}
+hydcd_sheng %>%
+  distinct(item)
+
+hydcd_sheng2 %>%
+  distinct(item)
+
+
+hydcd_mao %>%
+  distinct(item)
+
+hydcd_mao2 %>%
+  distinct(item)
+``` 
+
+
 These results can now be further examined in a spreadsheet.
 They are possible candidates
 
@@ -136,6 +156,7 @@ db_tidy %>%
                 drop = FALSE) %>%
   select(chars) %>%
   count(chars) %>%
+  filter(! str_detect(chars, "[:digit:]")) %>%
   arrange(desc(n)) %>%
   head(20)
 
@@ -146,6 +167,130 @@ As can be seen, there are 1735 *mao*s in the definition, and 864 *sheng*s. So th
 So this is further evidence that they are probably structural, closed-class used.
 However, there are no other predictors (maybe '象聲詞'?). 
 
+Will bigrams bring solace?
+```{r}
+db_tidy %>%
+  mutate(meaning = str_replace_all(meaning, "(.{1})", "\\1 ")) %>%
+  unnest_tokens(input = meaning, 
+                token = "ngrams",
+                n = 2,
+                output = "chars",
+                drop = FALSE) %>%
+  select(chars) %>%
+  filter(! str_detect(chars, "[:digit:]")) %>%
+  count(chars, sort = TRUE) %>%
+   head(20)
+```
+
+
+---
+
+# First treatment (after first manual checking, n = 500)
+
+```{r}
+first <- read_csv("hydcd_mao.csv")
+first %>%
+  mutate(n = nchar(item),
+         ch1 = str_extract(item, "^."),
+         ch2 = str_extract(item, ".$")) %>%
+  select(n, everything()) %>%
+  mutate(type = case_when(
+  n == "1" ~ "e",
+  type == "Q" ~ "q",
+  is.na(type) == FALSE ~ type,
+  str_detect(item, "然") ~ "ideo",
+  ch1 == ch2 & n == 2 ~ "ideo",
+  n == 4 ~ "prov"
+  )) %>%
+  arrange(type)  -> maofirst
+  
+#write_csv(maofirst, "maofirst.csv", col_names = TRUE)
+```
+
+```{r}
+first_sheng <- read_csv("hydcd_sheng.csv")
+first_sheng %>%
+  mutate(type = "NA",
+         n = nchar(item),
+         ch1 = str_extract(item, "^."),
+         ch2 = str_extract(item, ".$")) %>%
+  mutate(type = case_when(str_detect(meaning, "之聲") ~ "ideo",  
+                          str_detect(meaning, "象聲詞") ~ "ideo",
+                          str_detect(meaning, "叫聲") ~ "ideo", 
+                          str_detect(meaning, "鳴聲") ~ "ideo", 
+                          str_detect(meaning, "笑聲") ~ "ideo", 
+                          str_detect(meaning, "形容") ~ "ideo", 
+                          #n == "1" ~ "e",
+                          #type == "Q" ~ "q",
+                          is.na(type) == FALSE ~ type,
+                          #str_detect(item, "然") ~ "ideo",
+                          ch1 == ch2 & n == 2 ~ "ideo",
+                          n == 4 ~ "prov"
+  )) %>%
+  select(n, type, everything()) %>%
+  arrange(type) -> shengfirst
+  
+#write_csv(shengfirst, "shengfirst.csv", col_names = TRUE)
+```
+
+```{r}
+second_sheng <- read_csv("shengfirst.csv")
+second_sheng %>%
+  mutate(type = case_when(
+    is.na(type) == FALSE ~ type,
+    str_detect(meaning, "名聲") ~ "not",
+    str_detect(meaning, "比喻") ~ "not",
+  )) %>%
+  arrange(type) -> shengsecond
+
+#write_csv(shengsecond, "shengsecond.csv", col_names = TRUE)
+```
+
+---
+
+```{r}
+sheng_analyzed <- read_csv("shengsecond.csv") %>%
+  mutate(type = as_factor(type))
+
+
+
+mao_analyzed <- read_csv("maofirst.csv") %>%
+  mutate(type = case_when(
+    type == "prov" ~ "phrase",
+    type == "saying" ~ "phrase",
+    type == "e" ~ "single",
+    type == "q" ~ "possible candidate",
+    TRUE ~ type
+  ),
+  type = as_factor(type))
+
+#ggplots
+mao_groups <- mao_analyzed %>%
+  count(type) %>%
+  ggplot(aes(x = reorder(type, n), y = n)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  ylab("frequency of mao") +
+  xlab("")
+
+
+sheng_groups <- sheng_analyzed %>%
+  count(type) %>%
+  ggplot(aes(x = reorder(type, n), y = n)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  ylab("frequency of sheng") +
+  xlab("")
+``` 
+
+---
+
+```{r}
+tidy.hydcd %>%
+  filter(item == "貌")
+```
 
 
 
